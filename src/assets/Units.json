@@ -1,0 +1,125 @@
+{
+    "Area": [
+        "Acres (ac)",
+        "Ares (a)",
+        "Square Meters (m²)",
+        "Square Kilometers (km²)",
+        "Hectares (ha)",
+        "Square Miles (mi²)",
+        "Square Yards (yd²)",
+        "Square Feet (ft²)",
+        "Square Inches (in²)"
+    ],
+    "Length": [
+        "Meters (m)",
+        "Kilometers (km)",
+        "Centimeters (cm)",
+        "Millimeters (mm)",
+        "Miles (mi)",
+        "Feet (ft)",
+        "Inches (in)",
+        "Yards (yd)",
+        "Nanometers (nm)"
+    ],
+    "Temperature": [
+        "Celsius (°C)",
+        "Fahrenheit (°F)",
+        "Kelvin (K)",
+        "Rankine (°R)"
+    ],
+    "Volume": [
+        "Liters (L)",
+        "Milliliters (mL)",
+        "Cubic Meters (m³)",
+        "Gallons (gal)",
+        "Cubic Feet (ft³)",
+        "Cubic Centimeters (cm³)",
+        "Deciliters (dL)",
+        "Cubic Inches (in³)",
+        "Fluid Ounces (fl oz)"
+    ],
+    "Mass": [
+        "Kilograms (kg)",
+        "Grams (g)",
+        "Pounds (lb)",
+        "Ounces (oz)",
+        "Metric Tons (t)",
+        "Milligrams (mg)",
+        "Short Tons (short ton)"
+    ],
+    "Data": [
+        "Bytes (B)",
+        "Kilobytes (KB)",
+        "Megabytes (MB)",
+        "Gigabytes (GB)",
+        "Terabytes (TB)",
+        "Petabytes (PB)",
+        "Bits (bit)",
+        "Kilobits (Kb)",
+        "Megabits (Mb)"
+    ],
+    "Speed": [
+        "Meters per second (m/s)",
+        "Kilometers per hour (km/h)",
+        "Miles per hour (mph)",
+        "Feet per second (ft/s)",
+        "Knots (kn)"
+    ],
+    "Time": [
+        "Seconds (s)",
+        "Milliseconds (ms)",
+        "Minutes (min)",
+        "Hours (h)",
+        "Days (d)",
+        "Years (yr)",
+        "Weeks (wk)"
+    ],
+    "Pressure": [
+        "Pascals (Pa)",
+        "Kilopascals (kPa)",
+        "Bars (bar)",
+        "Atmospheres (atm)",
+        "Pounds per square inch (psi)"
+    ],
+    "Energy": [
+        "Joules (J)",
+        "Kilojoules (kJ)",
+        "Watt-hours (Wh)",
+        "Kilowatt-hours (kWh)",
+        "Calories (cal)"
+    ],
+    "Force": [
+        "Newtons (N)",
+        "Kilonewtons (kN)",
+        "Pound-force (lbf)",
+        "Dynes (dyn)"
+    ],
+    "Power": [
+        "Watts (W)",
+        "Kilowatts (kW)",
+        "Horsepower (hp)",
+        "Foot-pounds per second (ft-lb/s)"
+    ],
+    "Angle": [
+        "Degrees (deg)",
+        "Radians (rad)",
+        "Gradians (grad)"
+    ],
+    "Density": [
+        "Kilograms per cubic meter (kg/m³)",
+        "Grams per cubic centimeter (g/cm³)",
+        "Pounds per cubic foot (lb/ft³)"
+    ],
+    "Flow Rate": [
+        "Liters per second (L/s)",
+        "Cubic meters per hour (m³/h)",
+        "Gallons per minute (gpm)",
+        "Cubic feet per minute (cfm)"
+    ],
+    "Frequency": [
+        "Hertz (Hz)",
+        "Kilohertz (kHz)",
+        "Megahertz (MHz)",
+        "Gigahertz (GHz)"
+    ]
+}

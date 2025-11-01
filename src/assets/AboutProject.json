@@ -1,0 +1,31 @@
+{
+  "aboutProject": {
+    "description": "This Unit Converter offers the following features:",
+    "features": [
+      {
+        "title": "Real-time Conversion",
+        "description": "Instant calculations on input or unit changes."
+      },
+      {
+        "title": "Wide Unit Variety",
+        "description": "Supports over 70 units across 16 categories (e.g., Area, Length, Temperature, etc.)."
+      },
+      {
+        "title": "User-friendly Interface",
+        "description": "Sleek, responsive design with <span style='color:oklch(79.5% 0.184 86.047); font-weight:bold'>Tailwind CSS</span>, dark mode support, and full responsiveness."
+      },
+      {
+        "title": "Error Handling",
+        "description": "Validates inputs and displays clear error messages."
+      },
+      {
+        "title": "Modular & Extensible",
+        "description": "Built with <span style='color:oklch(79.5% 0.184 86.047); font-weight:bold'>React</span> and <span style='color:oklch(79.5% 0.184 86.047); font-weight:bold'>TypeScript</span> using a JSON-based structure for easy development."
+      },
+      {
+        "title": "Target Audience",
+        "description": "Designed for scientific, engineering, and everyday users."
+      }
+    ]
+  }
+}
