@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import TitleChip from '../Converter/TitleChip';
+import TitleChip from '../TitleChip';
 
 interface actionType {
     shape: 'Circle' | 'Rectangle' | 'Square';
