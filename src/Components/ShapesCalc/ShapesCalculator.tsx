@@ -1,6 +1,6 @@
 import { useEffect, useReducer, useState, type ActionDispatch } from "react";
 import ShapesJSON from "../../assets/Shapes.json";
-import Toast from "./../Converter/Toast";
+import Toast from "../Toast";
 import Menu from "../Menu";
 import TextChip from "../Converter/TextChlip";
 import ResultDisplay from "../ResultDisplay";
