@@ -2,6 +2,7 @@
     "shapes": [
         "Circle",
         "Rectangle",
-        "Square"
+        "Square",
+        "Pentagon"
     ]
 }

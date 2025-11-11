@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import TitleChip from '../TitleChip';
 
 interface actionType {
-    shape: 'Circle' | 'Rectangle' | 'Square';
+    shape: 'Circle' | 'Rectangle' | 'Square' | 'Pentagon';
     radius?: number;
     width?: number;
     length?: number;
@@ -10,7 +10,7 @@ interface actionType {
 }
 
 type ShapeInputProps = {
-    shape: 'Circle' | 'Rectangle' | 'Square';
+    shape: 'Circle' | 'Rectangle' | 'Square' | 'Pentagon';
     value?: number;
     param: string;
     label: string;

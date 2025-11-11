@@ -3,7 +3,7 @@ export function CircleIcon({ radius }: { radius: number }): React.ReactElement {
     const formattedRadius = new Intl.NumberFormat().format(localRadius);
     return (
         <div className="flex items-center">
-            <div className="block relative w-[6rem] h-[6rem] p-2 my-2 ml-2 mr-2 rounded-full border-2 border-slate-900">
+            <div className="block relative w-[6rem] h-[6rem] bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 hover:scale-110 p-2 my-2 ml-2 mr-2 rounded-full">
                 <div className="border-red-500 w-1/2 border-2 rotate-90 absolute top-[25%] left-2/4 translate-x-[-50%] rotate-45"></div>
             </div>
             {
@@ -40,7 +40,7 @@ export function RectangleIcon({ width, length }: { width: number, length: number
                 ) : null
             }
             <div className="flex justify-center gap-4 items-center">
-                <div className="block w-[7rem] h-[5rem] p-2 my-2 ml-2 mr-2 border-2  border-r-red-500 border-t-green-500 border-slate-900"></div>
+                <div className="block w-[7rem] h-[5rem] bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 hover:scale-110 p-2 my-2 ml-2 mr-2"></div>
                 {
                     localLength && localWidth
                     ? (
@@ -62,8 +62,30 @@ export function SquareIcon({ side }: { side: number }): React.ReactElement {
     const formattedSide = new Intl.NumberFormat().format(localSide);
     return (
         <div className="flex justify-center items-center">
-            <div className="block w-[6rem] h-[6rem] p-2 my-2 ml-2 mr-2 border-2 border-r-red-500 border-slate-900"></div>
+            <div className="block w-[6rem] h-[6rem] bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 hover:scale-110 p-2 my-2 ml-2 mr-2"></div>
             {
+                localSide
+                ? (
+                    <div className="overflow-x-hidden [overflow-wrap:anywhere] bg-slate-100 dark:bg-slate-700 hover:scale-[1.01] cursor-pointer rounded shadow p-2 my-2 ring-1 ring-slate-200 dark:ring-slate-700">
+                        {formattedSide}
+                    </div>
+                ) : null
+            }
+        </div>
+    )
+}
+
+export function PentagonIcon({ side }: { side: number }): React.ReactElement {
+    const localSide = side || 0;
+    const formattedSide = new Intl.NumberFormat().format(localSide);
+    return (
+        <div className="flex justify-center items-center">
+        <div 
+        className="block w-[6rem] h-[6rem] bg-gradient-to-r from-blue-500 to-purple-500 my-2 mx-2 transition-all duration-300 hover:scale-110"
+        style={{
+            clipPath: 'polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)'
+        }}
+        ></div>            {
                 localSide
                 ? (
                     <div className="overflow-x-hidden [overflow-wrap:anywhere] bg-slate-100 dark:bg-slate-700 hover:scale-[1.01] cursor-pointer rounded shadow p-2 my-2 ring-1 ring-slate-200 dark:ring-slate-700">
