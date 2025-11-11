@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import TitleChip from '../Converter/TitleChip';
 
 interface actionType {
     shape: 'Circle' | 'Rectangle' | 'Square';
@@ -56,16 +57,14 @@ const ShapeInput: React.FC<ShapeInputProps> = ({
 
     return (
         <label htmlFor={id} className="flex flex-col gap-2">
-            <span className="bg-slate-500 p-2 w-max rounded cursor-pointer text-white text-sm">
-                {label}
-            </span>
+            <TitleChip text={label}/>
             <input
                 id={id}
                 name={`${shape}-input`}
                 placeholder={placeholder}
                 value={localValue}
                 onChange={handleChange}
-                type="text" // بهتر است text باشد تا کنترل کامل داشته باشیم
+                type="text"
                 inputMode="decimal"
                 className="w-full bg-slate-100 dark:bg-slate-600 rounded shadow p-2 ring-1 ring-slate-200 dark:ring-slate-700 focus:ring-2 focus:ring-blue-500 transition"
             />

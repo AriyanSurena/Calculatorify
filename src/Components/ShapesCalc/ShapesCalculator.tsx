@@ -97,9 +97,9 @@ const ShapesCalculator: React.FC = () => {
 
     const Row: React.FC<{ label: string, placeholder: string, shape: ('Circle' | 'Rectangle' | 'Square'), param: string, onChange: ActionDispatch<[action: actionType]> }> = ({ label, placeholder, shape, param, onChange }) => {
         return (
-            <span className="flex flex-col my-2 gap-2">
+            <div className="flex flex-col my-2 gap-2">
                 <ShapeInput placeholder={placeholder} label={label} shape={shape} param={param} onChange={onChange} />
-            </span>
+            </div>
         )
     }
 
@@ -111,24 +111,25 @@ const ShapesCalculator: React.FC = () => {
                     <div className="flex flex-col">
                         <span className="flex flex-col my-2 gap-2">
                             {
-                                state.shape === 'Circle' &&
-                                (
-                                    <Row label="Radius" shape="Circle" param="radius" placeholder="Enter Radius (r)" onChange={dispatch} />
-                                )
+                                (state.shape === 'Circle')
+                                    ? (
+                                        <Row label="Radius" shape="Circle" param="radius" placeholder="Enter Radius (r)" onChange={dispatch} />
+                                    ) : null
                             }
                             {
-                                state.shape === 'Rectangle' && (
-                                    <>
-                                        <Row label="Width" shape="Rectangle" param="width" placeholder="Enter Rectangle Width (w)" onChange={dispatch} />
-                                        <Row label="Height" shape="Rectangle" param="height" placeholder="Enter Rectangle Height (h)" onChange={dispatch} />
-                                    </>
-                                )
+                                (state.shape === 'Rectangle')
+                                    ? (
+                                        <>
+                                            <Row label="Width" shape="Rectangle" param="width" placeholder="Enter Rectangle Width (w)" onChange={dispatch} />
+                                            <Row label="Height" shape="Rectangle" param="height" placeholder="Enter Rectangle Height (h)" onChange={dispatch} />
+                                        </>
+                                    ) : null
                             }
                             {
-                                state.shape === 'Square' &&
-                                (
-                                    <Row label="Side" shape="Square" param="side" placeholder="Enter Square Side (s)" onChange={dispatch} />
-                                )
+                                (state.shape === 'Square')
+                                    ? (
+                                        <Row label="Side" shape="Square" param="side" placeholder="Enter Square Side (s)" onChange={dispatch} />
+                                    ) : null
                             }
                         </span>
                         <ResultDisplay label={"Area"} placeholder={state.shape + ' Area'} result={state.area} />

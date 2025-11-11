@@ -1,15 +1,17 @@
-import React, { useEffect, useState, type Dispatch, type SetStateAction } from 'react';
+import React, { useEffect, useState } from 'react';
 interface SectionHeaderProps {
   children: React.ReactNode;
-  setMessage: Dispatch<SetStateAction<string>>
+  setMessage?: (value : string) => void
 }
 
 const TextChip: React.FC<SectionHeaderProps> = ({ setMessage, children }) => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
 
   useEffect(() => {
-    if (isClicked) setMessage(`Copied To Clipboard. ✅`);
-    else setMessage('');
+    if(setMessage) {
+      if (isClicked) setMessage(`Copied To Clipboard. ✅`);
+      else setMessage('');
+    }
     const Timer = setTimeout(() => {
       isClicked && setIsClicked(!isClicked);
     }, 2000)

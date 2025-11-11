@@ -34,9 +34,9 @@ const Converter: React.FC = () => {
     const [convertToUnit, setConvertToUnit] = useState<string>(unitsCategory[selectedUnitType][1])
     const [convertFromValue, setConvertFromValue] = useState<number>()
     const [convertToValue, setConvertToValue] = useState<number>()
-    
+
     const [message, setMessage] = useState<string>('')
-    
+
     function handleConverter(value: string): void {
         const converterValue = parseFloat(value);
         if (Number.isNaN(value)) {
@@ -69,7 +69,7 @@ const Converter: React.FC = () => {
     let formattedConvertFromValue = new Intl.NumberFormat().format(Number(convertFromValue));
     let formattedConvertToValue = new Intl.NumberFormat().format(Number(convertToValue));
 
-    
+
     return (
         <>
             <article className="flex flex-col gap-4 w-11/12 max-w-lg px-2 py-4 bg-gray-100 dark:bg-gray-700 text-black dark:text-white shadow-2xl ring-1 ring-gray-300 dark:ring-gray-800 rounded relative">
@@ -94,8 +94,8 @@ const Converter: React.FC = () => {
             </article>
             {
                 message &&
-                <Toast message={message} type="success" duration={2000}/>
-            }    
+                <Toast message={message} type="success" duration={2000} />
+            }
         </>
     )
 }
