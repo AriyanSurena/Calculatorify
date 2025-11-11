@@ -39,7 +39,7 @@ const Select: React.FC<SelectProps> = ({
                 isOpened &&
                 <div className="w-full h-max min-h-full max-h-[80vh] bg-white dark:bg-gray-700 absolute top-0 left-0 overflow-auto z-50">
                     <ul
-                        className="w-full flex flex-col gap-1 h-full p-2 z-50"
+                        className="w-full flex flex-col gap-2 h-full p-2 z-50"
                         id={selectId + 'Items'}>
                         {
                             list.map((item) => {
@@ -47,24 +47,21 @@ const Select: React.FC<SelectProps> = ({
                                     <li
                                         key={item}
                                         className="
-                                    w-full 
-                                    p-2 
-                                    rounded  
-                                    bg-white
-                                        dark:bg-gray-900 
-                                        text-black
-                                        dark:text-white 
-                                        ring-1
-                                        ring-gray-300
-                                        dark:ring-gray-800 
-                                        hover:bg-gray-100
-                                        dark:hover:bg-slate-900 
-                                        hover:scale-[1.01]
-                                        hover:text-blue-400
-                                        transition-all 
-                                        duration-200 
-                                        cursor-pointer 
-                                        select-none
+                                            w-full p-2 
+                                            rounded 
+                                            ring-1 ring-gray-300
+                                            bg-white
+                                            dark:bg-gray-900 
+                                            hover:bg-gray-100
+                                            dark:hover:bg-slate-900 
+                                            text-black dark:text-white 
+                                            dark:ring-gray-800 
+                                            hover:scale-[1.01]
+                                            hover:text-blue-400
+                                            transition-all 
+                                            duration-200 
+                                            cursor-pointer 
+                                            select-none
                                         "
                                         onClick={() => {
                                             if (setSelected) setSelected(item)
