@@ -96,3 +96,26 @@ export function PentagonIcon({ side }: { side: number }): React.ReactElement {
         </div>
     )
 }
+
+export function HexagonIcon({ side }: { side: number }): React.ReactElement {
+    const localSide = side || 0;
+    const formattedSide = new Intl.NumberFormat().format(localSide);
+    return (
+        <div className="flex justify-center items-center">
+        <div 
+            className="block w-[6rem] h-[6rem] bg-gradient-to-r from-green-500 to-teal-500 my-2 mx-2 transition-all duration-300 hover:scale-110"
+            style={{
+                clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'
+            }}
+        ></div>
+        {
+                localSide
+                ? (
+                    <div className="overflow-x-hidden [overflow-wrap:anywhere] bg-slate-100 dark:bg-slate-700 hover:scale-[1.01] cursor-pointer rounded shadow p-2 my-2 ring-1 ring-slate-200 dark:ring-slate-700">
+                        {formattedSide}
+                    </div>
+                ) : null
+            }
+        </div>
+    )
+}

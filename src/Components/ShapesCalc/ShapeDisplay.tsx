@@ -1,6 +1,6 @@
-import { CircleIcon, PentagonIcon, RectangleIcon, SquareIcon } from "../../assets/SVGIcons"
+import { CircleIcon, HexagonIcon, PentagonIcon, RectangleIcon, SquareIcon } from "../../assets/SVGIcons"
 interface stateType {
-    shape: 'Circle' | 'Rectangle' | 'Square' | 'Pentagon';
+    shape: 'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon';
     radius?: number,
     area: number,
     perimeter: number,
@@ -26,6 +26,9 @@ const ShapeDisplay: React.FC<stateType> = (state) => {
                 ) ||
                 state.shape === "Pentagon" && (
                     <PentagonIcon side={Number(state.side)}/>
+                ) ||
+                state.shape === "Hexagon" && (
+                    <HexagonIcon side={Number(state.side)}/>
                 )
             }
             

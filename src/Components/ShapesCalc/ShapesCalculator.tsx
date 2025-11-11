@@ -24,7 +24,7 @@ const ShapesCalculator: React.FC = () => {
     const [message, setMessage] = useState<string>('')
 
     interface stateType {
-        shape: 'Circle' | 'Rectangle' | 'Square' | 'Pentagon';
+        shape: 'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon';
         radius?: number,
         area: number,
         perimeter: number,
@@ -34,7 +34,7 @@ const ShapesCalculator: React.FC = () => {
     }
 
     interface actionType {
-        shape: 'Circle' | 'Rectangle' | 'Square' | 'Pentagon',
+        shape: 'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon',
         radius?: number,
         width?: number,
         length?: number,
@@ -88,6 +88,19 @@ const ShapesCalculator: React.FC = () => {
                     perimeter: side > 0 ? 5 * side : 0
                 };
             }
+            case 'Hexagon': {
+                const side = action.side ?? prevState.side ?? 0;
+                if (side < 0) return prevState;
+                
+                const hexagonAreaConstant = 2.598076211353316;
+                    
+                return {
+                    shape: "Hexagon",
+                    side,
+                    area: side > 0 ? hexagonAreaConstant * side * side : 0,
+                    perimeter: side > 0 ? 6 * side : 0
+                };
+            }
 
             default: return prevState;
         }
@@ -100,7 +113,7 @@ const ShapesCalculator: React.FC = () => {
 
     useEffect(() => {
         dispatch({
-            shape: selectedShape as ('Circle' | 'Rectangle' | 'Square' | 'Pentagon'),
+            shape: selectedShape as ('Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon'),
             radius: undefined,
             width: undefined,
             length: undefined,
@@ -109,7 +122,7 @@ const ShapesCalculator: React.FC = () => {
     }, [selectedShape])
 
 
-    const Row: React.FC<{ label: string, placeholder: string, shape: ('Circle' | 'Rectangle' | 'Square' | 'Pentagon'), param: string, onChange: ActionDispatch<[action: actionType]> }> = ({ label, placeholder, shape, param, onChange }) => {
+    const Row: React.FC<{ label: string, placeholder: string, shape: ('Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon'), param: string, onChange: ActionDispatch<[action: actionType]> }> = ({ label, placeholder, shape, param, onChange }) => {
         return (
             <div className="flex flex-col my-2 gap-2">
                 <ShapeInput placeholder={placeholder} label={label} shape={shape} param={param} onChange={onChange} />
@@ -149,6 +162,12 @@ const ShapesCalculator: React.FC = () => {
                                 (state.shape === 'Pentagon')
                                     ? (
                                         <Row label="Side" shape="Pentagon" param="side" placeholder="Enter Pentagon Side (s)" onChange={dispatch} />
+                                    ) : null
+                            }
+                            {
+                                (state.shape === 'Hexagon')
+                                    ? (
+                                        <Row label="Side" shape="Hexagon" param="side" placeholder="Enter Hexagon Side (s)" onChange={dispatch} />
                                     ) : null
                             }
                         </span>

@@ -3,6 +3,7 @@
         "Circle",
         "Rectangle",
         "Square",
-        "Pentagon"
+        "Pentagon",
+        "Hexagon"
     ]
 }
