@@ -6,14 +6,11 @@ interface MenuProps {
    setSelected: (selected: string) => void
 }
 
-const Menu: React.FC<MenuProps> = ({
-   id,
-   list,
-   selected,
-   setSelected
-}) => {
+const Menu: React.FC<MenuProps> = (props) => {
    return (
-      <Select id={id} list={list} selected={selected} setSelected={setSelected} />
+      <Select
+         {...props}
+      />
    )
 }
 
