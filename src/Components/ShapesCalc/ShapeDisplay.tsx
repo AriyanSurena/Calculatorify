@@ -1,12 +1,20 @@
-import { CircleIcon, HexagonIcon, PentagonIcon, RectangleIcon, SquareIcon } from "../../assets/SVGIcons"
+import { CircleIcon, EquilateralTriangleIcon, HexagonIcon, IsoscelesTriangleIcon, PentagonIcon, RectangleIcon, RightTriangleIcon, ScaleneTriangleIcon, SquareIcon } from "../../assets/SVGIcons"
 interface stateType {
-    shape: 'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon';
+    shape: 'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle';
     radius?: number,
     area: number,
     perimeter: number,
     width?: number,
     length?: number,
-    side?: number
+    height?: number,
+    base?: number,
+    side?: number,
+    sideA?: number,
+    sideB?: number,
+    sideC?: number,
+    equalSide?: number,
+    hypotenuse?: number,
+    error?: string
 }
 
 const ShapeDisplay: React.FC<stateType> = (state) => {
@@ -16,22 +24,34 @@ const ShapeDisplay: React.FC<stateType> = (state) => {
         >
             {
                 state.shape === "Circle" && (
-                    <CircleIcon radius={Number(state.radius)} />
+                    <CircleIcon />
                 ) ||
                 state.shape === "Rectangle" && (
-                    <RectangleIcon width={Number(state.width)} length={Number(state.length)}/>
+                    <RectangleIcon />
                 ) ||
                 state.shape === "Square" && (
-                    <SquareIcon side={Number(state.side)}/>
+                    <SquareIcon />
                 ) ||
                 state.shape === "Pentagon" && (
-                    <PentagonIcon side={Number(state.side)}/>
+                    <PentagonIcon />
                 ) ||
                 state.shape === "Hexagon" && (
-                    <HexagonIcon side={Number(state.side)}/>
+                    <HexagonIcon />
+                ) ||
+                state.shape === "Equilateral Triangle" && (
+                    <EquilateralTriangleIcon />
+                ) ||
+                state.shape === "Isosceles Triangle" && (
+                    <IsoscelesTriangleIcon />
+                ) ||
+                state.shape === "Right Triangle" && (
+                    <RightTriangleIcon />
+                ) ||
+                state.shape === "Scalene Triangle" && (
+                    <ScaleneTriangleIcon />
                 )
             }
-            
+
         </section>
     )
 }

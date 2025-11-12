@@ -4,6 +4,10 @@
         "Rectangle",
         "Square",
         "Pentagon",
-        "Hexagon"
+        "Hexagon",
+        "Equilateral Triangle",
+        "Isosceles Triangle",
+        "Scalene Triangle",
+        "Right Triangle"
     ]
 }
