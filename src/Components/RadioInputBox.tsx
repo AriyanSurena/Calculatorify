@@ -1,5 +1,3 @@
-import TitleChip from "./TitleChip";
-
 interface RadioInputBoxProps {
     name: string,
     labelText: string,
