@@ -1,24 +1,25 @@
 import { useId, useState } from "react";
 
 interface SelectProps {
-    id: string,
-    list: string[],
-    selected: string,
-    setSelected: (selected: string) => void,
+    id: string;
+    list: string[];
+    selected: string;
+    setSelected: (selected: string) => void;
 }
 
 const Select: React.FC<SelectProps> = ({
     id,
     list,
     selected,
-    setSelected
+    setSelected,
 }) => {
     const [isOpened, setIsOpened] = useState<boolean>(false);
     const selectId: string = id || useId();
+
     return (
-        <div
+        <section
             id={selectId}
-            className="shadow-2xl rounded select-none">
+            className="w-full shadow-2xl rounded select-none">
             {
                 !isOpened &&
                 <button
@@ -36,46 +37,63 @@ const Select: React.FC<SelectProps> = ({
                 </button>
             }
             {
-                isOpened &&
-                <div className="w-full h-max min-h-full max-h-[80vh] bg-white dark:bg-gray-700 absolute top-0 left-0 overflow-auto z-50">
-                    <ul
-                        className="w-full flex flex-col gap-2 h-full p-2 z-50"
-                        id={selectId + 'Items'}>
-                        {
-                            list.map((item) => {
-                                return (
-                                    <li
-                                        key={item}
-                                        className="
-                                            w-full p-2 
-                                            rounded 
-                                            ring-1 ring-gray-300
-                                            bg-white
-                                            dark:bg-gray-900 
-                                            hover:bg-gray-100
-                                            dark:hover:bg-slate-900 
-                                            text-black dark:text-white 
-                                            dark:ring-gray-800 
-                                            hover:scale-[1.01]
-                                            hover:text-blue-400
-                                            transition-all 
-                                            duration-200 
-                                            cursor-pointer 
-                                            select-none
-                                        "
-                                        onClick={() => {
-                                            if (setSelected) setSelected(item)
-                                            setIsOpened(!isOpened);
-                                        }}>
-                                        {item}
-                                    </li>
-                                )
-                            })
-                        }
-                    </ul>
-                </div>
+                isOpened ? (
+                    <div
+                        className="
+                                w-full min-h-full max-h-[75vh] rounded bg-white dark:bg-gray-700 overflow-auto z-50 absolute top-0 left-0 overflow-y-auto
+                                /* برای فایرفاکس */
+                                scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-100
+                                /* برای کروم و سافاری */
+                                [&::-webkit-scrollbar]:w-1
+                                hover:[&::-webkit-scrollbar]:w-3
+                                [&::-webkit-scrollbar-track]:bg-gray-100
+                                [&::-webkit-scrollbar-track]:rounded-full
+                                [&::-webkit-scrollbar-thumb]:bg-blue-500
+                                [&::-webkit-scrollbar-thumb]:rounded-full
+                                hover:[&::-webkit-scrollbar-thumb]:bg-blue-600"
+                    >
+                        <ul
+                            className="w-full flex flex-col gap-2 h-full p-2 z-50"
+                            id={selectId + 'Items'}>
+                            {
+                                list.map((item) => {
+                                    return (
+                                        <li
+                                            key={item}
+                                            className="
+                                                    w-full p-2 
+                                                    rounded 
+                                                    ring-1 ring-gray-300
+                                                    bg-white
+                                                    dark:bg-gray-900 
+                                                    hover:bg-gray-100
+                                                    dark:hover:bg-slate-900 
+                                                    text-black dark:text-white 
+                                                    dark:ring-gray-800 
+                                                    hover:scale-[1.01]
+                                                    hover:text-blue-400
+                                                    transition-all 
+                                                    duration-200 
+                                                    cursor-pointer 
+                                                    select-none
+                                                "
+                                            value={item}
+                                            onClick={() => {
+                                                if (setSelected)
+                                                        setSelected(item)
+                                                setIsOpened(!isOpened);
+                                            }}>
+                                            {item}
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>
+                    </div>
+                ) :
+                    null
             }
-        </div>
+        </section>
     )
 }
 
