@@ -1,4 +1,4 @@
-# 🧮 Calculator Suite
+# 🧮 calculatorify Suite
 
 A comprehensive and modern calculator toolkit built with cutting-edge web technologies.
 
