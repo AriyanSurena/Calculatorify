@@ -3,7 +3,6 @@ import InputBox from "../BMICalc/InputBox";
 
 import useExchangeRates from "./useExchangeRates";
 import currencyUnitsJSON from "../../assets/currencyUnits .json"
-import Menu from "../Menu";
 
 const CurrencyConverter: React.FC = () => {
     const [isOpened, setIsOpened] = useState(false)
