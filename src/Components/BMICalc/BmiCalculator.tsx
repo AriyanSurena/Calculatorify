@@ -1,7 +1,7 @@
 import { useEffect, useReducer } from "react";
-import Input from "../Converter/Input";
 import ResultDisplay from "../ResultDisplay";
 import TextChip from "../TextChlip";
+import InputBox from "./InputBox";
 
 const BMICalculator: React.FC = () => {
 
@@ -115,8 +115,8 @@ const BMICalculator: React.FC = () => {
 
     return (
         <article className="flex flex-col gap-4 w-11/12 max-w-lg px-2 py-4 bg-gray-100 dark:bg-gray-700 text-black dark:text-white shadow-2xl ring-1 ring-gray-300 dark:ring-gray-800 rounded relative">
-            <InputBox htmlFor="height" id="height" name="height" placeholder="Enter Your Height in cm: " onChangeFn={(v) => dispatch({ type: "UPDATE", param: 'height', value: Number(v) })} labelText="Height (Cm): " />
-            <InputBox htmlFor="weight" id="weight" name="weight" placeholder="Enter Your Weight in kg: " onChangeFn={(v) => dispatch({ type: "UPDATE", param: 'weight', value: Number(v) })} labelText="Weight (Kg): " />
+            <InputBox id="height" name="height" placeholder="Enter Your Height in cm: " onChangeFn={(v) => dispatch({ type: "UPDATE", param: 'height', value: Number(v) })} labelText="Height (Cm): " />
+            <InputBox id="weight" name="weight" placeholder="Enter Your Weight in kg: " onChangeFn={(v) => dispatch({ type: "UPDATE", param: 'weight', value: Number(v) })} labelText="Weight (Kg): " />
             <div>
                 {state.bmi ?
                     (state.weight && state.height) ? (
@@ -183,38 +183,3 @@ const BMICalculator: React.FC = () => {
 }
 
 export default BMICalculator;
-
-
-const InputBox: React.FC<{
-    htmlFor: string,
-    labelText: string,
-    id: string,
-    name: string,
-    placeholder: string,
-    onClickFn?: () => void,
-    onChangeFn?: (value: number) => void
-}> = ({
-    htmlFor,
-    labelText,
-    id,
-    name,
-    placeholder,
-    onClickFn,
-    onChangeFn,
-}) => {
-        const handleChange = (value: string) => {
-            if (onChangeFn) {
-                const numValue = Number(value);
-                onChangeFn(numValue);
-            }
-        };
-        return (
-            <label
-                htmlFor={htmlFor}
-                onClick={onClickFn}
-                className="flex flex-col gap-2 cursor-pointer">
-                <span>{labelText}</span>
-                <Input id={id} name={name} placeholder={placeholder} onChange={handleChange} />
-            </label>
-        )
-    }

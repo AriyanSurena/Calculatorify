@@ -1,10 +1,10 @@
 import React, { type JSX } from 'react';
 interface SectionHeaderProps {
-  text: string | JSX.Element;
+  children: string | JSX.Element;
   classes?: string;
 }
 
-const TitleChip: React.FC<SectionHeaderProps> = ({ text, classes }) => {
+const TitleChip: React.FC<SectionHeaderProps> = ({ children, classes }) => {
   return (
     <span
       className={`
@@ -19,7 +19,7 @@ const TitleChip: React.FC<SectionHeaderProps> = ({ text, classes }) => {
         select-none
       ${classes}`}
     >
-      {text}
+      {children}
     </span>
   );
 };

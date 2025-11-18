@@ -57,7 +57,9 @@ const ShapeInput: React.FC<ShapeInputProps> = ({
 
     return (
         <label htmlFor={id} className="flex flex-col gap-2">
-            <TitleChip text={label}/>
+            <TitleChip>
+                {label}
+            </TitleChip>
             <input
                 id={id}
                 name={`${shape}-input`}

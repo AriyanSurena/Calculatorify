@@ -3,6 +3,7 @@ import Converter from "./Components/Converter/Converter";
 import ShapesCalculator from "./Components/ShapesCalc/ShapesCalculator";
 import TextChip from "./Components/TextChlip";
 import BMICalculator from "./Components/BMICalc/BmiCalculator";
+import InvestmentCalculator from "./Components/InvestmentCalculator/InvestmentCalculator";
 
 const App = (): React.ReactNode => {
   return (
@@ -27,12 +28,17 @@ const App = (): React.ReactNode => {
             to={'BMI_Calculator'}
             className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
           >BMI Calculator</Link>
+          <Link
+            to={'Investment_Calculator'}
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+          >Investment Calculator</Link>
         </nav>
 
         <Routes>
           <Route path="/Convertor" element={<Converter />} />
           <Route path="/Shape_Calculator" element={<ShapesCalculator />} />
           <Route path="/BMI_Calculator" element={<BMICalculator />} />
+          <Route path="/Investment_Calculator" element={<InvestmentCalculator />} />
           <Route path="*" element={<div>Page not found</div>} />
         </Routes>
       </BrowserRouter>
