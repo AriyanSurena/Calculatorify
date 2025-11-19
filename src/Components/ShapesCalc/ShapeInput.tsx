@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import TitleChip from '../TitleChip';
 
 interface actionType {
     shape:  'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle';
@@ -57,9 +56,7 @@ const ShapeInput: React.FC<ShapeInputProps> = ({
 
     return (
         <label htmlFor={id} className="flex flex-col gap-2">
-            <TitleChip>
                 {label}
-            </TitleChip>
             <input
                 id={id}
                 name={`${shape}-input`}

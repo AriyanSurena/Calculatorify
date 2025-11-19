@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import InputBox from "../BMICalc/InputBox";
+import InputBox from "./../InputBox";
 
 import useExchangeRates from "./useExchangeRates";
 import currencyUnitsJSON from "../../assets/currencyUnits .json"
@@ -25,10 +25,10 @@ const CurrencyConverter: React.FC = () => {
 
             <InputBox
                 id="amount"
-                labelText="Amount"
+                label="Amount"
                 name="amount"
                 placeholder="Enter Base Currency: "
-                labelTitle="Base Currency"
+                title="Base Currency"
                 onChangeFn={
                     (v) => {
                         setAmount(v)

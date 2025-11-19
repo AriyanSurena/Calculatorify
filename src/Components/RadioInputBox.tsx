@@ -4,6 +4,7 @@ interface RadioInputBoxProps {
     labelTitle?: string,
     id: string,
     value: string;
+    checked?: boolean;
     onClickFn?: (value: string) => void,
 }
 
@@ -13,6 +14,7 @@ const RadioInputBox: React.FC<RadioInputBoxProps> = ({
     id,
     name,
     value,
+    checked,
     onClickFn,
 }) => {
     const handleClick = () => {
@@ -33,6 +35,7 @@ const RadioInputBox: React.FC<RadioInputBoxProps> = ({
                 id={id}
                 value={value}
                 className="peer w-6 h-6 rounded bg-slate-300 checked:bg-blue-500 transition-colors"
+                checked={checked}
             />
             {
                 labelText ? (

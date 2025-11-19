@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from "react";
-import InputBox from "../BMICalc/InputBox";
+import InputBox from "../InputBox";
 import RadioInputBox from "../RadioInputBox";
 import ResultDisplay from "../ResultDisplay";
 
@@ -106,6 +106,7 @@ const InvestmentCalculator: React.FC = () => {
                     name="interestType"
                     labelText="Simple"
                     labelTitle="interest Type is Simple"
+                    checked={state.interestType === "simple"}
                     onClickFn={
                         (v) => {
                             dispatch(
@@ -124,6 +125,7 @@ const InvestmentCalculator: React.FC = () => {
                     name="interestType"
                     labelText="Compound"
                     labelTitle="interest Type is Compound"
+                    checked={state.interestType === "compound"}
                     onClickFn={
                         (v) => {
                             dispatch(
@@ -136,7 +138,7 @@ const InvestmentCalculator: React.FC = () => {
                         }
                     }
                     value="compound"
-                />
+                    />
             </div>
             {
                 state.interestType === 'compound' ? (
@@ -146,6 +148,7 @@ const InvestmentCalculator: React.FC = () => {
                             name="compounding"
                             labelText="Yearly"
                             labelTitle="Compounding Yearly"
+                            checked={state.compounding === "yearly"}
                             onClickFn={
                                 (v) => {
                                     dispatch(
@@ -158,13 +161,14 @@ const InvestmentCalculator: React.FC = () => {
                                 }
                             }
                             value="yearly"
-                        />
+                            />
                         
                         <RadioInputBox
                             id="compound_monthly"
                             name="compounding"
                             labelText="Monthly"
                             labelTitle="Compounding Monthly"
+                            checked={state.compounding === "monthly"}
                             onClickFn={
                                 (v) => {
                                     dispatch(
@@ -177,13 +181,14 @@ const InvestmentCalculator: React.FC = () => {
                                 }
                             }
                             value="monthly"
-                        />
+                            />
                         
                         <RadioInputBox
                             id="compound_daily"
                             name="compounding"
                             labelText="Daily"
                             labelTitle="Compounding Daily"
+                            checked={state.compounding === "daily"}
                             onClickFn={
                                 (v) => {
                                     dispatch(
@@ -216,7 +221,7 @@ const InvestmentCalculator: React.FC = () => {
                         )
                     }
                 }
-                labelText="initial Investment: " />
+                label ="initial Investment: " />
 
             <InputBox
                 id="interestRate"
@@ -233,7 +238,7 @@ const InvestmentCalculator: React.FC = () => {
                         )
                     }
                 }
-                labelText="Interest Rate: " />
+                label ="Interest Rate: " />
             <InputBox
                 id="duration"
                 name="duration"
@@ -249,7 +254,7 @@ const InvestmentCalculator: React.FC = () => {
                         )
                     }
                 }
-                labelText="duration: " />
+                label ="duration: " />
 
                 <ResultDisplay result={Number(state.finalAmount)} placeholder="Resualt"/>
         </article>

@@ -1,25 +1,24 @@
 import { useEffect, useState } from "react";
 
 interface InputProps {
-    id: string,
-    name: string,
-    placeholder: string,
-    propValue?: number | undefined,
-    disabled?: boolean,
-    onChange: (value: string) => void,
-    classes?: string
+    name: string;
+    placeholder: string;
+    onChange: (value: string) => void;
+    id?: string;
+    propValue?: number;
+    disabled?: boolean;
+    classes?: string;
 }
 
 const Input: React.FC<InputProps> = ({
-    id,
     name,
     placeholder,
+    onChange,
+    id,
     propValue,
     disabled,
-    onChange,
     classes
 }) => {
-
     const [localValue, setLocalValue] = useState<string>('')
 
     // همگام‌سازی با prop (در صورت controlled component بودن)
@@ -42,7 +41,7 @@ const Input: React.FC<InputProps> = ({
             return;
         }
 
-        // فقط اعداد، نقطه و منفی مجاز باشند
+        // فقط اعداد، نقطه مجاز باشند
         if (/^\d*\.?\d*$/.test(inputValue) || inputValue === '') {
             setLocalValue(inputValue);
         }
@@ -56,7 +55,7 @@ const Input: React.FC<InputProps> = ({
             value={localValue}
             disabled={disabled}
             onChange={handleChange}
-            className={`w-full bg-slate-100 dark:bg-slate-600 rounded shadow p-2 ring-1 ring-slate-200 dark:ring-slate-700 ${classes}`}
+            className={`w-full bg-slate-100 dark:bg-slate-600 hover:shadow-xl focus:ring-2 focus:ring-slate-900 rounded shadow p-2 ring-1 ring-slate-200 dark:ring-slate-700 transition-all duration-200 ${classes}`}
             type="text"
             inputMode="decimal"
         />
