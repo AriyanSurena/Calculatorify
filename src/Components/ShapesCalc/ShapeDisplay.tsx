@@ -1,6 +1,7 @@
 import { CircleIcon, EquilateralTriangleIcon, HexagonIcon, IsoscelesTriangleIcon, PentagonIcon, RectangleIcon, RightTriangleIcon, ScaleneTriangleIcon, SquareIcon } from "../../assets/SVGIcons"
+type Shapes = 'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle'
 interface stateType {
-    shape: 'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle';
+    shape: Shapes;
     radius?: number,
     area: number,
     perimeter: number,

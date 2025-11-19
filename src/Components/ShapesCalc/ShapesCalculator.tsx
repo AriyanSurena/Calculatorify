@@ -11,6 +11,8 @@ interface ShapesObj {
     shapes: string[];
 }
 
+type Shapes = 'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle';
+
 const ShapesCalculator: React.FC = () => {
     const ShapesCategory: ShapesObj = ShapesJSON;
     const shapes: string[] = ShapesCategory.shapes;
@@ -24,7 +26,7 @@ const ShapesCalculator: React.FC = () => {
     const [message, setMessage] = useState<string>('')
 
     interface stateType {
-        shape: 'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle';
+        shape: Shapes;
         radius?: number,
         area: number,
         perimeter: number,
@@ -42,7 +44,7 @@ const ShapesCalculator: React.FC = () => {
     }
 
     interface actionType {
-        shape: 'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle',
+        shape: Shapes;
         radius?: number,
         width?: number,
         length?: number,
@@ -212,7 +214,7 @@ case 'Isosceles Triangle': {
 
     useEffect(() => {
         dispatch({
-            shape: selectedShape as ('Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle'),
+            shape: selectedShape as (Shapes),
             radius: undefined,
             width: undefined,
             length: undefined,
@@ -221,7 +223,7 @@ case 'Isosceles Triangle': {
     }, [selectedShape])
 
 
-    const Row: React.FC<{ label: string, placeholder: string, shape: ('Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle'), param: string, onChange: ActionDispatch<[action: actionType]> }> = ({ label, placeholder, shape, param, onChange }) => {
+    const Row: React.FC<{ label: string, placeholder: string, shape: (Shapes), param: string, onChange: ActionDispatch<[action: actionType]> }> = ({ label, placeholder, shape, param, onChange }) => {
         return (
             <div className="flex flex-col my-2 gap-2">
                 <ShapeInput placeholder={placeholder} label={label} shape={shape} param={param} onChange={onChange} />

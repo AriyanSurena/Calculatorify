@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
+type Shapes = 'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle';
+
 interface actionType {
-    shape:  'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle';
+    shape: Shapes;
     radius?: number;
     width?: number;
     length?: number;
@@ -9,7 +11,7 @@ interface actionType {
 }
 
 type ShapeInputProps = {
-    shape:  'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle';
+    shape: Shapes;
     value?: number;
     param: string;
     label: string;
