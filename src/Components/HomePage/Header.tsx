@@ -8,7 +8,7 @@ const Header: React.FC = () => {
 
                     {/* بخش عنوان و توضیحات */}
                     <div className="flex flex-col text-center md:text-left">
-                        <h1 className="text-2xl md:text-3xl font-bold flex items-center gap-2">
+                        <h1 className="text-2xl md:text-3xl font-bold flex items-center gap-2 font-jost">
                             🛠️ Ariyan's Tools
                             <span className="text-sm bg-yellow-500 text-black px-2 py-1 rounded-full select-none">
                                 Beta

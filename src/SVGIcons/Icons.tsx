@@ -190,16 +190,6 @@ export const UnitConverterIcon: React.FC<{ className?: string }> = ({ className 
     </svg>
 );
 
-// ماشین حساب BMI - نماد سلامتی
-export const BMICalculatorIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
-    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-        <circle cx="8.5" cy="8.5" r="1.5"/>
-        <circle cx="15.5" cy="8.5" r="1.5"/>
-        <path d="M12 14c-2.33 0-4.32 1.45-5.12 3.5h10.24c-.8-2.05-2.79-3.5-5.12-3.5z"/>
-    </svg>
-);
-
 // مبدل ارز - اسکناس
 export const CurrencyConverterIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
     <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -235,5 +225,20 @@ export const VolumeCalculatorIcon: React.FC<{ className?: string }> = ({ classNa
 export const DateCalculatorIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
     <svg className={className} fill="currentColor" viewBox="0 0 24 24">
         <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+    </svg>
+);
+
+// آیکون BMI - نماد ترازو و بدن
+export const BMICalculatorIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        {/* بدنه ترازو */}
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6h18M6 6v12m12-12v12"/>
+        {/* پایه ترازو */}
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v18"/>
+        {/* کفه‌های ترازو */}
+        <circle cx="6" cy="9" r="2" strokeWidth={2}/>
+        <circle cx="18" cy="9" r="2" strokeWidth={2}/>
+        {/* نماد بدن */}
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 12h4m-2 0v4"/>
     </svg>
 );
