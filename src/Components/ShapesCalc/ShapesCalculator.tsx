@@ -6,6 +6,7 @@ import TextChip from "../TextChlip";
 import ResultDisplay from "../ResultDisplay";
 import ShapeInput from "./ShapeInput";
 import ShapeDisplay from "./ShapeDisplay";
+import ToolCard from "../ToolCard";
 
 interface ShapesObj {
     shapes: string[];
@@ -233,7 +234,7 @@ case 'Isosceles Triangle': {
 
     return (
         <>
-            <article className="flex flex-col gap-4 w-11/12 max-w-lg px-2 py-4 bg-gray-100 dark:bg-gray-700 text-black dark:text-white shadow-2xl ring-1 ring-gray-300 dark:ring-gray-800 rounded relative">
+            <ToolCard id="Shapes_Calculator">
                 <Menu id='category' list={shapes} setSelected={setSelectedShape} selected={selectedShape} />
                 {
                     <div className="flex flex-col">
@@ -326,7 +327,7 @@ case 'Isosceles Triangle': {
                     )
                 }
 
-            </article>
+            </ToolCard>
             {
                 message &&
                 <Toast message={message} type="success" duration={2000} />

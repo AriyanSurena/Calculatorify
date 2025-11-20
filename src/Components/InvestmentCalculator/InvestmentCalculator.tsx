@@ -2,6 +2,7 @@ import { useEffect, useReducer } from "react";
 import InputBox from "../InputBox";
 import RadioInputBox from "../RadioInputBox";
 import ResultDisplay from "../ResultDisplay";
+import ToolCard from "../ToolCard";
 
 interface InvestmentForm {
     initialAmount?: number;
@@ -99,7 +100,7 @@ const InvestmentCalculator: React.FC = () => {
 
 
     return (
-        <article className="flex flex-col gap-4 w-11/12 max-w-lg px-2 py-4 bg-gray-100 dark:bg-gray-700 text-black dark:text-white shadow-2xl ring-1 ring-gray-300 dark:ring-gray-800 rounded relative">
+        <ToolCard id="Investment_Calculator">
             <div className="flex gap-2 justify-around">
                 <RadioInputBox
                     id="interestType_simple"
@@ -257,7 +258,7 @@ const InvestmentCalculator: React.FC = () => {
                 label ="duration: " />
 
                 <ResultDisplay result={Number(state.finalAmount)} placeholder="Resualt"/>
-        </article>
+        </ToolCard>
     )
 }
 

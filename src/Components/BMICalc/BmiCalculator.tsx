@@ -2,6 +2,7 @@ import { useEffect, useReducer } from "react";
 import ResultDisplay from "../ResultDisplay";
 import TextChip from "../TextChlip";
 import InputBox from "../InputBox";
+import ToolCard from "../ToolCard";
 
 const BMICalculator: React.FC = () => {
 
@@ -114,7 +115,7 @@ const BMICalculator: React.FC = () => {
     const weightRange = calculateWeightRange(state.height);
 
     return (
-        <article className="flex flex-col gap-4 w-11/12 max-w-lg px-2 py-4 bg-gray-100 dark:bg-gray-700 text-black dark:text-white shadow-2xl ring-1 ring-gray-300 dark:ring-gray-800 rounded relative">
+        <ToolCard id="BMI_Calculator">
             <InputBox id="height" name="height" placeholder="Enter Your Height in cm: " onChangeFn={(v) => dispatch({ type: "UPDATE", param: 'height', value: Number(v) })} label="Height (Cm): " />
             <InputBox id="weight" name="weight" placeholder="Enter Your Weight in kg: " onChangeFn={(v) => dispatch({ type: "UPDATE", param: 'weight', value: Number(v) })} label="Weight (Kg): " />
             <div>
@@ -178,7 +179,7 @@ const BMICalculator: React.FC = () => {
                         </TextChip>
                     )}
             </div>
-        </article>
+        </ToolCard>
     )
 }
 

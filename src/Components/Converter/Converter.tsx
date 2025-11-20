@@ -6,6 +6,7 @@ import TextChip from "../TextChlip";
 import Toast from "../Toast";
 import ResultDisplay from "../ResultDisplay";
 import Menu from "../Menu";
+import ToolCard from "../ToolCard";
 
 interface UnitsObj {
     Area: string[];
@@ -72,7 +73,7 @@ const Converter: React.FC = () => {
 
     return (
         <>
-            <article id="Converter" className="flex flex-col gap-4 w-11/12 max-w-lg px-2 py-4 bg-gray-100 dark:bg-gray-700 text-black dark:text-white shadow-2xl ring-1 ring-gray-300 dark:ring-gray-800 rounded relative">
+            <ToolCard id="Converter">
                 <Menu id='category' list={unitTypesList} setSelected={setSelectedUnitType} selected={selectedUnitType} />
                 <Input name="InputValue" id="inputValue" placeholder="Enter" onChange={handleConverter} />
                 <Menu id={'convertFrom'} list={unitsCategory[selectedUnitType]} selected={convertFromUnit} setSelected={setConvertFromUnit} />
@@ -91,7 +92,7 @@ const Converter: React.FC = () => {
                         </TextChip>
                     )
                 }
-            </article>
+            </ToolCard>
             {
                 message &&
                 <Toast message={message} type="success" duration={2000} />

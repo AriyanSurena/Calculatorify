@@ -3,6 +3,7 @@ import InputBox from "./../InputBox";
 
 import useExchangeRates from "./useExchangeRates";
 import currencyUnitsJSON from "../../assets/currencyUnits .json"
+import ToolCard from "../ToolCard";
 
 const CurrencyConverter: React.FC = () => {
     const [isOpened, setIsOpened] = useState(false)
@@ -21,8 +22,7 @@ const CurrencyConverter: React.FC = () => {
     }, [amount, fromCurrency, toCurrency])
 
     return (
-        <article className="flex flex-col gap-4 w-11/12 max-w-lg px-2 py-4 bg-gray-100 dark:bg-gray-700 text-black dark:text-white shadow-2xl ring-1 ring-gray-300 dark:ring-gray-800 rounded relative">
-
+        <ToolCard id="Currency_Converter">
             <InputBox
                 id="amount"
                 label="Amount"
@@ -171,9 +171,7 @@ const CurrencyConverter: React.FC = () => {
                     </p>
                 </div>
             )}
-
-
-        </article>
+        </ToolCard>
     )
 }
 

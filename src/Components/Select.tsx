@@ -25,7 +25,7 @@ const Select: React.FC<SelectProps> = ({
                 <button
                     value={selected}
                     onClick={() => { setIsOpened(!isOpened) }}
-                    className="flex justify-between w-full p-2 rounded bg-gray-500 dark:bg-gray-800 hover:bg-gray-600 dark:hover:bg-gray-900 transition-all duration-200 text-white"
+                    className="flex justify-between w-full p-2 rounded-md bg-gradient-to-r from-blue-500 to-purple-400 hover:to-blue-600 transition-all duration-200 dark:from-gray-700 dark:to-gray-800 dark:hover:to-gray-900 hover:scale-[1.01] transition-all duration-200 text-white"
                 >
                     {selected}
                     <svg className="w-1/12 h-4">
@@ -40,7 +40,7 @@ const Select: React.FC<SelectProps> = ({
                 isOpened ? (
                     <div
                         className="
-                                w-full min-h-full max-h-[75vh] rounded bg-white dark:bg-gray-700 overflow-auto z-50 absolute top-0 left-0 overflow-y-auto
+                                w-full min-h-full max-h-[75vh] rounded bg-gradient-to-r from-blue-100 to-purple-100 dark:from-gray-800 dark:to-gray-900 overflow-auto z-50 absolute top-0 left-0 overflow-y-auto
                                 /* برای فایرفاکس */
                                 scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-100
                                 /* برای کروم و سافاری */

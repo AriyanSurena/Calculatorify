@@ -14,12 +14,12 @@ const ToolNav: React.FC = () => {
     
     return (
         <nav className="w-full bg-gradient-to-r from-blue-600 to-purple-700 dark:from-gray-800 dark:to-gray-900 text-white shadow-lg">
-            <div className="container mx-auto px-4 py-3">
+            <div className="container mx-auto px-4 py-3 select-none">
                 <div className="flex items-center justify-between gap-4 max-md:flex-col max-lg:flex-col">
                     <div className="flex items-center gap-4 max-md:flex-col max-lg:flex-col">
                         <Link 
                             to="/"
-                            className="group flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white shadow-lg transition-all duration-300 fixed bottom-4 left-2 z-50 p-3 rounded-full md:static md:bg-white/20 md:hover:bg-white/30 md:rounded-lg md:px-3 md:py-2 md:text-current"
+                            className="group flex select-none items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white shadow-lg transition-all duration-300 fixed bottom-4 left-2 z-50 p-3 rounded-full md:static md:bg-white/20 md:hover:bg-white/30 md:rounded-lg md:px-3 md:py-2 md:text-current select-none [-webkit-user-drag:none]"
                             title="Back to Home"
                         >
                         {/* آیکون */}
@@ -81,7 +81,7 @@ const Home: React.FC = () => {
                                     {Object.entries(toolsConfig).map(([key, tool]) => (
                                         <Link
                                             to={tool.path}
-                                            className="p-4 text-white flex flex-col items-center rounded-lg select-none [-webkit-user-drag:none] transition-all duration-300 bg-gradient-to-r from-blue-600 to-purple-700 dark:from-slate-900 dark:to-gray-900 hover:scale-105 hover:shadow-lg w-32"
+                                            className="p-4 text-white flex flex-col items-center rounded-lg select-none [-webkit-user-drag:none] transition-all duration-300 bg-gradient-to-r from-blue-600 to-purple-700 dark:from-slate-900 dark:to-gray-900 hover:scale-105 hover:shadow-lg w-32 active:text-blue-500"
                                             key={key}
                                         >
                                             <DynamicIcon icon={tool.icon} />
