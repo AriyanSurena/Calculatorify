@@ -16,7 +16,7 @@ const footerConfig = {
             ]
         },
         upcoming: {
-            title: "🔜 Up Coming", 
+            title: "🔜 Up Coming",
             list: [
                 "Volume Calculator",
                 "Interest Rate Calculator",
@@ -67,49 +67,34 @@ const footerConfig = {
         links: [
             {
                 icon: "github",
-                title: "GitHub Profile",
+                title: "👨‍💻 GitHub Portfolio",
                 link: "https://github.com/AriyanSurena"
             },
             {
                 icon: "repo",
-                title: "GitHub Repo",
-                link: "https://github.com/AriyanSurena/Calculator.git"
+                title: "📂 Repository Access",
+                link: "https://github.com/AriyanSurena/Calculatorify.git"
             },
             {
                 icon: "telegram",
-                title: "GitHub Repo",
-                link: "https://github.com/AriyanSurena/Calculator.git"
-            },
-            {
-                icon: "instagram",
-                title: "GitHub Repo",
-                link: "https://github.com/AriyanSurena/Calculator.git"
-            },
-            {
-                icon: "repo",
-                title: "GitHub Repo",
-                link: "https://github.com/AriyanSurena/Calculator.git"
-            },
-            {
-                icon: "website",
-                title: "GitHub Repo",
-                link: "https://github.com/AriyanSurena/Calculator.git"
+                title: "📢 Development Channel",
+                link: "https://t.me/SurenaIO"
             },
             {
                 icon: "email",
-                title: "GitHub Repo",
-                link: "https://github.com/AriyanSurena/Calculator.git"
+                title: "✉️ Contact Developer",
+                link: "mailto:AriyanSurena@gmail.com"
             },
             {
-                icon: "discord",
-                title: "GitHub Repo",
-                link: "https://github.com/AriyanSurena/Calculator.git"
+                icon: "twitter",
+                title: "📱 Tech Twitter",
+                link: "https://twitter.com/AriyanSurena"
             },
             {
                 icon: "linkedin",
-                title: "GitHub Repo",
-                link: "https://github.com/AriyanSurena/Calculator.git"
-            },
+                title: "🤝 Professional Connect",
+                link: "https://linkedin.com/in/AriyanSurena"
+            }
         ]
     },
     keywords: [
