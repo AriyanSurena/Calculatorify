@@ -182,3 +182,58 @@ export function EquilateralTriangleIcon(): React.ReactElement {
         ></div>
     )
 }
+
+// مبدل واحد - خط‌کش
+export const UnitConverterIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+        <path d="M1 21h22v2H1v-2zM5 1h14v18H5V1zm2 2v14h10V3H7zm2 2h6v2H9V5zm0 4h6v2H9V9zm0 4h6v2H9v-2z"/>
+    </svg>
+);
+
+// ماشین حساب BMI - نماد سلامتی
+export const BMICalculatorIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <circle cx="15.5" cy="8.5" r="1.5"/>
+        <path d="M12 14c-2.33 0-4.32 1.45-5.12 3.5h10.24c-.8-2.05-2.79-3.5-5.12-3.5z"/>
+    </svg>
+);
+
+// مبدل ارز - اسکناس
+export const CurrencyConverterIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/>
+    </svg>
+);
+
+// ماشین حساب سرمایه‌گذاری - نمودار رشد
+export const InvestmentCalculatorIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+        <path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/>
+        <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.83 3.41 18.3l6-6.01 4 4L20 9.71 22 11.71V6z"/>
+    </svg>
+);
+
+// ماشین حساب شکل‌ها - مثلث و مربع
+export const ShapeCalculatorIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17 15h2V7H9v2h8v6z"/>
+        <path d="M7 17V7H5v10h2z"/>
+        <path d="M19 19H5V5h14v14zM19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+    </svg>
+);
+
+// ماشین حساب حجم - مکعب
+export const VolumeCalculatorIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+        <path d="M21 7V3h-4v2H7V3H3v4h2v10H3v4h4v-2h10v2h4v-4h-2V7h2zM5 5h2v2H5V5zm2 14H5v-2h2v2zm12 0h-2v-2h2v2zm-2-4H7v-2h10v2zm0-4H7V7h10v4zm2-6h2v2h-2V5z"/>
+    </svg>
+);
+
+// ماشین حساب تاریخ - تقویم
+export const DateCalculatorIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+        <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+    </svg>
+);

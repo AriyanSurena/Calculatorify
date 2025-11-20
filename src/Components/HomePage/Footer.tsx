@@ -1,4 +1,4 @@
-import footerConfig from "../../assets/footerConfig";
+import footerConfig from "../../assets/configs/footerConfig";
 import DynamicIcon from "../../SVGIcons/DynamicIcon";
 
 const Footer: React.FC = () => {
