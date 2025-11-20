@@ -1,4 +1,5 @@
-import { CircleIcon, EquilateralTriangleIcon, HexagonIcon, IsoscelesTriangleIcon, PentagonIcon, RectangleIcon, RightTriangleIcon, ScaleneTriangleIcon, SquareIcon } from "../../assets/SVGIcons"
+import DynamicIcon from "../../SVGIcons/DynamicIcon";
+
 type Shapes = 'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle'
 interface stateType {
     shape: Shapes;
@@ -25,31 +26,31 @@ const ShapeDisplay: React.FC<stateType> = (state) => {
         >
             {
                 state.shape === "Circle" && (
-                    <CircleIcon />
+                    <DynamicIcon icon="circle" />
                 ) ||
                 state.shape === "Rectangle" && (
-                    <RectangleIcon />
+                    <DynamicIcon icon="rectangle" />
                 ) ||
                 state.shape === "Square" && (
-                    <SquareIcon />
+                    <DynamicIcon icon="square" />
                 ) ||
                 state.shape === "Pentagon" && (
-                    <PentagonIcon />
+                    <DynamicIcon icon="pentagon" />
                 ) ||
                 state.shape === "Hexagon" && (
-                    <HexagonIcon />
+                    <DynamicIcon icon="hexagon" />
                 ) ||
                 state.shape === "Equilateral Triangle" && (
-                    <EquilateralTriangleIcon />
+                    <DynamicIcon icon="equilateralTriangle" />
                 ) ||
                 state.shape === "Isosceles Triangle" && (
-                    <IsoscelesTriangleIcon />
+                    <DynamicIcon icon="isoscelesTriangle" />
                 ) ||
                 state.shape === "Right Triangle" && (
-                    <RightTriangleIcon />
+                    <DynamicIcon icon="rightTriangle" />
                 ) ||
                 state.shape === "Scalene Triangle" && (
-                    <ScaleneTriangleIcon />
+                    <DynamicIcon icon="scaleneTriangle" />
                 )
             }
 
