@@ -64,6 +64,8 @@ const footerConfig = {
     creator: {
         title: "👨‍💼 About Creator & Links",
         name: "Ariyan Surena",
+        description: "",
+        photo: "src/assets/Creator.png",
         links: [
             {
                 icon: "github",

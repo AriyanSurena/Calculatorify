@@ -6,7 +6,66 @@ const Footer: React.FC = () => {
         <footer className="w-full bg-gradient-to-r from-blue-600 to-purple-700 dark:from-gray-800 dark:to-gray-900 text-white shadow-lg">
             <div className="container mx-auto px-4 py-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {/* About Creator & Links */}
+                    <section className="space-y-4">
+                        <h4 className="font-semibold text-lg">{footerConfig.creator.title}</h4>
+                        <div className="space-y-3 select-none" title={footerConfig.creator.name}>
+                            <div className="relative w-32 h-32 p-4 my-4 mx-auto">
+                                {/* قاب عکس مدرن با افکت‌های خاص */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full transform scale-110 opacity-20 blur-sm"></div>
 
+                                {/* حلقه‌های انیمیشنی */}
+                                <div className="absolute inset-0 border-2 border-dashed border-blue-300 rounded-full animate-pulse"></div>
+                                <div className="absolute inset-6 border border-white/30 rounded-full"></div>
+
+                                {/* سایه و هایلایت */}
+                                <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full opacity-10 blur-md"></div>
+
+                                {/* عکس اصلی */}
+                                <div className="relative z-10">
+                                    <img
+                                        src={footerConfig.creator.photo}
+                                        className="w-full h-full rounded-full border-4 border-white/80 shadow-2xl shadow-blue-500/20 object-cover transform hover:scale-105 transition-transform duration-300"
+                                        alt={footerConfig.creator.name}
+                                    />
+                                </div>
+
+                                {/* افکت hover */}
+                                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/0 to-purple-500/0 hover:from-blue-400/10 hover:to-purple-500/10 transition-all duration-300 z-20"></div>
+                            </div>
+                            <p className="text-sm text-blue-100">
+                                Made with ❤️ by <strong>{footerConfig.creator.name}</strong>
+                            </p>
+                            <p>
+                                {footerConfig.creator.description}
+                            </p>
+
+                            <div className="space-y-2">
+                                {
+                                    footerConfig.creator.links.map((link, index) => {
+                                        return (
+                                            <a
+                                                key={index}
+                                                href={link.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center gap-2 bg-black/30 hover:bg-black/50 px-3 py-2 rounded-lg transition-colors text-sm"
+                                            >
+                                                <DynamicIcon icon={link.icon} />
+                                                {link.title}
+                                            </a>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </div>
+
+                        <div className="flex items-center gap-2 bg-yellow-500/20 px-3 py-2 rounded-lg">
+                            <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+                            <span className="text-sm">{footerConfig.project.status}</span>
+                        </div>
+                    </section>
+                    
                     {/* About Project */}
                     <section className="space-y-4">
                         <h3 className="text-xl font-bold flex items-center gap-2">
@@ -60,40 +119,6 @@ const Footer: React.FC = () => {
                                     })
                                 }
                             </ul>
-                        </div>
-                    </section>
-
-                    {/* About Creator & Links */}
-                    <section className="space-y-4">
-                        <h4 className="font-semibold text-lg">{footerConfig.creator.title}</h4>
-                        <div className="space-y-3">
-                            <p className="text-sm text-blue-100">
-                                Made with ❤️ by <strong>{footerConfig.creator.name}</strong>
-                            </p>
-
-                            <div className="space-y-2">
-                                {
-                                    footerConfig.creator.links.map((link, index) => {
-                                        return (
-                                            <a
-                                                key={index}
-                                                href={link.link}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex items-center gap-2 bg-black/30 hover:bg-black/50 px-3 py-2 rounded-lg transition-colors text-sm"
-                                            >
-                                                <DynamicIcon icon={link.icon} />
-                                                {link.title}
-                                            </a>
-                                        )
-                                    })
-                                }
-                            </div>
-                        </div>
-
-                        <div className="flex items-center gap-2 bg-yellow-500/20 px-3 py-2 rounded-lg">
-                            <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-                            <span className="text-sm">{footerConfig.project.status}</span>
                         </div>
                     </section>
 
