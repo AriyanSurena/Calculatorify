@@ -93,7 +93,7 @@ const footerConfig = {
             {
                 icon: "linkedin",
                 title: "🤝 Professional Connect",
-                link: "https://linkedin.com/in/AriyanSurena"
+                link: "https://www.linkedin.com/in/ariyan-surena-09148b2b3/"
             }
         ]
     },
