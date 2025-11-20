@@ -172,11 +172,13 @@ const BMICalculator: React.FC = () => {
                         </div>
                     ) : null
                     : (
-                        <TextChip>
-                            <div className="text-red-500 font-bold">
-                                {state.message}
-                            </div>
-                        </TextChip>
+                        state.message ? (
+                            <TextChip>
+                                <div className="text-red-500 font-bold">
+                                    {state.message}
+                                </div>
+                            </TextChip>
+                        ) : null
                     )}
             </div>
         </ToolCard>
