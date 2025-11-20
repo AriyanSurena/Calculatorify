@@ -15,19 +15,27 @@ const ToolNav: React.FC = () => {
     return (
         <nav className="w-full bg-gradient-to-r from-blue-600 to-purple-700 dark:from-gray-800 dark:to-gray-900 text-white shadow-lg">
             <div className="container mx-auto px-4 py-3">
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4">
-                        <Link
+                <div className="flex items-center justify-between gap-4 max-md:flex-col max-lg:flex-col">
+                    <div className="flex items-center gap-4 max-md:flex-col max-lg:flex-col">
+                        <Link 
                             to="/"
-                            className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-3 py-2 rounded-lg transition-colors"
+                            className="group flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white shadow-lg transition-all duration-300 fixed bottom-4 left-2 z-50 p-3 rounded-full md:static md:bg-white/20 md:hover:bg-white/30 md:rounded-lg md:px-3 md:py-2 md:text-current"
                             title="Back to Home"
                         >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                            </svg>
-                            Back to Home
-                        </Link>
+                        {/* آیکون */}
+                        <svg className="w-6 h-6 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
                         
+                        {/* متن با انیمیشن */}
+                        <span className="hidden md:inline group-hover:translate-x-1 transition-transform">
+                            Back to Home
+                        </span>
+                        
+                        {/* افکت پالس در موبایل */}
+                        <div className="absolute -inset-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-20 blur-sm transition-opacity duration-300 md:hidden"></div>                        
+                        </Link>
+
                         {currentTool && (
                             <div className="flex items-center gap-2">
                                 <DynamicIcon icon={currentTool.icon} />
@@ -59,7 +67,7 @@ const Home: React.FC = () => {
                         </Routes>
                     }/>
                 </Routes>
-                <div className="container mx-auto px-4 py-6 flex justify-center">
+                <div className="container mx-auto py-4 flex justify-center">
                     <Routes>
                         <Route path="/" element={
                             <div className="text-center">
