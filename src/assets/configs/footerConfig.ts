@@ -1,5 +1,3 @@
-import creatorPhoto from "../Creator.png";
-
 const footerConfig = {
     project: {
         name: "Calculatorify Suite",
@@ -67,7 +65,7 @@ const footerConfig = {
         title: "👨‍💼 About Creator & Links",
         name: "Ariyan Surena",
         description: "",
-        photo: creatorPhoto,
+        photo: "/Creator.png",
         links: [
             {
                 icon: "github",
