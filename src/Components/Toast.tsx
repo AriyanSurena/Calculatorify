@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import DynamicIcon from "../SVGIcons/DynamicIcon";
+import { useToast } from "../Context/useToast";
 
 /**
  * Types of toast notifications.
@@ -13,7 +15,7 @@ interface ToastProps {
     /**
    * The message to display inside the toast.
    */
-    message: string;
+    message?: string;
 
     /**
    * Visual style of the toast.
@@ -53,14 +55,15 @@ const Toast: React.FC<ToastProps> = ({
     type = 'success', // It can also be 'success' | 'error' | 'warning' | 'info'
     duration = 2000 //A number based on milliseconds.
 }) => {
-    const [isVisible, setIsVisible] = useState(true)
-
+    const {toast, setToast} = useToast();
     useEffect(() => {
         const Timer = setTimeout(() => {
-            setIsVisible(false);
+            setToast(undefined)
         }, duration);
 
-        return (): void => clearTimeout(Timer);
+        return (): void => {
+            clearTimeout(Timer);
+        }
     }, [duration])
 
     // Classes that style the component depending on the type present in the props:
@@ -73,22 +76,32 @@ const Toast: React.FC<ToastProps> = ({
 
     // Base (default) component classes:
     const baseClasses = `
-        w-11/12 max-w-lg p-3 my-2 
+        flex flex-row justify-between
+        w-11/12 max-w-lg min-h-max max-h-32 p-3 my-2 
         text-white font-medium 
         shadow-xl rounded-lg 
         select-none
-        ${isVisible ? 'opacity-100' : 'opacity-0'}
+        fixed top-4 left-1/2 transform -translate-x-1/2
+        md:top-auto md:bottom-4 md:left-4 md:translate-x-0
+        z-50
+        opac
+        ${toast ? 'opacity-100' : 'opacity-0'}
     `;
 
     // After the duration expires, the toast disappears:
-    if (!isVisible) {
+    if (!toast) {
         return null;
     } else {
         return (
             <div
                 role="status"
                 className={`${baseClasses} ${typeClasses[type]}`}>
-                {message}
+                <span>
+                    {message}
+                </span>
+                <span className="block w-max h-max cursor-pointer text-red-700 hover:text-red-600" onClick={() => setToast(undefined)}>
+                    <DynamicIcon icon="close" />
+                </span>
             </div>
         )
     }
