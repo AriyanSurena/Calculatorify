@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import footerConfig from "../../assets/configs/footerConfig";
 import DynamicIcon from "../../SVGIcons/DynamicIcon";
 
@@ -60,14 +61,10 @@ const Footer: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="flex items-center gap-2 bg-yellow-500/20 px-3 py-2 rounded-lg">
-                            <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-                            <span className="text-sm">{footerConfig.project.status}</span>
-                        </div>
                     </section>
-                    
+
                     {/* About Project */}
-                    <section className="space-y-4">
+                    <section className="space-y-4 select-none [-webkit-user-drag:none]">
                         <h3 className="text-xl font-bold flex items-center gap-2">
                             {footerConfig.project.name}
                         </h3>
@@ -79,10 +76,41 @@ const Footer: React.FC = () => {
                             <h4 className="font-semibold text-blue-200">{footerConfig.features.available.title}</h4>
                             <ul className="text-sm text-blue-100 space-y-1">
                                 {
-                                    footerConfig.features.available.list.map((item, index) => {
+                                    footerConfig.features.available.list.map((tool, index) => {
+                                        console.log(tool)
                                         return (
-                                            <li key={index}>
-                                                {item}
+                                            <li
+                                                key={index}
+                                                className="selsect-none"
+                                            >
+                                                <Link
+                                                    to={tool?.path ?? '/*'}
+                                                    className="hover:text-gray-400 active:text-red-400"
+                                                >
+                                                    {tool?.title}
+                                                </Link>
+                                            </li>
+                                        )
+                                    })
+                                }
+                            </ul>
+                        </div>
+
+                        <div className="space-y-2">
+                            <h4 className="font-semibold text-blue-200">{footerConfig.features.upcoming.title}</h4>
+                            <ul className="text-sm text-blue-100 space-y-1">
+                                {
+                                    footerConfig.features.upcoming.list.map((tool, index) => {
+                                        return (
+                                            <li
+                                                key={index}
+                                            >
+                                                <Link
+                                                    to={tool?.path ?? '/*'}
+                                                    className="hover:text-gray-400 active:text-red-400"
+                                                >
+                                                    {tool?.title}
+                                                </Link>
                                             </li>
                                         )
                                     })
@@ -92,7 +120,7 @@ const Footer: React.FC = () => {
                     </section>
 
                     {/* Tech Stack & Status */}
-                    <section className="space-y-4">
+                    <section className="space-y-4 select-none [-webkit-user-drag:none]">
                         <h4 className="font-semibold text-lg">{footerConfig.technologies.title}</h4>
                         <div className="grid grid-cols-2 gap-2 text-sm">
                             {
@@ -106,24 +134,17 @@ const Footer: React.FC = () => {
                             }
                         </div>
 
-                        <div className="space-y-2">
-                            <h4 className="font-semibold text-blue-200">{footerConfig.features.upcoming.title}</h4>
-                            <ul className="text-sm text-blue-100 space-y-1">
-                                {
-                                    footerConfig.features.upcoming.list.map((upComming, index) => {
-                                        return (
-                                            <li key={index}>
-                                                {upComming}
-                                            </li>
-                                        )
-                                    })
-                                }
-                            </ul>
+                        <div className="flex flex-col gap-2 items-start">
+                            <div className="flex w-full items-center gap-2 bg-yellow-500/20 px-3 py-2 rounded-lg animate-pulse">
+                                <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+                                <span className="text-sm">{footerConfig.project.status.title}</span>
+                            </div>
+                            <p className="text-sm bg-red-300/20 p-2 rounded">{footerConfig.project.status.message}</p>
                         </div>
                     </section>
 
                     {/* Keywords & Features */}
-                    <section className="space-y-4">
+                    <section className="space-y-4 select-none [-webkit-user-drag:none]">
                         <h4 className="font-semibold text-lg">{footerConfig.projectBenefits.title}</h4>
                         <ul className="text-sm text-blue-100 space-y-2">
                             {
@@ -144,21 +165,23 @@ const Footer: React.FC = () => {
                         <div className="flex flex-wrap gap-2">
                             {
                                 footerConfig.keywords.map((tag) => (
-                                    <span
+                                    <a
                                         key={tag}
-                                        className="bg-white/20 px-2 py-1 rounded text-xs"
+                                        href={`https://www.google.com/search?q=${tag}`}
+                                        target="_blank"
+                                        className="bg-white/20 px-2 py-1 rounded text-xs hover:text-blue-300 active:text-red-400"
                                     >
                                         #{tag}
-                                    </span>
+                                    </a>
                                 ))}
                         </div>
                     </section>
                 </div>
 
                 {/* Copyright */}
-                <div className="border-t border-white/20 mt-8 pt-6 text-center">
+                <div className="border-t border-white/20 mt-8 pt-6 text-center select-none [-webkit-user-drag:none]">
                     <p className="text-blue-200 text-sm">
-                        {footerConfig.copyright.text.replace('year', new Date().getFullYear().toString())}
+                        {footerConfig.copyright.text.replace('{year}', new Date().getFullYear().toString())}
                     </p>
                     <p className="text-blue-300 text-xs mt-1">
                         {footerConfig.copyright.subText}

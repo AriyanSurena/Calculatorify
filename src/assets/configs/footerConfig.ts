@@ -1,28 +1,28 @@
+import { toolsConfig } from "./homeConfig";
 const footerConfig = {
     project: {
         name: "Calculatorify Suite",
         description: "A comprehensive and modern suite of computational tools built with advanced web technologies.",
-        status: "active_development 🚧"
+        status: {
+            title: "active_development 🚧",
+            message: "This project is under construction and not yet complete. I am actively and regularly upgrading and improving it."
+        }
     },
     features: {
         available: {
             title: "🚀 Available features",
-            list: [
-                "Unit Converter",
-                "Area & Perimeter Calculator",
-                "BMI Calculator",
-                "Currency Converter",
-                "Investment Calculator"
-            ]
+            list: Object.entries(toolsConfig).map(([, tool]) => {
+                if(tool.status === 'active')
+                    return tool;
+            })
+
         },
         upcoming: {
             title: "🔜 Up Coming",
-            list: [
-                "Volume Calculator",
-                "Interest Rate Calculator",
-                "Date Calculator",
-                "Forex Calculator"
-            ]
+            list: Object.entries(toolsConfig).map(([, tool]) => {
+                if(tool.status === 'comingSoon')
+                    return tool
+            })
         }
     },
     technologies: {
@@ -33,7 +33,8 @@ const footerConfig = {
             { name: "TypeScript", icon: "📘" },
             { name: "React Router", icon: "🛣️" },
             { name: "Tailwind CSS", icon: "🎨" },
-            { name: "Dark Mode", icon: "🌙" }
+            { name: "Dark Mode", icon: "🌙" },
+            { name: "Responsive", icon: "📱" }
         ]
     },
     projectBenefits: {
