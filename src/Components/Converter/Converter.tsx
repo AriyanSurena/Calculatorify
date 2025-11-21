@@ -3,10 +3,10 @@ import UnitsJSON from "../../assets/Units.json";
 import handleCalculate from "../../utils/Converter/handleCalculate";
 import Input from "../Input";
 import TextChip from "../TextChlip";
-import Toast from "../Toast";
 import ResultDisplay from "../ResultDisplay";
 import Menu from "../Menu";
 import ToolCard from "../ToolCard";
+import { useToast } from "../../Context/useToast";
 
 interface UnitsObj {
     Area: string[];
@@ -35,13 +35,16 @@ const Converter: React.FC = () => {
     const [convertToUnit, setConvertToUnit] = useState<string>(unitsCategory[selectedUnitType][1])
     const [convertFromValue, setConvertFromValue] = useState<number>()
     const [convertToValue, setConvertToValue] = useState<number>()
-
-    const [message, setMessage] = useState<string>('')
+    const { setToast } = useToast()
 
     function handleConverter(value: string): void {
         const converterValue = parseFloat(value);
         if (Number.isNaN(value)) {
-            setMessage('setMessage("Please enter a valid number")');
+            setToast({
+                    type: "error",
+                    duration: 2000,
+                    message: "Please enter a valid number:"
+                });
             return;
         }; // یا مقدار پیش‌فرض
         setConvertFromValue(converterValue);
@@ -70,34 +73,27 @@ const Converter: React.FC = () => {
     let formattedConvertFromValue = new Intl.NumberFormat().format(Number(convertFromValue));
     let formattedConvertToValue = new Intl.NumberFormat().format(Number(convertToValue));
 
-
     return (
-        <>
-            <ToolCard id="Converter">
-                <Menu id='category' list={unitTypesList} setSelected={setSelectedUnitType} selected={selectedUnitType} />
-                <Input name="InputValue" id="inputValue" placeholder="Enter" onChange={handleConverter} />
-                <Menu id={'convertFrom'} list={unitsCategory[selectedUnitType]} selected={convertFromUnit} setSelected={setConvertFromUnit} />
-                <ResultDisplay placeholder="Result" result={Number(convertToValue)} />
-                <Menu id={'convertTo'} list={unitsCategory[selectedUnitType]} selected={convertToUnit} setSelected={setConvertToUnit} />
-                {
-                    !isNaN(convertFromValue as number) && !isNaN(convertToValue as number) && (
-                        <TextChip setMessage={setMessage}>
-                            <div className="overflow-x-hidden">
-                                <span className="text-blue-500">{` ${formattedConvertFromValue} `}</span>
-                                <span className="text-blue-300">{` ${convertFromUnit} `}</span>
-                                {' is equal to '}
-                                <span className="text-green-500">{` ${formattedConvertToValue} `}</span>
-                                <span className="text-green-300">{` ${(Number(convertToUnit) < 0.001) ? Math.round(Math.max(Number(convertToUnit))) : convertToUnit} `}</span>
-                            </div>
-                        </TextChip>
-                    )
-                }
-            </ToolCard>
+        <ToolCard id="Converter">
+            <Menu id='category' list={unitTypesList} setSelected={setSelectedUnitType} selected={selectedUnitType} />
+            <Input name="InputValue" id="inputValue" placeholder="Enter" onChange={handleConverter} />
+            <Menu id={'convertFrom'} list={unitsCategory[selectedUnitType]} selected={convertFromUnit} setSelected={setConvertFromUnit} />
+            <ResultDisplay placeholder="Result" result={Number(convertToValue)} />
+            <Menu id={'convertTo'} list={unitsCategory[selectedUnitType]} selected={convertToUnit} setSelected={setConvertToUnit} />
             {
-                message &&
-                <Toast message={message} type="success" duration={2000} />
+                !isNaN(convertFromValue as number) && !isNaN(convertToValue as number) && (
+                    <TextChip>
+                        <div className="overflow-x-hidden">
+                            <span className="text-blue-500">{` ${formattedConvertFromValue} `}</span>
+                            <span className="text-blue-300">{` ${convertFromUnit} `}</span>
+                            {' is equal to '}
+                            <span className="text-green-500">{` ${formattedConvertToValue} `}</span>
+                            <span className="text-green-300">{` ${(Number(convertToUnit) < 0.001) ? Math.round(Math.max(Number(convertToUnit))) : convertToUnit} `}</span>
+                        </div>
+                    </TextChip>
+                )
             }
-        </>
+        </ToolCard>
     )
 }
 

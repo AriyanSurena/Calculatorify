@@ -1,3 +1,5 @@
+import { useToast } from "../Context/useToast";
+
 interface ResultDisplayProps {
     placeholder: string,
     label?: string,
@@ -10,15 +12,28 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({
     result
 }) => {
     const formattedResult = new Intl.NumberFormat().format(Number(result));
-
+    const { setToast } = useToast()
     const handleCopy: (value: string | number) => void = (value) => {
         const stringValue = String(value).trim();
-
+        
+        
         if (!stringValue || stringValue === "0" || stringValue === "NaN") {
             return;
         }
-
-        navigator.clipboard.writeText(stringValue);
+        try {
+            navigator.clipboard.writeText(stringValue);
+            setToast({
+                type: 'success',
+                duration: 2000,
+                message: 'Content copied successfully.'
+            })
+        } catch {
+            setToast({
+                type: 'error',
+                duration: 2000,
+                message: 'The copy process failed.'
+            })
+        }
     }
 
     return (

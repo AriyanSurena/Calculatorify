@@ -1,4 +1,4 @@
-import { BMICalculatorIcon, CircleIcon, CurrencyConverterIcon, DateCalculatorIcon, DiscordIcon, EmailIcon, EquilateralTriangleIcon, FacebookIcon, GitHubIcon, GitHubRepoIcon, HexagonIcon, InstagramIcon, InvestmentCalculatorIcon, IsoscelesTriangleIcon, LinkedInIcon, PentagonIcon, RectangleIcon, RightTriangleIcon, ScaleneTriangleIcon, ShapeCalculatorIcon, SquareIcon, TelegramIcon, TwitterIcon, UnitConverterIcon, UserIcon, VolumeCalculatorIcon, WebsiteIcon } from "./Icons";
+import { BackIcon, BMICalculatorIcon, CircleIcon, CloseIcon, CurrencyConverterIcon, DateCalculatorIcon, DiscordIcon, EmailIcon, EquilateralTriangleIcon, FacebookIcon, GitHubIcon, GitHubRepoIcon, HexagonIcon, InstagramIcon, InvestmentCalculatorIcon, IsoscelesTriangleIcon, LinkedInIcon, PentagonIcon, RectangleIcon, RightTriangleIcon, ScaleneTriangleIcon, ShapeCalculatorIcon, SquareIcon, TelegramIcon, TwitterIcon, UnitConverterIcon, UserIcon, VolumeCalculatorIcon, WebsiteIcon } from "./Icons";
 
 const DynamicIcon: React.FC<
 {
@@ -25,13 +25,15 @@ const DynamicIcon: React.FC<
             website: <WebsiteIcon />,
             repo: <GitHubRepoIcon />,
             email: <EmailIcon />,
-            DateCalculator: <DateCalculatorIcon />,
-            VolumeCalculator: <VolumeCalculatorIcon />,
-            InvestmentCalculator: <InvestmentCalculatorIcon /> ,
-            CurrencyConverter: <CurrencyConverterIcon />,
-            BMICalculator: <BMICalculatorIcon />,
-            ShapeCalculator: <ShapeCalculatorIcon />,
-            UnitConverter: <UnitConverterIcon />
+            dateCalculator: <DateCalculatorIcon />,
+            volumeCalculator: <VolumeCalculatorIcon />,
+            investmentCalculator: <InvestmentCalculatorIcon /> ,
+            currencyConverter: <CurrencyConverterIcon />,
+            bmiCalculator: <BMICalculatorIcon />,
+            shapeCalculator: <ShapeCalculatorIcon />,
+            unitConverter: <UnitConverterIcon />,
+            back: <BackIcon />,
+            close: <CloseIcon />
             // repo: <RepoIcon />,
             // portfolio: <PortfolioIcon />,
             // email: <EmailIcon />,

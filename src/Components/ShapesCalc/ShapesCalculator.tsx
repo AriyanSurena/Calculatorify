@@ -1,6 +1,5 @@
 import { useEffect, useReducer, useState, type ActionDispatch } from "react";
 import ShapesJSON from "../../assets/Shapes.json";
-import Toast from "../Toast";
 import Menu from "../Menu";
 import TextChip from "../TextChlip";
 import ResultDisplay from "../ResultDisplay";
@@ -24,6 +23,8 @@ const ShapesCalculator: React.FC = () => {
         area: 0,
         perimeter: 0,
     }
+
+    //@ts-ignore
     const [message, setMessage] = useState<string>('')
 
     interface stateType {
@@ -233,7 +234,6 @@ case 'Isosceles Triangle': {
     }
 
     return (
-        <>
             <ToolCard id="Shapes_Calculator">
                 <Menu id='category' list={shapes} setSelected={setSelectedShape} selected={selectedShape} />
                 {
@@ -328,11 +328,6 @@ case 'Isosceles Triangle': {
                 }
 
             </ToolCard>
-            {
-                message &&
-                <Toast message={message} type="success" duration={2000} />
-            }
-        </>
     )
 }
 
