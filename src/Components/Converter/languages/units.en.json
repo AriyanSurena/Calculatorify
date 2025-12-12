@@ -1,0 +1,446 @@
+{
+    "Area": {
+        "displayName": "Area",
+        "units": [
+            {
+                "unit": "Acres (ac)",
+                "display": "Acres (ac)"
+            },
+            {
+                "unit": "Ares (a)",
+                "display": "Ares (a)"
+            },
+            {
+                "unit": "Square Meters (m²)",
+                "display": "Square Meters (m²)"
+            },
+            {
+                "unit": "Square Kilometers (km²)",
+                "display": "Square Kilometers (km²)"
+            },
+            {
+                "unit": "Hectares (ha)",
+                "display": "Hectares (ha)"
+            },
+            {
+                "unit": "Square Miles (mi²)",
+                "display": "Square Miles (mi²)"
+            },
+            {
+                "unit": "Square Yards (yd²)",
+                "display": "Square Yards (yd²)"
+            },
+            {
+                "unit": "Square Feet (ft²)",
+                "display": "Square Feet (ft²)"
+            },
+            {
+                "unit": "Square Inches (in²)",
+                "display": "Square Inches (in²)"
+            }
+        ]
+    },
+    "Length": {
+        "displayName": "Length",
+        "units": [
+            {
+                "unit": "Meters (m)",
+                "display": "Meters (m)"
+            },
+            {
+                "unit": "Kilometers (km)",
+                "display": "Kilometers (km)"
+            },
+            {
+                "unit": "Centimeters (cm)",
+                "display": "Centimeters (cm)"
+            },
+            {
+                "unit": "Millimeters (mm)",
+                "display": "Millimeters (mm)"
+            },
+            {
+                "unit": "Miles (mi)",
+                "display": "Miles (mi)"
+            },
+            {
+                "unit": "Feet (ft)",
+                "display": "Feet (ft)"
+            },
+            {
+                "unit": "Inches (in)",
+                "display": "Inches (in)"
+            },
+            {
+                "unit": "Yards (yd)",
+                "display": "Yards (yd)"
+            },
+            {
+                "unit": "Nanometers (nm)",
+                "display": "Nanometers (nm)"
+            }
+        ]
+    },
+    "Temperature": {
+        "displayName": "Temperature",
+        "units": [
+            {
+                "unit": "Celsius (°C)",
+                "display": "Celsius (°C)"
+            },
+            {
+                "unit": "Fahrenheit (°F)",
+                "display": "Fahrenheit (°F)"
+            },
+            {
+                "unit": "Kelvin (K)",
+                "display": "Kelvin (K)"
+            },
+            {
+                "unit": "Rankine (°R)",
+                "display": "Rankine (°R)"
+            }
+        ]
+    },
+    "Volume": {
+        "displayName": "Volume",
+        "units": [
+            {
+                "unit": "Liters (L)",
+                "display": "Liters (L)"
+            },
+            {
+                "unit": "Milliliters (mL)",
+                "display": "Milliliters (mL)"
+            },
+            {
+                "unit": "Cubic Meters (m³)",
+                "display": "Cubic Meters (m³)"
+            },
+            {
+                "unit": "Gallons (gal)",
+                "display": "Gallons (gal)"
+            },
+            {
+                "unit": "Cubic Feet (ft³)",
+                "display": "Cubic Feet (ft³)"
+            },
+            {
+                "unit": "Cubic Centimeters (cm³)",
+                "display": "Cubic Centimeters (cm³)"
+            },
+            {
+                "unit": "Deciliters (dL)",
+                "display": "Deciliters (dL)"
+            },
+            {
+                "unit": "Cubic Inches (in³)",
+                "display": "Cubic Inches (in³)"
+            },
+            {
+                "unit": "Fluid Ounces (fl oz)",
+                "display": "Fluid Ounces (fl oz)"
+            }
+        ]
+    },
+    "Mass": {
+        "displayName": "Mass",
+        "units": [
+            {
+                "unit": "Kilograms (kg)",
+                "display": "Kilograms (kg)"
+            },
+            {
+                "unit": "Grams (g)",
+                "display": "Grams (g)"
+            },
+            {
+                "unit": "Pounds (lb)",
+                "display": "Pounds (lb)"
+            },
+            {
+                "unit": "Ounces (oz)",
+                "display": "Ounces (oz)"
+            },
+            {
+                "unit": "Metric Tons (t)",
+                "display": "Metric Tons (t)"
+            },
+            {
+                "unit": "Milligrams (mg)",
+                "display": "Milligrams (mg)"
+            },
+            {
+                "unit": "Short Tons (short ton)",
+                "display": "Short Tons (short ton)"
+            }
+        ]
+    },
+    "Data": {
+        "displayName": "Data",
+        "units": [
+            {
+                "unit": "Bytes (B)",
+                "display": "Bytes (B)"
+            },
+            {
+                "unit": "Kilobytes (KB)",
+                "display": "Kilobytes (KB)"
+            },
+            {
+                "unit": "Megabytes (MB)",
+                "display": "Megabytes (MB)"
+            },
+            {
+                "unit": "Gigabytes (GB)",
+                "display": "Gigabytes (GB)"
+            },
+            {
+                "unit": "Terabytes (TB)",
+                "display": "Terabytes (TB)"
+            },
+            {
+                "unit": "Petabytes (PB)",
+                "display": "Petabytes (PB)"
+            },
+            {
+                "unit": "Bits (bit)",
+                "display": "Bits (bit)"
+            },
+            {
+                "unit": "Kilobits (Kb)",
+                "display": "Kilobits (Kb)"
+            },
+            {
+                "unit": "Megabits (Mb)",
+                "display": "Megabits (Mb)"
+            }
+        ]
+    },
+    "Speed": {
+        "displayName": "Speed",
+        "units": [
+            {
+                "unit": "Meters per second (m/s)",
+                "display": "Meters per second (m/s)"
+            },
+            {
+                "unit": "Kilometers per hour (km/h)",
+                "display": "Kilometers per hour (km/h)"
+            },
+            {
+                "unit": "Miles per hour (mph)",
+                "display": "Miles per hour (mph)"
+            },
+            {
+                "unit": "Feet per second (ft/s)",
+                "display": "Feet per second (ft/s)"
+            },
+            {
+                "unit": "Knots (kn)",
+                "display": "Knots (kn)"
+            }
+        ]
+    },
+    "Time": {
+        "displayName": "Time",
+        "units": [
+            {
+                "unit": "Seconds (s)",
+                "display": "Seconds (s)"
+            },
+            {
+                "unit": "Milliseconds (ms)",
+                "display": "Milliseconds (ms)"
+            },
+            {
+                "unit": "Minutes (min)",
+                "display": "Minutes (min)"
+            },
+            {
+                "unit": "Hours (h)",
+                "display": "Hours (h)"
+            },
+            {
+                "unit": "Days (d)",
+                "display": "Days (d)"
+            },
+            {
+                "unit": "Years (yr)",
+                "display": "Years (yr)"
+            },
+            {
+                "unit": "Weeks (wk)",
+                "display": "Weeks (wk)"
+            }
+        ]
+    },
+    "Pressure": {
+        "displayName": "Pressure",
+        "units": [
+            {
+                "unit": "Pascals (Pa)",
+                "display": "Pascals (Pa)"
+            },
+            {
+                "unit": "Kilopascals (kPa)",
+                "display": "Kilopascals (kPa)"
+            },
+            {
+                "unit": "Bars (bar)",
+                "display": "Bars (bar)"
+            },
+            {
+                "unit": "Atmospheres (atm)",
+                "display": "Atmospheres (atm)"
+            },
+            {
+                "unit": "Pounds per square inch (psi)",
+                "display": "Pounds per square inch (psi)"
+            }
+        ]
+    },
+    "Energy": {
+        "displayName": "Energy",
+        "units": [
+            {
+                "unit": "Joules (J)",
+                "display": "Joules (J)"
+            },
+            {
+                "unit": "Kilojoules (kJ)",
+                "display": "Kilojoules (kJ)"
+            },
+            {
+                "unit": "Watt-hours (Wh)",
+                "display": "Watt-hours (Wh)"
+            },
+            {
+                "unit": "Kilowatt-hours (kWh)",
+                "display": "Kilowatt-hours (kWh)"
+            },
+            {
+                "unit": "Calories (cal)",
+                "display": "Calories (cal)"
+            }
+        ]
+    },
+    "Force": {
+        "displayName": "Force",
+        "units": [
+            {
+                "unit": "Newtons (N)",
+                "display": "Newtons (N)"
+            },
+            {
+                "unit": "Kilonewtons (kN)",
+                "display": "Kilonewtons (kN)"
+            },
+            {
+                "unit": "Pound-force (lbf)",
+                "display": "Pound-force (lbf)"
+            },
+            {
+                "unit": "Dynes (dyn)",
+                "display": "Dynes (dyn)"
+            }
+        ]
+    },
+    "Power": {
+        "displayName": "Power",
+        "units": [
+            {
+                "unit": "Watts (W)",
+                "display": "Watts (W)"
+            },
+            {
+                "unit": "Kilowatts (kW)",
+                "display": "Kilowatts (kW)"
+            },
+            {
+                "unit": "Horsepower (hp)",
+                "display": "Horsepower (hp)"
+            },
+            {
+                "unit": "Foot-pounds per second (ft-lb/s)",
+                "display": "Foot-pounds per second (ft-lb/s)"
+            }
+        ]
+    },
+    "Angle": {
+        "displayName": "Angle",
+        "units": [
+            {
+                "unit": "Degrees (deg)",
+                "display": "Degrees (deg)"
+            },
+            {
+                "unit": "Radians (rad)",
+                "display": "Radians (rad)"
+            },
+            {
+                "unit": "Gradians (grad)",
+                "display": "Gradians (grad)"
+            }
+        ]
+    },
+    "Density": {
+        "displayName": "Density",
+        "units": [
+            {
+                "unit": "Kilograms per cubic meter (kg/m³)",
+                "display": "Kilograms per cubic meter (kg/m³)"
+            },
+            {
+                "unit": "Grams per cubic centimeter (g/cm³)",
+                "display": "Grams per cubic centimeter (g/cm³)"
+            },
+            {
+                "unit": "Pounds per cubic foot (lb/ft³)",
+                "display": "Pounds per cubic foot (lb/ft³)"
+            }
+        ]
+    },
+    "Flow Rate": {
+        "displayName": "Flow Rate",
+        "units": [
+            {
+                "unit": "Liters per second (L/s)",
+                "display": "Liters per second (L/s)"
+            },
+            {
+                "unit": "Cubic meters per hour (m³/h)",
+                "display": "Cubic meters per hour (m³/h)"
+            },
+            {
+                "unit": "Gallons per minute (gpm)",
+                "display": "Gallons per minute (gpm)"
+            },
+            {
+                "unit": "Cubic feet per minute (cfm)",
+                "display": "Cubic feet per minute (cfm)"
+            }
+        ]
+    },
+    "Frequency": {
+        "displayName": "Frequency",
+        "units": [
+            {
+                "unit": "Hertz (Hz)",
+                "display": "Hertz (Hz)"
+            },
+            {
+                "unit": "Kilohertz (kHz)",
+                "display": "Kilohertz (kHz)"
+            },
+            {
+                "unit": "Megahertz (MHz)",
+                "display": "Megahertz (MHz)"
+            },
+            {
+                "unit": "Gigahertz (GHz)",
+                "display": "Gigahertz (GHz)"
+            }
+        ]
+    }
+}

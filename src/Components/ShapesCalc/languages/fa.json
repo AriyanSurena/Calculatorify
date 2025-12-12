@@ -1,0 +1,61 @@
+{
+    "title": "ماشین حساب اشکال هندسی",
+    "description": "محاسبه مساحت و محیط اشکال هندسی مختلف",
+    "shapes": {
+        "displayNames": {
+            "Circle": "دایره",
+            "Rectangle": "مستطیل",
+            "Square": "مربع",
+            "Pentagon": "پنج‌ضلعی",
+            "Hexagon": "شش‌ضلعی",
+            "Equilateral Triangle": "مثلث متساوی‌الاضلاع",
+            "Isosceles Triangle": "مثلث متساوی‌الساقین",
+            "Scalene Triangle": "مثلث مختلف‌الاضلاع",
+            "Right Triangle": "مثلث قائم‌الزاویه"
+        },
+        "labels": {
+            "radius": "شعاع",
+            "width": "عرض",
+            "length": "طول",
+            "height": "ارتفاع",
+            "base": "قاعده",
+            "side": "ضلع",
+            "equalSide": "ضلع برابر",
+            "sideA": "ضلع A",
+            "sideB": "ضلع B",
+            "sideC": "ضلع C",
+            "area": "مساحت",
+            "perimeter": "محیط"
+        },
+        "placeholders": {
+            "radius": "شعاع دایره را وارد کنید",
+            "width": "عرض مستطیل را وارد کنید",
+            "length": "طول مستطیل را وارد کنید",
+            "side": "طول ضلع را وارد کنید",
+            "base": "طول قاعده را وارد کنید",
+            "height": "ارتفاع را وارد کنید",
+            "equalSide": "طول ضلع برابر را وارد کنید",
+            "sideA": "طول ضلع A را وارد کنید",
+            "sideB": "طول ضلع B را وارد کنید",
+            "sideC": "طول ضلع C را وارد کنید"
+        },
+        "units": {
+            "area": "مساحت",
+            "perimeter": "محیط"
+        },
+        "errors": {
+            "invalidTriangle": "قاعده نمی‌تواند بزرگتر یا مساوی دو برابر ضلع برابر باشد",
+            "invalidInput": "لطفاً مقادیر معتبر وارد کنید"
+        },
+        "messages": {
+            "areaIs": "برابر است با",
+            "perimeterIs": "محیط برابر است با",
+            "of": "از",
+            "selectShape": "یک شکل انتخاب کنید"
+        }
+    },
+    "toast": {
+        "resCopied": "نتیجه با موفقیت کپی شد.",
+        "copied": "کپی شد."
+    }
+}

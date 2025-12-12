@@ -2,6 +2,7 @@ interface RadioInputBoxProps {
     name: string,
     labelText: string,
     labelTitle?: string,
+    labelDescription?: string,
     id: string,
     value: string;
     checked?: boolean;
@@ -11,6 +12,7 @@ interface RadioInputBoxProps {
 const RadioInputBox: React.FC<RadioInputBoxProps> = ({
     labelText,
     labelTitle,
+    labelDescription,
     id,
     name,
     value,
@@ -28,9 +30,9 @@ const RadioInputBox: React.FC<RadioInputBoxProps> = ({
             htmlFor={id}
             title={labelTitle}
             onClick={handleClick}
-            className="flex items-center gap-2 cursor-pointer select-none p-1 rounded bg-inherit transition-colors peer-checked:border-blue-500 peer-checked:bg-blue-50">
-            <input 
-                type="radio" 
+            className="flex items-start gap-2 cursor-pointer select-none p-1 rounded bg-inherit transition-colors peer-checked:border-blue-500 peer-checked:bg-blue-50">
+            <input
+                type="radio"
                 name={name}
                 id={id}
                 value={value}
@@ -38,11 +40,27 @@ const RadioInputBox: React.FC<RadioInputBoxProps> = ({
                 checked={checked}
             />
             {
-                labelText ? (
-                    <div>
-                        {labelText}
+                <div className="flex flex-col gap-2">
+                    <div className="flex gap-2">
+                        {
+                            labelText
+                                ? (
+                                    labelText
+                                )
+                                : null
+                        }
                     </div>
-                ) : null
+                    {
+                        labelDescription
+                            ?
+                            <span className="text-xs leading-7 opacity-50">
+                                {
+                                    labelDescription
+                                }
+                            </span>
+                            : null
+                    }
+                </div>
             }
         </label>
     )

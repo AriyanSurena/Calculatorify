@@ -1,0 +1,86 @@
+{
+    "title": "ماشین حساب سرمایه‌گذاری",
+    "description": "محاسبه سود سرمایه‌گذاری با سود ساده و مرکب",
+    "labels": {
+        "initialInvestment": "سرمایه اولیه",
+        "interestRate": "نرخ سود",
+        "duration": "مدت زمان",
+        "finalAmount": "مبلغ نهایی",
+        "interestType": "نوع سود",
+        "compounding": "دفعات ترکیب سود"
+    },
+    "placeholders": {
+        "initialInvestment": "مبلغ سرمایه اولیه را وارد کنید",
+        "interestRate": "نرخ سود سالانه را وارد کنید",
+        "duration": "مدت زمان را وارد کنید",
+        "result": "نتیجه محاسبه"
+    },
+    "interestTypes": {
+        "simple": {
+            "label": "سود ساده",
+            "title": "نوع سود: ساده",
+            "description": "سود فقط بر روی سرمایه اولیه محاسبه می‌شود"
+        },
+        "compound": {
+            "label": "سود مرکب",
+            "title": "نوع سود: مرکب",
+            "description": "سود بر روی سرمایه اولیه به علاوه سودهای قبلی محاسبه می‌شود"
+        }
+    },
+    "compoundingOptions": {
+        "yearly": {
+            "label": "سالانه",
+            "title": "ترکیب سود سالانه",
+            "description": "سود یک بار در سال محاسبه می‌شود"
+        },
+        "monthly": {
+            "label": "ماهانه",
+            "title": "ترکیب سود ماهانه",
+            "description": "سود هر ماه محاسبه و به سرمایه اضافه می‌شود"
+        },
+        "daily": {
+            "label": "روزانه",
+            "title": "ترکیب سود روزانه",
+            "description": "سود هر روز محاسبه و به سرمایه اضافه می‌شود"
+        }
+    },
+    "units": {
+        "currency": "ریال",
+        "percentage": "درصد",
+        "year": "سال"
+    },
+    "messages": {
+        "selectInterestType": "نوع سود را انتخاب کنید",
+        "selectCompounding": "دفعات ترکیب سود را انتخاب کنید",
+        "calculationResult": "نتیجه محاسبه",
+        "initialAmountRequired": "لطفاً مبلغ سرمایه اولیه را وارد کنید",
+        "interestRateRequired": "لطفاً نرخ سود را وارد کنید",
+        "durationRequired": "لطفاً مدت زمان را وارد کنید"
+    },
+    "investmentTerms": {
+        "initialInvestment": "سرمایه اولیه",
+        "finalInvestment": "سرمایه نهایی",
+        "growth": "رشد",
+        "percentage": "درصد",
+        "dailyGrowth": "رشد روزانه",
+        "monthlyGrowth": "رشد ماهانه",
+        "yearlyGrowth": "رشد سالانه",
+        "months": "ماه",
+        "years": "سال"
+    },
+    "formats": {
+        "currency": "#,##0",
+        "percentage": "0.00",
+        "years": "0"
+    },
+    "tooltips": {
+        "initialInvestment": "مبلغ اولیه‌ای که سرمایه‌گذاری می‌کنید",
+        "interestRate": "نرخ سود سالانه (بر حسب درصد)",
+        "duration": "مدت زمان سرمایه‌گذاری (بر حسب سال)",
+        "simpleInterest": "سود = سرمایه اولیه × نرخ سود × زمان",
+        "compoundInterest": "سود = سرمایه اولیه × (۱ + نرخ سود)^زمان"
+    },
+    "toast": {
+        "copied": "کپی شد."
+    }
+}

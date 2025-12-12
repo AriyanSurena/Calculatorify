@@ -1,0 +1,22 @@
+{
+  "title": "Unit Converter",
+  "description": "Convert between different measurement units",
+  "placeholders": {
+    "inputValue": "Enter value",
+    "result": "Result"
+  },
+  "labels": {
+    "category": "Unit Category",
+    "convertFrom": "Convert From",
+    "convertTo": "Convert To"
+  },
+  "messages": {
+    "isEqual": " is equal to ",
+    "selectCategory": "Please select a category",
+    "error": "Error: Please enter a valid number"
+  },
+  "toast": {
+    "convertCopied": "Result Copied Successfully.",
+    "copied": "Copied"
+  }
+}

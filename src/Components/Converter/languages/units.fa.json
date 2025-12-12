@@ -1,0 +1,446 @@
+{
+    "Area": {
+        "displayName": "مساحت",
+        "units": [
+            {
+                "unit": "Acres (ac)",
+                "display": "جریب (ac)"
+            },
+            {
+                "unit": "Ares (a)",
+                "display": "آر (a)"
+            },
+            {
+                "unit": "Square Meters (m²)",
+                "display": "متر مربع (m²)"
+            },
+            {
+                "unit": "Square Kilometers (km²)",
+                "display": "کیلومتر مربع (km²)"
+            },
+            {
+                "unit": "Hectares (ha)",
+                "display": "هکتار (ha)"
+            },
+            {
+                "unit": "Square Miles (mi²)",
+                "display": "مایل مربع (mi²)"
+            },
+            {
+                "unit": "Square Yards (yd²)",
+                "display": "یارد مربع (yd²)"
+            },
+            {
+                "unit": "Square Feet (ft²)",
+                "display": "فوت مربع (ft²)"
+            },
+            {
+                "unit": "Square Inches (in²)",
+                "display": "اینچ مربع (in²)"
+            }
+        ]
+    },
+    "Length": {
+        "displayName": "طول",
+        "units": [
+            {
+                "unit": "Meters (m)",
+                "display": "متر (m)"
+            },
+            {
+                "unit": "Kilometers (km)",
+                "display": "کیلومتر (km)"
+            },
+            {
+                "unit": "Centimeters (cm)",
+                "display": "سانتی‌متر (cm)"
+            },
+            {
+                "unit": "Millimeters (mm)",
+                "display": "میلی‌متر (mm)"
+            },
+            {
+                "unit": "Miles (mi)",
+                "display": "مایل (mi)"
+            },
+            {
+                "unit": "Feet (ft)",
+                "display": "فوت (ft)"
+            },
+            {
+                "unit": "Inches (in)",
+                "display": "اینچ (in)"
+            },
+            {
+                "unit": "Yards (yd)",
+                "display": "یارد (yd)"
+            },
+            {
+                "unit": "Nanometers (nm)",
+                "display": "نانومتر (nm)"
+            }
+        ]
+    },
+    "Temperature": {
+        "displayName": "دما",
+        "units": [
+            {
+                "unit": "Celsius (°C)",
+                "display": "سلسیوس (°C)"
+            },
+            {
+                "unit": "Fahrenheit (°F)",
+                "display": "فارنهایت (°F)"
+            },
+            {
+                "unit": "Kelvin (K)",
+                "display": "کلوین (K)"
+            },
+            {
+                "unit": "Rankine (°R)",
+                "display": "رانکین (°R)"
+            }
+        ]
+    },
+    "Volume": {
+        "displayName": "حجم",
+        "units": [
+            {
+                "unit": "Liters (L)",
+                "display": "لیتر (L)"
+            },
+            {
+                "unit": "Milliliters (mL)",
+                "display": "میلی‌لیتر (mL)"
+            },
+            {
+                "unit": "Cubic Meters (m³)",
+                "display": "متر مکعب (m³)"
+            },
+            {
+                "unit": "Gallons (gal)",
+                "display": "گالون (gal)"
+            },
+            {
+                "unit": "Cubic Feet (ft³)",
+                "display": "فوت مکعب (ft³)"
+            },
+            {
+                "unit": "Cubic Centimeters (cm³)",
+                "display": "سانتی‌متر مکعب (cm³)"
+            },
+            {
+                "unit": "Deciliters (dL)",
+                "display": "دسی‌لیتر (dL)"
+            },
+            {
+                "unit": "Cubic Inches (in³)",
+                "display": "اینچ مکعب (in³)"
+            },
+            {
+                "unit": "Fluid Ounces (fl oz)",
+                "display": "اونس مایع (fl oz)"
+            }
+        ]
+    },
+    "Mass": {
+        "displayName": "جرم",
+        "units": [
+            {
+                "unit": "Kilograms (kg)",
+                "display": "کیلوگرم (kg)"
+            },
+            {
+                "unit": "Grams (g)",
+                "display": "گرم (g)"
+            },
+            {
+                "unit": "Pounds (lb)",
+                "display": "پوند (lb)"
+            },
+            {
+                "unit": "Ounces (oz)",
+                "display": "اونس (oz)"
+            },
+            {
+                "unit": "Metric Tons (t)",
+                "display": "تن متریک (t)"
+            },
+            {
+                "unit": "Milligrams (mg)",
+                "display": "میلی‌گرم (mg)"
+            },
+            {
+                "unit": "Short Tons (short ton)",
+                "display": "تن کوتاه (short ton)"
+            }
+        ]
+    },
+    "Data": {
+        "displayName": "داده",
+        "units": [
+            {
+                "unit": "Bytes (B)",
+                "display": "بایت (B)"
+            },
+            {
+                "unit": "Kilobytes (KB)",
+                "display": "کیلوبایت (KB)"
+            },
+            {
+                "unit": "Megabytes (MB)",
+                "display": "مگابایت (MB)"
+            },
+            {
+                "unit": "Gigabytes (GB)",
+                "display": "گیگابایت (GB)"
+            },
+            {
+                "unit": "Terabytes (TB)",
+                "display": "ترابایت (TB)"
+            },
+            {
+                "unit": "Petabytes (PB)",
+                "display": "پتابایت (PB)"
+            },
+            {
+                "unit": "Bits (bit)",
+                "display": "بیت (bit)"
+            },
+            {
+                "unit": "Kilobits (Kb)",
+                "display": "کیلوبیت (Kb)"
+            },
+            {
+                "unit": "Megabits (Mb)",
+                "display": "مگابیت (Mb)"
+            }
+        ]
+    },
+    "Speed": {
+        "displayName": "سرعت",
+        "units": [
+            {
+                "unit": "Meters per second (m/s)",
+                "display": "متر بر ثانیه (m/s)"
+            },
+            {
+                "unit": "Kilometers per hour (km/h)",
+                "display": "کیلومتر بر ساعت (km/h)"
+            },
+            {
+                "unit": "Miles per hour (mph)",
+                "display": "مایل بر ساعت (mph)"
+            },
+            {
+                "unit": "Feet per second (ft/s)",
+                "display": "فوت بر ثانیه (ft/s)"
+            },
+            {
+                "unit": "Knots (kn)",
+                "display": "گره دریایی (kn)"
+            }
+        ]
+    },
+    "Time": {
+        "displayName": "زمان",
+        "units": [
+            {
+                "unit": "Seconds (s)",
+                "display": "ثانیه (s)"
+            },
+            {
+                "unit": "Milliseconds (ms)",
+                "display": "میلی‌ثانیه (ms)"
+            },
+            {
+                "unit": "Minutes (min)",
+                "display": "دقیقه (min)"
+            },
+            {
+                "unit": "Hours (h)",
+                "display": "ساعت (h)"
+            },
+            {
+                "unit": "Days (d)",
+                "display": "روز (d)"
+            },
+            {
+                "unit": "Years (yr)",
+                "display": "سال (yr)"
+            },
+            {
+                "unit": "Weeks (wk)",
+                "display": "هفته (wk)"
+            }
+        ]
+    },
+    "Pressure": {
+        "displayName": "فشار",
+        "units": [
+            {
+                "unit": "Pascals (Pa)",
+                "display": "پاسکال (Pa)"
+            },
+            {
+                "unit": "Kilopascals (kPa)",
+                "display": "کیلوپاسکال (kPa)"
+            },
+            {
+                "unit": "Bars (bar)",
+                "display": "بار (bar)"
+            },
+            {
+                "unit": "Atmospheres (atm)",
+                "display": "اتمسفر (atm)"
+            },
+            {
+                "unit": "Pounds per square inch (psi)",
+                "display": "پوند بر اینچ مربع (psi)"
+            }
+        ]
+    },
+    "Energy": {
+        "displayName": "انرژی",
+        "units": [
+            {
+                "unit": "Joules (J)",
+                "display": "ژول (J)"
+            },
+            {
+                "unit": "Kilojoules (kJ)",
+                "display": "کیلوژول (kJ)"
+            },
+            {
+                "unit": "Watt-hours (Wh)",
+                "display": "وات-ساعت (Wh)"
+            },
+            {
+                "unit": "Kilowatt-hours (kWh)",
+                "display": "کیلووات-ساعت (kWh)"
+            },
+            {
+                "unit": "Calories (cal)",
+                "display": "کالری (cal)"
+            }
+        ]
+    },
+    "Force": {
+        "displayName": "نیرو",
+        "units": [
+            {
+                "unit": "Newtons (N)",
+                "display": "نیوتن (N)"
+            },
+            {
+                "unit": "Kilonewtons (kN)",
+                "display": "کیلونیوتن (kN)"
+            },
+            {
+                "unit": "Pound-force (lbf)",
+                "display": "پوند-نیرو (lbf)"
+            },
+            {
+                "unit": "Dynes (dyn)",
+                "display": "دین (dyn)"
+            }
+        ]
+    },
+    "Power": {
+        "displayName": "توان",
+        "units": [
+            {
+                "unit": "Watts (W)",
+                "display": "وات (W)"
+            },
+            {
+                "unit": "Kilowatts (kW)",
+                "display": "کیلووات (kW)"
+            },
+            {
+                "unit": "Horsepower (hp)",
+                "display": "اسب بخار (hp)"
+            },
+            {
+                "unit": "Foot-pounds per second (ft-lb/s)",
+                "display": "فوت-پوند بر ثانیه (ft-lb/s)"
+            }
+        ]
+    },
+    "Angle": {
+        "displayName": "زاویه",
+        "units": [
+            {
+                "unit": "Degrees (deg)",
+                "display": "درجه (deg)"
+            },
+            {
+                "unit": "Radians (rad)",
+                "display": "رادیان (rad)"
+            },
+            {
+                "unit": "Gradians (grad)",
+                "display": "گراد (grad)"
+            }
+        ]
+    },
+    "Density": {
+        "displayName": "چگالی",
+        "units": [
+            {
+                "unit": "Kilograms per cubic meter (kg/m³)",
+                "display": "کیلوگرم بر متر مکعب (kg/m³)"
+            },
+            {
+                "unit": "Grams per cubic centimeter (g/cm³)",
+                "display": "گرم بر سانتی‌متر مکعب (g/cm³)"
+            },
+            {
+                "unit": "Pounds per cubic foot (lb/ft³)",
+                "display": "پوند بر فوت مکعب (lb/ft³)"
+            }
+        ]
+    },
+    "Flow Rate": {
+        "displayName": "دبی",
+        "units": [
+            {
+                "unit": "Liters per second (L/s)",
+                "display": "لیتر بر ثانیه (L/s)"
+            },
+            {
+                "unit": "Cubic meters per hour (m³/h)",
+                "display": "متر مکعب بر ساعت (m³/h)"
+            },
+            {
+                "unit": "Gallons per minute (gpm)",
+                "display": "گالون بر دقیقه (gpm)"
+            },
+            {
+                "unit": "Cubic feet per minute (cfm)",
+                "display": "فوت مکعب بر دقیقه (cfm)"
+            }
+        ]
+    },
+    "Frequency": {
+        "displayName": "فرکانس",
+        "units": [
+            {
+                "unit": "Hertz (Hz)",
+                "display": "هرتز (Hz)"
+            },
+            {
+                "unit": "Kilohertz (kHz)",
+                "display": "کیلوهرتز (kHz)"
+            },
+            {
+                "unit": "Megahertz (MHz)",
+                "display": "مگاهرتز (MHz)"
+            },
+            {
+                "unit": "Gigahertz (GHz)",
+                "display": "گیگاهرتز (GHz)"
+            }
+        ]
+    }
+}

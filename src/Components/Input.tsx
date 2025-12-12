@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 interface InputProps {
     name: string;
-    placeholder: string;
+    placeholder: string | undefined;
     onChange: (value: string) => void;
     id?: string;
     propValue?: number;

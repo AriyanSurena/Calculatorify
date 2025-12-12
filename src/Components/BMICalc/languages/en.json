@@ -1,0 +1,52 @@
+{
+    "title": "BMI Calculator",
+    "description": "Calculate your Body Mass Index",
+    "labels": {
+        "height": "Height (cm)",
+        "weight": "Weight (kg)",
+        "gender": "Gender"
+    },
+    "placeholders": {
+        "height": "Enter your height in centimeters",
+        "weight": "Enter your weight in kilograms"
+    },
+    "genders": {
+        "male": "Male",
+        "female": "Female"
+    },
+    "categories": {
+        "underweight": "Underweight",
+        "normal": "Normal weight",
+        "overweight": "Overweight",
+        "obese": "Obese"
+    },
+    "messages": {
+        "underweight": "Your weight is underweight. It is recommended to consult a nutritionist.",
+        "normal": "Congratulations! Your weight is within the normal range.",
+        "overweight": "You are overweight. Regular exercise is recommended.",
+        "obese": "You are in the obese category. Please consult with a healthcare professional."
+    },
+    "resultLabels": {
+        "bmi": "Body Mass Index",
+        "result": "Result"
+    },
+    "weightRangeText": "The appropriate weight range for your height of",
+    "buttons": {
+        "reset": "Reset"
+    },
+    "common": {
+        "to": "to",
+        "is": "is"
+    },
+    "units": {
+        "kg": "kilograms",
+        "cm": "centimeters"
+    },
+    "errors": {
+        "invalidInput": "Please enter valid values for height and weight"
+    },
+    "toast": {
+        "bmiCopied": "Body mass index was successfully copied.",
+        "messageCopied": "The body mass index message was successfully copied."
+    }
+}

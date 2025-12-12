@@ -1,16 +1,19 @@
 import { Link } from "react-router-dom";
-import footerConfig from "../../assets/configs/footerConfig";
 import DynamicIcon from "../../SVGIcons/DynamicIcon";
+import { useConfig } from "../../Context/useProjectConfig";
 
 const Footer: React.FC = () => {
+
+    const config = useConfig();
+
     return (
         <footer className="w-full bg-gradient-to-r from-blue-600 to-purple-700 dark:from-gray-800 dark:to-gray-900 text-white shadow-lg">
             <div className="container mx-auto px-4 py-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* About Creator & Links */}
                     <section className="space-y-4">
-                        <h4 className="font-semibold text-lg">{footerConfig.creator.title}</h4>
-                        <div className="space-y-3 select-none" title={footerConfig.creator.name}>
+                        <h4 className="font-semibold text-lg">{config.creator.title}</h4>
+                        <div className="space-y-3 select-none" title={config.creator.profile.name}>
                             <div className="relative w-32 h-32 p-4 my-4 mx-auto">
                                 {/* قاب عکس مدرن با افکت‌های خاص */}
                                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full transform scale-110 opacity-20 blur-sm"></div>
@@ -25,39 +28,43 @@ const Footer: React.FC = () => {
                                 {/* عکس اصلی */}
                                 <div className="relative z-10">
                                     <img
-                                        src={footerConfig.creator.photo}
+                                        src={config.creator.profile.photo}
                                         className="w-full h-full rounded-full border-4 border-white/80 shadow-2xl shadow-blue-500/20 object-cover transform hover:scale-105 transition-transform duration-300"
-                                        alt={footerConfig.creator.name}
+                                        alt={config.creator.profile.name}
                                     />
                                 </div>
 
                                 {/* افکت hover */}
                                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/0 to-purple-500/0 hover:from-blue-400/10 hover:to-purple-500/10 transition-all duration-300 z-20"></div>
                             </div>
-                            <p className="text-sm text-blue-100">
-                                Made with ❤️ by <strong>{footerConfig.creator.name}</strong>
+                            <p className="text-sm text-center text-blue-100">
+                                <strong>{config.creator.profile.name}</strong>
                             </p>
-                            <p>
-                                {footerConfig.creator.description}
+                            <p className="text-center text-sm text-gray-400 mb-6">
+                                {config.creator.profile.description}
                             </p>
 
                             <div className="space-y-2">
-                                {
-                                    footerConfig.creator.links.map((link, index) => {
-                                        return (
-                                            <a
-                                                key={index}
-                                                href={link.link}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex items-center gap-2 bg-black/30 hover:bg-black/50 px-3 py-2 rounded-lg transition-colors text-sm"
-                                            >
-                                                <DynamicIcon icon={link.icon} />
-                                                {link.title}
-                                            </a>
-                                        )
-                                    })
-                                }
+                                {/* ترکیب همه لینک‌ها در یک آرایه */}
+                                {[
+                                    ...config.creator.links.development,
+                                    ...config.creator.links.contact,
+                                    ...config.creator.links.professional
+                                ].map((link, index) => (
+                                    <a
+                                        key={index}
+                                        href={link.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-3 bg-black/30 hover:bg-black/50 px-4 py-3 rounded-lg transition-colors text-sm"
+                                    >
+                                        <DynamicIcon icon={link.icon} />
+                                        <div className="flex flex-col gap-2">
+                                            <div className="font-medium">{link.title}</div>
+                                            <div className="text-xs text-gray-400">{link.description}</div>
+                                        </div>
+                                    </a>
+                                ))}
                             </div>
                         </div>
 
@@ -66,30 +73,33 @@ const Footer: React.FC = () => {
                     {/* About Project */}
                     <section className="space-y-4 select-none [-webkit-user-drag:none]">
                         <h3 className="text-xl font-bold flex items-center gap-2">
-                            {footerConfig.project.name}
+                            {config.project.name}
                         </h3>
                         <p className="text-blue-100 dark:text-gray-300 text-sm leading-relaxed">
-                            {footerConfig.project.description}
+                            {config.project.description}
                         </p>
 
                         <div className="space-y-2">
-                            <h4 className="font-semibold text-blue-200">{footerConfig.features.available.title}</h4>
+                            <h4 className="font-semibold text-blue-200">{config.features.available.title}</h4>
                             <ul className="text-sm text-blue-100 space-y-1">
                                 {
-                                    footerConfig.features.available.list.map((tool, index) => {
+                                    // @ts-ignore
+                                    Object.entries(config.tools).map(([toolkey, tool], index) => {
                                         console.log(tool)
                                         return (
-                                            <li
-                                                key={index}
-                                                className="selsect-none"
-                                            >
-                                                <Link
-                                                    to={tool?.path ?? '/*'}
-                                                    className="hover:text-gray-400 active:text-red-400"
+                                            (tool.status === 'active') ? (
+                                                <li
+                                                    key={index}
+                                                    className="selsect-none"
                                                 >
-                                                    {tool?.title}
-                                                </Link>
-                                            </li>
+                                                    <Link
+                                                        to={String(tool.path) ?? '/*'}
+                                                        className="hover:text-gray-400 active:text-red-400"
+                                                    >
+                                                        {String(tool.title)}
+                                                    </Link>
+                                                </li>
+                                            ) : null
                                         )
                                     })
                                 }
@@ -97,21 +107,24 @@ const Footer: React.FC = () => {
                         </div>
 
                         <div className="space-y-2">
-                            <h4 className="font-semibold text-blue-200">{footerConfig.features.upcoming.title}</h4>
+                            <h4 className="font-semibold text-blue-200">{config.features.upcoming.title}</h4>
                             <ul className="text-sm text-blue-100 space-y-1">
                                 {
-                                    footerConfig.features.upcoming.list.map((tool, index) => {
+                                    // @ts-ignore
+                                    Object.entries(config.tools).map(([toolKey, tool], index) => {
                                         return (
-                                            <li
-                                                key={index}
-                                            >
-                                                <Link
-                                                    to={tool?.path ?? '/*'}
-                                                    className="hover:text-gray-400 active:text-red-400"
+                                            (tool.status  === "comingSoon") ? (
+                                                <li
+                                                    key={toolKey}
                                                 >
-                                                    {tool?.title}
-                                                </Link>
-                                            </li>
+                                                    <Link
+                                                        to={String(tool.path) ?? '/*'}
+                                                        className="hover:text-gray-400 active:text-red-400"
+                                                    >
+                                                        {String(tool.title)}
+                                                    </Link>
+                                                </li>
+                                            ) : null
                                         )
                                     })
                                 }
@@ -121,13 +134,28 @@ const Footer: React.FC = () => {
 
                     {/* Tech Stack & Status */}
                     <section className="space-y-4 select-none [-webkit-user-drag:none]">
-                        <h4 className="font-semibold text-lg">{footerConfig.technologies.title}</h4>
-                        <div className="grid grid-cols-2 gap-2 text-sm">
-                            {
-                                footerConfig.technologies.list.map((tech, index) => {
+                        <h4 className="font-semibold text-lg">{config.technologies.title}</h4>
+                        <div className="flex flex-col gap-8 text-sm">
+                            {   
+                                // @ts-ignore
+                                Object.entries(config.technologies.categories).map(([techKey, tech], index) => {
                                     return (
-                                        <div key={index} className="flex items-center gap-1">
-                                            <span>{tech.icon}</span> {tech.name}
+                                        <div key={techKey} className="flex flex-col gap-2">
+                                            <span>{tech.title}</span>
+                                            <ul className="flex flex-col">
+                                                {
+                                                    tech.items.map(item => (
+                                                        <li className="flex gap-2 my-1">
+                                                            <span>
+                                                                {item.icon}
+                                                            </span>
+                                                            <span>
+                                                                {item.name}
+                                                            </span>
+                                                        </li>
+                                                    ))
+                                                }
+                                            </ul>
                                         </div>
                                     )
                                 })
@@ -137,18 +165,18 @@ const Footer: React.FC = () => {
                         <div className="flex flex-col gap-2 items-start">
                             <div className="flex w-full items-center gap-2 bg-yellow-500/20 px-3 py-2 rounded-lg animate-pulse">
                                 <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-                                <span className="text-sm">{footerConfig.project.status.title}</span>
+                                <span className="text-sm">{config.project.status.title}</span>
                             </div>
-                            <p className="text-sm bg-red-300/20 p-2 rounded">{footerConfig.project.status.message}</p>
+                            <p className="text-sm bg-red-300/20 p-2 rounded">{config.project.status.message}</p>
                         </div>
                     </section>
 
                     {/* Keywords & Features */}
                     <section className="space-y-4 select-none [-webkit-user-drag:none]">
-                        <h4 className="font-semibold text-lg">{footerConfig.projectBenefits.title}</h4>
+                        <h4 className="font-semibold text-lg">{config.projectBenefits.title}</h4>
                         <ul className="text-sm text-blue-100 space-y-2">
                             {
-                                footerConfig.projectBenefits.benefits.map((item, index) => {
+                                config.projectBenefits.benefits.map((item, index) => {
                                     return (
                                         <li key={index} className="flex items-start gap-3">
                                             <span className="text-lg">{item.icon}</span>
@@ -164,7 +192,7 @@ const Footer: React.FC = () => {
 
                         <div className="flex flex-wrap gap-2">
                             {
-                                footerConfig.keywords.map((tag) => (
+                                config.keywords.map((tag) => (
                                     <a
                                         key={tag}
                                         href={`https://www.google.com/search?q=${tag}`}
@@ -181,10 +209,10 @@ const Footer: React.FC = () => {
                 {/* Copyright */}
                 <div className="border-t border-white/20 mt-8 pt-6 text-center select-none [-webkit-user-drag:none]">
                     <p className="text-blue-200 text-sm">
-                        {footerConfig.copyright.text.replace('{year}', new Date().getFullYear().toString())}
+                        {config.copyright.text.replace('{year}', new Date().getFullYear().toString())}
                     </p>
                     <p className="text-blue-300 text-xs mt-1">
-                        {footerConfig.copyright.subText}
+                        {config.copyright.subText}
                     </p>
                 </div>
             </div>

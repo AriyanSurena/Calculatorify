@@ -1,0 +1,293 @@
+@font-face {
+    font-family: "Jost";
+    src: url('/Jost/static/Jost-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url('/Jost/static/Jost-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url('/Jost/static/Jost-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url('/Jost/static/Jost-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url('/Jost/static/Jost-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url('/Jost/static/Jost-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url('/Jost/static/Jost-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url('/Jost/static/Jost-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url('/Jost/static/Jost-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url('/Jost/static/Jost-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url('/Jost/static/Jost-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url('/Jost/static/Jost-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url('/Jost/static/Jost-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url('/Jost/static/Jost-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url('/Jost/static/Jost-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url('/Jost/static/Jost-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url('/Jost/static/Jost-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Jost";
+    src: url('/Jost/static/Jost-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Vazir */
+
+/* Vazir Font Face - All Weights */
+@font-face {
+  font-family: 'Vazir';
+  src: url('./Vazir-Thin.eot');
+  src: url('./Vazir-Thin.eot?#iefix') format('embedded-opentype'),
+       url('./Vazir-Thin.woff2') format('woff2'),
+       url('./Vazir-Thin.woff') format('woff'),
+       url('./Vazir-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazir';
+  src: url('./Vazir-Light.eot');
+  src: url('./Vazir-Light.eot?#iefix') format('embedded-opentype'),
+       url('./Vazir-Light.woff2') format('woff2'),
+       url('./Vazir-Light.woff') format('woff'),
+       url('./Vazir-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazir';
+  src: url('./Vazir.eot');
+  src: url('./Vazir.eot?#iefix') format('embedded-opentype'),
+       url('./Vazir.woff2') format('woff2'),
+       url('./Vazir.woff') format('woff'),
+       url('./Vazir.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazir';
+  src: url('./Vazir-Medium.eot');
+  src: url('./Vazir-Medium.eot?#iefix') format('embedded-opentype'),
+       url('./Vazir-Medium.woff2') format('woff2'),
+       url('./Vazir-Medium.woff') format('woff'),
+       url('./Vazir-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazir';
+  src: url('./Vazir-Bold.eot');
+  src: url('./Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+       url('./Vazir-Bold.woff2') format('woff2'),
+       url('./Vazir-Bold.woff') format('woff'),
+       url('./Vazir-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* نسخه بدون اعداد لاتین (فقط اعداد فارسی) */
+@font-face {
+  font-family: 'Vazir FD';
+  src: url('./Farsi-Digits/Vazir-Thin-FD.eot');
+  src: url('./Farsi-Digits/Vazir-Thin-FD.eot?#iefix') format('embedded-opentype'),
+       url('./Farsi-Digits/Vazir-Thin-FD.woff2') format('woff2'),
+       url('./Farsi-Digits/Vazir-Thin-FD.woff') format('woff'),
+       url('./Farsi-Digits/Vazir-Thin-FD.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazir FD';
+  src: url('./Farsi-Digits/Vazir-Light-FD.eot');
+  src: url('./Farsi-Digits/Vazir-Light-FD.eot?#iefix') format('embedded-opentype'),
+       url('./Farsi-Digits/Vazir-Light-FD.woff2') format('woff2'),
+       url('./Farsi-Digits/Vazir-Light-FD.woff') format('woff'),
+       url('./Farsi-Digits/Vazir-Light-FD.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazir FD';
+  src: url('./Farsi-Digits/Vazir-FD.eot');
+  src: url('./Farsi-Digits/Vazir-FD.eot?#iefix') format('embedded-opentype'),
+       url('./Farsi-Digits/Vazir-FD.woff2') format('woff2'),
+       url('./Farsi-Digits/Vazir-FD.woff') format('woff'),
+       url('./Farsi-Digits/Vazir-FD.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazir FD';
+  src: url('./Farsi-Digits/Vazir-Medium-FD.eot');
+  src: url('./Farsi-Digits/Vazir-Medium-FD.eot?#iefix') format('embedded-opentype'),
+       url('./Farsi-Digits/Vazir-Medium-FD.woff2') format('woff2'),
+       url('./Farsi-Digits/Vazir-Medium-FD.woff') format('woff'),
+       url('./Farsi-Digits/Vazir-Medium-FD.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazir FD';
+  src: url('./Farsi-Digits/Vazir-Bold-FD.eot');
+  src: url('./Farsi-Digits/Vazir-Bold-FD.eot?#iefix') format('embedded-opentype'),
+       url('./Farsi-Digits/Vazir-Bold-FD.woff2') format('woff2'),
+       url('./Farsi-Digits/Vazir-Bold-FD.woff') format('woff'),
+       url('./Farsi-Digits/Vazir-Bold-FD.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* کلاس‌های کمکی برای استفاده راحت‌تر */
+.vazir-font {
+  font-family: 'Vazir', 'Vazir FD', Tahoma, sans-serif;
+}
+
+.vazir-fd {
+  font-family: 'Vazir FD', Tahoma, sans-serif;
+}
+
+/* تنظیمات فارسی */
+body.farsi-lang {
+  font-family: 'Vazir', 'Vazir FD', Tahoma, sans-serif;
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: right;
+  direction: rtl;
+}
+
+/* برای اعداد فارسی */
+.persian-numbers {
+  font-feature-settings: "ss01";
+  -moz-font-feature-settings: "ss01";
+  -webkit-font-feature-settings: "ss01";
+}
+

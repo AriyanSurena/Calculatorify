@@ -1,0 +1,469 @@
+{
+  "project": {
+    "name": "Calculatorify Suite",
+    "description": "A comprehensive and modern suite of computational tools built with advanced web technologies.",
+    "status": {
+      "title": "Active Development 🚧",
+      "message": "This project is under construction and not yet complete. I am actively and regularly upgrading and improving it.",
+      "phase": "Online",
+      "version": "1.0.0-beta"
+    }
+  },
+  "features": {
+    "available": {
+      "title": "🚀 Available Features",
+      "description": "Currently implemented and fully functional tools",
+      "sectionIcon": "✅"
+    },
+    "upcoming": {
+      "title": "🔜 Coming Soon",
+      "description": "Features and tools currently in development",
+      "sectionIcon": "🛠️"
+    },
+    "planned": {
+      "title": "📋 Planned Features",
+      "description": "Features planned for future releases",
+      "sectionIcon": "📅"
+    }
+  },
+  "technologies": {
+    "title": "🛠️ Tech Stack & Status",
+    "description": "Modern technologies powering this application",
+    "categories": {
+      "core": {
+        "title": "Core Framework",
+        "items": [
+          {
+            "name": "Vite",
+            "icon": "⚡",
+            "description": "Next Generation Frontend Tooling"
+          },
+          {
+            "name": "React 18",
+            "icon": "⚛️",
+            "description": "Modern UI Library with Concurrent Features"
+          },
+          {
+            "name": "TypeScript",
+            "icon": "📘",
+            "description": "Type-Safe JavaScript Development"
+          }
+        ]
+      },
+      "routing": {
+        "title": "Routing & State",
+        "items": [
+          {
+            "name": "React Router",
+            "icon": "🛣️",
+            "description": "Declarative Routing for React"
+          },
+          {
+            "name": "React Context",
+            "icon": "🔄",
+            "description": "State Management Solution"
+          }
+        ]
+      },
+      "styling": {
+        "title": "Styling & UI",
+        "items": [
+          {
+            "name": "Tailwind CSS",
+            "icon": "🎨",
+            "description": "Utility-First CSS Framework"
+          },
+          {
+            "name": "Dark Mode",
+            "icon": "🌙",
+            "description": "Automatic Theme Switching"
+          },
+          {
+            "name": "Responsive Design",
+            "icon": "📱",
+            "description": "Mobile-First Approach"
+          }
+        ]
+      }
+    }
+  },
+  "projectBenefits": {
+    "title": "💡 Why This Project?",
+    "description": "Key advantages and unique selling points",
+    "benefits": [
+      {
+        "icon": "🎯",
+        "title": "All-in-One Solution",
+        "description": "No need for multiple calculator apps - everything in one place",
+        "color": "blue"
+      },
+      {
+        "icon": "⚡",
+        "title": "Modern & Fast",
+        "description": "Built with the latest web technologies for optimal performance",
+        "color": "green"
+      },
+      {
+        "icon": "👥",
+        "title": "User-Friendly",
+        "description": "Intuitive interface and smooth user experience",
+        "color": "purple"
+      },
+      {
+        "icon": "🔓",
+        "title": "Open Source",
+        "description": "Transparent and community-driven development",
+        "color": "orange"
+      },
+      {
+        "icon": "🌍",
+        "title": "Multi-Language",
+        "description": "Support for multiple languages and locales",
+        "color": "teal"
+      },
+      {
+        "icon": "📊",
+        "title": "Real-Time Results",
+        "description": "Instant calculations with live updates",
+        "color": "red"
+      }
+    ]
+  },
+  "creator": {
+    "title": "👨‍💼 About Creator & Links",
+    "description": "Information about the developer and project maintainer",
+    "profile": {
+      "name": "Ariyan Surena",
+      "title": "Full-Stack Developer",
+      "description": "Passionate about building useful tools with modern web technologies",
+      "photo": "/Creator.png",
+      "location": "Remote",
+      "specialization": "React, TypeScript, Web Applications"
+    },
+    "links": {
+      "development": [
+        {
+          "icon": "github",
+          "title": "👨‍💻 GitHub Portfolio",
+          "description": "View all my projects and contributions",
+          "link": "https://github.com/AriyanSurena"
+        },
+        {
+          "icon": "repo",
+          "title": "📂 Repository Access",
+          "description": "Source code of Calculatorify",
+          "link": "https://github.com/AriyanSurena/Calculatorify.git"
+        }
+      ],
+      "contact": [
+        {
+          "icon": "telegram",
+          "title": "📢 Development Channel",
+          "description": "Latest updates and announcements",
+          "link": "https://t.me/SurenaIO"
+        },
+        {
+          "icon": "email",
+          "title": "✉️ Contact Developer",
+          "description": "Send me an email directly",
+          "link": "mailto:AriyanSurena@gmail.com"
+        },
+        {
+          "icon": "twitter",
+          "title": "📱 Tech Twitter",
+          "description": "Tech thoughts and updates",
+          "link": "https://twitter.com/AriyanSurena"
+        }
+      ],
+      "professional": [
+        {
+          "icon": "linkedin",
+          "title": "🤝 Professional Connect",
+          "description": "Connect on LinkedIn",
+          "link": "https://www.linkedin.com/in/ariyan-surena-09148b2b3/"
+        }
+      ]
+    }
+  },
+  "development": {
+    "title": "🚀 Development Status",
+    "phases": [
+      {
+        "name": "Alpha",
+        "status": "active",
+        "description": "Core features implementation",
+        "progress": 85
+      },
+      {
+        "name": "Beta",
+        "status": "upcoming",
+        "description": "User testing and bug fixes",
+        "progress": 40
+      },
+      {
+        "name": "Release",
+        "status": "planned",
+        "description": "Full public release",
+        "progress": 10
+      }
+    ]
+  },
+  "tools": {
+    "unitConverter": {
+      "icon": "unitConverter",
+      "title": "Unit Converter",
+      "path": "/Converter",
+      "description": "Convert between various measurement units",
+      "status": "active",
+      "category": "conversion",
+      "keywords": [
+        "unit",
+        "convert",
+        "measurement",
+        "meter",
+        "kilogram"
+      ],
+      "popularity": 5,
+      "lastUpdated": "2024-01-15"
+    },
+    "shapeCalculator": {
+      "icon": "shapeCalculator",
+      "title": "Shape Calculator",
+      "path": "/Shape_Calculator",
+      "description": "Calculate area, perimeter and geometry measurements",
+      "status": "active",
+      "category": "geometry",
+      "keywords": [
+        "geometry",
+        "area",
+        "perimeter",
+        "triangle",
+        "circle"
+      ],
+      "popularity": 4,
+      "lastUpdated": "2024-01-10"
+    },
+    "bmiCalculator": {
+      "icon": "bmiCalculator",
+      "title": "BMI Calculator",
+      "path": "/BMI_Calculator",
+      "description": "Calculate Body Mass Index and health metrics",
+      "status": "active",
+      "category": "health",
+      "keywords": [
+        "health",
+        "weight",
+        "height",
+        "fitness",
+        "bmi"
+      ],
+      "popularity": 4,
+      "lastUpdated": "2024-01-12"
+    },
+    "currencyConverter": {
+      "icon": "currencyConverter",
+      "title": "Currency Converter",
+      "path": "/Currency_Converter",
+      "description": "Real-time currency exchange rates and conversion",
+      "status": "active",
+      "category": "finance",
+      "keywords": [
+        "currency",
+        "dollar",
+        "euro",
+        "convert",
+        "exchange"
+      ],
+      "popularity": 5,
+      "lastUpdated": "2024-01-14"
+    },
+    "investmentCalculator": {
+      "icon": "investmentCalculator",
+      "title": "Investment Calculator",
+      "path": "/Investment_Calculator",
+      "description": "Calculate investment returns and compound interest",
+      "status": "active",
+      "category": "finance",
+      "keywords": [
+        "investment",
+        "interest",
+        "profit",
+        "bank",
+        "compound"
+      ],
+      "popularity": 3,
+      "lastUpdated": "2024-01-13"
+    },
+    "volumeCalculator": {
+      "icon": "🧊",
+      "title": "Volume Calculator",
+      "path": "/Volume_Calculator",
+      "description": "Calculate 3D shapes volume and capacity",
+      "status": "comingSoon",
+      "category": "geometry",
+      "keywords": [
+        "volume",
+        "cube",
+        "cylinder",
+        "3d",
+        "capacity"
+      ],
+      "popularity": 2,
+      "estimatedRelease": "Q1 2024"
+    },
+    "interestCalculator": {
+      "icon": "💰",
+      "title": "Interest Calculator",
+      "path": "/Interest_Calculator",
+      "description": "Calculate loan interest and savings growth",
+      "status": "comingSoon",
+      "category": "finance",
+      "keywords": [
+        "interest",
+        "loan",
+        "installment",
+        "bank",
+        "profit"
+      ],
+      "popularity": 3,
+      "estimatedRelease": "Q1 2024"
+    },
+    "dateCalculator": {
+      "icon": "📅",
+      "title": "Date Calculator",
+      "path": "/Date_Calculator",
+      "description": "Calculate date differences and durations",
+      "status": "comingSoon",
+      "category": "time",
+      "keywords": [
+        "date",
+        "time",
+        "difference",
+        "duration",
+        "calendar"
+      ],
+      "popularity": 2,
+      "estimatedRelease": "Q1 2024"
+    },
+    "forexCalculator": {
+      "icon": "🌍",
+      "title": "Forex Calculator",
+      "path": "/Forex_Calculator",
+      "description": "Foreign exchange and trading calculations",
+      "status": "comingSoon",
+      "category": "finance",
+      "keywords": [
+        "forex",
+        "trading",
+        "currency",
+        "market",
+        "rate"
+      ],
+      "popularity": 2,
+      "estimatedRelease": "Q2 2024"
+    },
+    "mathCalculator": {
+      "icon": "🧮",
+      "title": "Math Calculator",
+      "path": "/Math_Calculator",
+      "description": "Basic to advanced mathematical operations",
+      "status": "comingSoon",
+      "category": "math",
+      "keywords": [
+        "math",
+        "calculate",
+        "add",
+        "multiply",
+        "mathematics"
+      ],
+      "popularity": 3,
+      "estimatedRelease": "Q1 2024"
+    },
+    "percentageCalculator": {
+      "icon": "📊",
+      "title": "Percentage Calculator",
+      "path": "/Percentage_Calculator",
+      "description": "Calculate percentages, discounts and increases",
+      "status": "comingSoon",
+      "category": "math",
+      "keywords": [
+        "percentage",
+        "discount",
+        "increase",
+        "ratio",
+        "percent"
+      ],
+      "popularity": 3,
+      "estimatedRelease": "Q1 2024"
+    },
+    "ageCalculator": {
+      "icon": "🎂",
+      "title": "Age Calculator",
+      "path": "/Age_Calculator",
+      "description": "Calculate exact age and time differences",
+      "status": "comingSoon",
+      "category": "time",
+      "keywords": [
+        "age",
+        "birthdate",
+        "lifetime",
+        "time",
+        "birth"
+      ],
+      "popularity": 2,
+      "estimatedRelease": "Q1 2024"
+    }
+  },
+  "categories": {
+    "all": "All",
+    "active": "Active",
+    "comingSoon": "Coming Soon",
+    "conversion": "Conversion",
+    "geometry": "Geometry",
+    "health": "Health",
+    "finance": "Finance",
+    "time": "Time",
+    "math": "Math"
+  },
+  "tooltips": {
+    "active": "✅ Ready to use",
+    "comingSoon": "🛠️ In development - coming soon",
+    "popular": "🔥 Popular and frequently used",
+    "new": "🆕 Newly added"
+  },
+  "messages": {
+    "selectTool": "Select a tool",
+    "activeTools": "Active Tools",
+    "upcomingTools": "Upcoming Tools",
+    "searchPlaceholder": "Search tools...",
+    "noResults": "No tools found"
+  },
+  "sorting": {
+    "popularity": "Most Popular",
+    "alphabetical": "A to Z",
+    "recent": "Recently Updated",
+    "category": "By Category"
+  },
+  "keywords": [
+    "Calculator",
+    "Unit Converter",
+    "React Application",
+    "TypeScript",
+    "Online Tools",
+    "Computational Tools",
+    "Web Application",
+    "Productivity Tools",
+    "Math Tools",
+    "Financial Calculator"
+  ],
+  "common": {
+    "backToHome": "back to Home",
+    "pageNotFound": "Page Not Found"
+  },
+  "copyright": {
+    "text": "© {year} Calculatorify Suite. Built with Passion and React",
+    "subText": "Our goal is to create the most comprehensive computational tools suite",
+    "license": "MIT License",
+    "attribution": "Made with ❤️ by Ariyan Surena"
+  }
+}

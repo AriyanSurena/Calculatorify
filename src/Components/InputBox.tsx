@@ -4,8 +4,8 @@ import Label from "./Label";
 
 const InputBox: React.FC<{
     name: string,
-    placeholder: string,
-    label: string,
+    placeholder?: string,
+    label?: string,
     title?: string,
     propValue?: number,
     id?: string,

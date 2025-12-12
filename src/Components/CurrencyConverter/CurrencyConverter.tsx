@@ -2,33 +2,48 @@ import { useEffect, useState } from "react";
 import InputBox from "./../InputBox";
 
 import useExchangeRates from "./useExchangeRates";
-import currencyUnitsJSON from "../../assets/currencyUnits .json"
 import ToolCard from "../ToolCard";
+import En from "./languages/en.json";
+import Fa from "./languages/fa.json";
+import { useLanguage } from "../../Context/useLanguage";
+import CurrencySelect from "./CurrencySelect";
+import ResultDisplay from "../ResultDisplay";
+import TextChip from "../TextChlip";
+
+type ContentType = typeof En;
 
 const CurrencyConverter: React.FC = () => {
-    const [isOpened, setIsOpened] = useState(false)
-    const currencyUnits = currencyUnitsJSON.currencies;
     const [amount, setAmount] = useState<number | undefined>()
-    const [fromCurrency, setFromCurrency] = useState<string>("USD")
-    const [toCurrency, setToCurrency] = useState<string>("IRR")
-    const { rates, loading, error } = useExchangeRates(fromCurrency)
+    const [fromCurrency, setFromCurrency] = useState<{ name: string, code: string, symbol: string }>({ name: '', symbol: '', code: '' })
+    const [toCurrency, setToCurrency] = useState<{ name: string, code: string, symbol: string }>({ name: '', symbol: '', code: '' })
+    const { rates, loading, error } = useExchangeRates(fromCurrency.code)
+
+    const { language } = useLanguage();
+    const content: ContentType = language.includes('en-US') ? En : Fa;
 
     let [convertedAmount, setConvertedAmount] = useState(0);
 
-    console.log('rates: ', rates)
+    useEffect(() => {
+        let currencies: typeof content.currencies = [];
+        content?.currencies.map(currency => {
+            currencies.push(currency)
+        })
+        setFromCurrency(currencies[0])
+        setToCurrency(currencies[1])
+    }, [])
 
     useEffect(() => {
-        setConvertedAmount(rates[toCurrency] ? (amount ?? 0) * rates[toCurrency] : 0)
+        setConvertedAmount(rates[toCurrency.code] ? (amount ?? 0) * rates[toCurrency.code] : 0)
     }, [amount, fromCurrency, toCurrency])
 
     return (
         <ToolCard id="Currency_Converter">
             <InputBox
                 id="amount"
-                label="Amount"
+                label={content?.labels?.amount}
                 name="amount"
-                placeholder="Enter Base Currency: "
-                title="Base Currency"
+                placeholder={content?.placeholders?.amount}
+                title={content?.tooltips?.amount}
                 onChangeFn={
                     (v) => {
                         setAmount(v)
@@ -36,139 +51,72 @@ const CurrencyConverter: React.FC = () => {
                 }
             />
 
-            <div
-            className="shadow-2xl rounded select-none">
-            {
-                !isOpened &&
-                <button
-                    value={fromCurrency}
-                    onClick={() => { setIsOpened(!isOpened) }}
-                    className="flex justify-between w-full p-2 rounded bg-gray-500 dark:bg-gray-800 hover:bg-gray-600 dark:hover:bg-gray-900 transition-all duration-200 text-white"
-                >
-                    {fromCurrency}
-                    <svg className="w-1/12 h-4">
-                        <path
-                            d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z"
-                            className="fill-white">
-                        </path>
-                    </svg>
-                </button>
-            }
-            {
-                isOpened &&
-                <div className="w-full h-max min-h-full max-h-[80vh] bg-white dark:bg-gray-700 absolute top-0 left-0 overflow-auto z-50">
-                    <ul
-                        className="w-full flex flex-col gap-2 h-full p-2 z-50">
-                        {
-                            currencyUnits.map((item) => {
-                                return (
-                                    <li
-                                        key={item.code}
-                                        className="
-                                            w-full p-2 
-                                            rounded 
-                                            ring-1 ring-gray-300
-                                            bg-white
-                                            dark:bg-gray-900 
-                                            hover:bg-gray-100
-                                            dark:hover:bg-slate-900 
-                                            text-black dark:text-white 
-                                            dark:ring-gray-800 
-                                            hover:scale-[1.01]
-                                            hover:text-blue-400
-                                            transition-all 
-                                            duration-200 
-                                            cursor-pointer 
-                                            select-none
-                                        "
-                                        value={item.code}
-                                        onClick={() => {
-                                            if (setFromCurrency) setFromCurrency(item.code)
-                                            setIsOpened(!isOpened);
-                                        }}>
-                                        {item.code + ' ' + item.name + ' ' + item.symbol}
-                                    </li>
-                                )
-                            })
-                        }
-                    </ul>
-                </div>
-            }
-        </div>
-            <div
-            className="shadow-2xl rounded select-none">
-            {
-                !isOpened &&
-                <button
-                    value={toCurrency}
-                    onClick={() => { setIsOpened(!isOpened) }}
-                    className="flex justify-between w-full p-2 rounded bg-gray-500 dark:bg-gray-800 hover:bg-gray-600 dark:hover:bg-gray-900 transition-all duration-200 text-white"
-                >
-                    {toCurrency}
-                    <svg className="w-1/12 h-4">
-                        <path
-                            d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z"
-                            className="fill-white">
-                        </path>
-                    </svg>
-                </button>
-            }
-            {
-                isOpened &&
-                <div className="w-full h-max min-h-full max-h-[80vh] bg-white dark:bg-gray-700 absolute top-0 left-0 overflow-auto z-50">
-                    <ul
-                        className="w-full flex flex-col gap-2 h-full p-2 z-50">
-                        {
-                            currencyUnits.map((item) => {
-                                return (
-                                    <li
-                                        key={item.code}
-                                        className="
-                                            w-full p-2 
-                                            rounded 
-                                            ring-1 ring-gray-300
-                                            bg-white
-                                            dark:bg-gray-900 
-                                            hover:bg-gray-100
-                                            dark:hover:bg-slate-900 
-                                            text-black dark:text-white 
-                                            dark:ring-gray-800 
-                                            hover:scale-[1.01]
-                                            hover:text-blue-400
-                                            transition-all 
-                                            duration-200 
-                                            cursor-pointer 
-                                            select-none
-                                        "
-                                        onClick={() => {
-                                            if (setToCurrency) setToCurrency(item.code)
-                                            setIsOpened(!isOpened);
-                                        }}>
-                                        {item.code + ' ' + item.name + ' ' + item.symbol}
-                                    </li>
-                                )
-                            })
-                        }
-                    </ul>
-                </div>
-            }
-        </div>
+            {/* واحد ورودی */}
+
+            <CurrencySelect
+                id="fromCurrency"
+                title={content?.tooltips?.fromCurrency}
+                currencies={content?.currencies}
+                onCurrencyChange={setFromCurrency}
+                selectedCurrency={fromCurrency}
+                label={content?.labels?.fromCurrency}
+                placeholder={content?.placeholders?.selectCurrency}
+            />
+
+            {/* خروجی */}
+            <CurrencySelect
+                id="toCurrency"
+                title={content?.tooltips?.toCurrency}
+                currencies={content?.currencies}
+                onCurrencyChange={setToCurrency}
+                selectedCurrency={toCurrency}
+                label={content?.labels?.toCurrency}
+                placeholder={content?.placeholders?.selectCurrency}
+            />
 
 
-
-
-            {loading && <div className="text-blue-500">در حال دریافت نرخ...</div>}
-            {error && <div className="text-red-500">{error}</div>}
-            
-            {!loading && !error && (
-                <div className="mt-4 p-4  rounded">
-                    <p className="text-lg">
-                        {amount} {fromCurrency} = {' '}
-                        <strong>{convertedAmount} {toCurrency}</strong>
+            {/* لودینگ */}
+            {/* وضعیت لودینگ و خطا */}
+            {loading && (
+                <div className="text-center p-4">
+                    <div className="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
+                    <p className="mt-2 text-blue-600 dark:text-blue-400">
+                        {content?.messages?.loading}
                     </p>
-                    <p className="text-sm text-red-600 mt-2">
-                        نرخ: 1 {fromCurrency} = {rates[toCurrency]?.toLocaleString()} {toCurrency}
+                </div>
+            )}
+
+            {error && (
+                <div className="text-center p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
+                    <p className="text-red-600 dark:text-red-400">
+                        {content?.messages?.error}
                     </p>
+                </div>
+            )}
+
+            {/* نمایش نتیجه */}
+            {!loading && !error && amount !== undefined && (
+                <div className="bg-gradient-to-r from-blue-500 to-purple-500 dark:from-gray-800 dark:to-gray-900 rounded-xl shadow-lg">
+                    <div className="text-center mb-4">
+                        <ResultDisplay result={convertedAmount.toLocaleString(language.includes('fa-IR') ? 'fa-IR' : 'en-US') || 0} label={content?.placeholders?.result} placeholder={content?.labels?.convertedAmount} />
+
+                        <TextChip classes="my-2 text-sm text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
+                            {content?.messages?.exchangeRateInfo
+                                .replace("{fromCurrency}", fromCurrency?.name)
+                                .replace("{rate}", rates[toCurrency?.code]?.toLocaleString(language.startsWith('fa') ? 'fa-IR' : 'en-US') || "0")
+                                .replace("{toCurrency}", toCurrency?.name)}
+                        </TextChip>
+
+                        <TextChip classes="my-2 text-sm text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
+                            {content?.messages?.conversionResult
+                                .replace("{amount}", amount?.toLocaleString(language.includes('fa-IR') ? 'fa-IR' : 'en-US') || "0")
+                                .replace("{fromCurrency}", fromCurrency?.name)
+                                .replace("{convertedAmount}", convertedAmount?.toLocaleString(language.startsWith('fa') ? 'fa-IR' : 'en-US') || "0")
+                                .replace("{toCurrency}", toCurrency?.name)}
+                        </TextChip>
+
+
+                    </div>
                 </div>
             )}
         </ToolCard>

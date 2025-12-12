@@ -1,0 +1,61 @@
+{
+    "title": "Shapes Calculator",
+    "description": "Calculate area and perimeter of various geometric shapes",
+    "shapes": {
+        "displayNames": {
+            "Circle": "Circle",
+            "Rectangle": "Rectangle",
+            "Square": "Square",
+            "Pentagon": "Pentagon",
+            "Hexagon": "Hexagon",
+            "Equilateral Triangle": "Equilateral Triangle",
+            "Isosceles Triangle": "Isosceles Triangle",
+            "Scalene Triangle": "Scalene Triangle",
+            "Right Triangle": "Right Triangle"
+        },
+        "labels": {
+            "radius": "Radius",
+            "width": "Width",
+            "length": "Length",
+            "height": "Height",
+            "base": "Base",
+            "side": "Side",
+            "equalSide": "Equal Side",
+            "sideA": "Side A",
+            "sideB": "Side B",
+            "sideC": "Side C",
+            "area": "Area",
+            "perimeter": "Perimeter"
+        },
+        "placeholders": {
+            "radius": "Enter circle radius",
+            "width": "Enter rectangle width",
+            "length": "Enter rectangle length",
+            "side": "Enter side length",
+            "base": "Enter base length",
+            "height": "Enter height",
+            "equalSide": "Enter equal side length",
+            "sideA": "Enter side A length",
+            "sideB": "Enter side B length",
+            "sideC": "Enter side C length"
+        },
+        "units": {
+            "area": "Area",
+            "perimeter": "Perimeter"
+        },
+        "errors": {
+            "invalidTriangle": "Base cannot be greater than or equal to twice the equal side",
+            "invalidInput": "Please enter valid values"
+        },
+        "messages": {
+            "areaIs": "Area is equal to",
+            "perimeterIs": "Perimeter is equal to",
+            "of": "of",
+            "selectShape": "Select a shape"
+        }
+    },
+    "toast": {
+        "resCopied": "Result Copied Successfully.",
+        "copied": "Copied."
+    }
+}

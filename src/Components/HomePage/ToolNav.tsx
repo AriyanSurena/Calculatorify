@@ -1,10 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
-import { toolsConfig } from "../../assets/configs/homeConfig"
 import DynamicIcon from "../../SVGIcons/DynamicIcon"
+import { useConfig } from "../../Context/useProjectConfig";
 // کامپوننت هدر برای صفحات ابزار
 const ToolNav: React.FC = () => {
+    const config = useConfig()
     const location = useLocation();
-    const currentTool = Object.values(toolsConfig).find(tool => tool.path === location.pathname);
+
+    const currentTool = Object.values(config.tools).find(tool => tool.path === location.pathname);
     
     return (
         <nav className="w-full bg-gradient-to-r from-blue-600 to-purple-700 dark:from-gray-800 dark:to-gray-900 text-white shadow-lg">
@@ -21,7 +23,7 @@ const ToolNav: React.FC = () => {
                         
                         {/* متن با انیمیشن */}
                         <span className="hidden md:inline group-hover:translate-x-1 transition-transform">
-                            Back to Home
+                            {config.common.backToHome}
                         </span>
                         
                         {/* افکت پالس در موبایل */}
@@ -37,7 +39,7 @@ const ToolNav: React.FC = () => {
                     </div>
                     
                     <div className="text-sm text-blue-200">
-                        {currentTool?.description}
+                        {currentTool.description}
                     </div>
                 </div>
             </div>

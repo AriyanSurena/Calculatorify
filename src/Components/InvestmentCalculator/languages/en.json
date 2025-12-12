@@ -1,0 +1,87 @@
+{
+    "title": "Investment Calculator",
+    "description": "Calculate investment returns with simple and compound interest",
+    "labels": {
+        "initialInvestment": "Initial Investment",
+        "interestRate": "Interest Rate",
+        "duration": "Duration",
+        "finalAmount": "Final Amount",
+        "interestType": "Interest Type",
+        "compounding": "Compounding Frequency"
+    },
+    "placeholders": {
+        "initialInvestment": "Enter initial investment amount",
+        "interestRate": "Enter annual interest rate",
+        "duration": "Enter duration in years",
+        "result": "Calculation result"
+    },
+    "interestTypes": {
+        "simple": {
+            "label": "Simple Interest",
+            "title": "Interest Type: Simple",
+            "description": "Interest calculated only on the principal amount"
+        },
+        "compound": {
+            "label": "Compound Interest",
+            "title": "Interest Type: Compound",
+            "description": "Interest calculated on principal plus accumulated interest"
+        }
+    },
+    "compoundingOptions": {
+        "yearly": {
+            "label": "Yearly",
+            "title": "Compounding: Yearly",
+            "description": "Interest calculated once per year"
+        },
+        "monthly": {
+            "label": "Monthly",
+            "title": "Compounding: Monthly",
+            "description": "Interest calculated and added monthly"
+        },
+        "daily": {
+            "label": "Daily",
+            "title": "Compounding: Daily",
+            "description": "Interest calculated and added daily"
+        }
+    },
+    "units": {
+        "currency": "$",
+        "percentage": "%",
+        "year": "years"
+    },
+    "messages": {
+        "selectInterestType": "Select interest type",
+        "selectCompounding": "Select compounding frequency",
+        "calculationResult": "Calculation Result",
+        "initialAmountRequired": "Please enter initial investment amount",
+        "interestRateRequired": "Please enter interest rate",
+        "durationRequired": "Please enter duration"
+    },
+    "investmentTerms": {
+        "initialInvestment": "Initial Investment",
+        "finalInvestment": "Final Investment",
+        "growth": "Growth",
+        "percentage": "percentage",
+        "dailyGrowth": "daily Growth",
+        "monthlyGrowth": "monthly Growth",
+        "yearlyGrowth": "yearly Growth",
+        "currency": "USD",
+        "months": "months",
+        "years": "years"
+    },
+    "formats": {
+        "currency": "#,##0.00",
+        "percentage": "0.00",
+        "years": "0"
+    },
+    "tooltips": {
+        "initialInvestment": "The initial amount you invest",
+        "interestRate": "Annual interest rate (in percentage)",
+        "duration": "Investment duration (in years)",
+        "simpleInterest": "Interest = Principal × Rate × Time",
+        "compoundInterest": "Interest = Principal × (1 + Rate)^Time"
+    },
+    "toast": {
+        "copied": "Copied."
+    }
+}

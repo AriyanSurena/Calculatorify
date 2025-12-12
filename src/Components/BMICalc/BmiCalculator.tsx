@@ -1,36 +1,58 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import ResultDisplay from "../ResultDisplay";
 import TextChip from "../TextChlip";
 import InputBox from "../InputBox";
 import ToolCard from "../ToolCard";
+import { useLanguage } from "../../Context/useLanguage";
+import En from "./languages/en.json";
+import Fa from "./languages/fa.json";
+
+interface BMIState {
+    weight: number | undefined,
+    height: number | undefined,
+    category?: string | undefined,
+    message?: string | undefined,
+}
+
+type StateType = {
+    weight?: number;
+    height?: number;
+    bmi?: number;
+    category?: string;
+    message?: string;
+};
+
+type ActionType =
+    { type: "UPDATE"; param: keyof StateType; value: string | number }
+    | { type: "CALCULATE_BMI" };
+
+
+type contentuageType = typeof En
 
 const BMICalculator: React.FC = () => {
+    const { language } = useLanguage();
+    const [content, setContent] = useState<contentuageType>();
+    useEffect(() => {
+        setContent(Fa)
+        switch (language) {
+            case "en-US": {
+                setContent(En)
+            } break;
+            case "fa-IR": {
+                setContent(Fa)
+            } break;
+        }
 
-    const initialState: {
-        gender: ('male' | 'female') | undefined,
-        weight: number | undefined,
-        height: number | undefined,
-        category?: string | undefined
-        message?: string | undefined
-    } = {
-        gender: undefined,
+        dispatch({ type: "CALCULATE_BMI" })
+    }, [language])
+
+    const initialState: BMIState = {
         weight: undefined,
         height: undefined,
         category: undefined,
-        message: undefined
+        message: undefined,
     }
 
-    type StateType = {
-        weight?: number;
-        height?: number;
-        bmi?: number;
-        category?: string;
-        message?: string;
-    };
-
-    type ActionType =
-        | { type: "UPDATE"; param: keyof StateType; value: string | number }
-        | { type: "CALCULATE_BMI" };
 
     const reducer = (prevState: StateType, action: ActionType): StateType => {
         switch (action.type) {
@@ -54,20 +76,20 @@ const BMICalculator: React.FC = () => {
                 const bmi = weight / (heightInMeters * heightInMeters);
                 const roundedBMI = Math.round(bmi * 10) / 10;
 
-                let category: string;
-                let message = "";
+                let category: string | undefined = "";
+                let message: string | undefined = "";
                 if (bmi < 18.5) {
-                    category = "Underweight";
-                    message = "Your weight is underweight. Consider consulting a nutritionist.";
+                    category = content?.categories?.underweight;
+                    message = content?.messages?.underweight;
                 } else if (bmi < 25) {
-                    category = "Normal weight";
-                    message = "Congratulations! Your weight is normal.";
+                    category = content?.categories?.normal;
+                    message = content?.messages?.normal;
                 } else if (bmi < 30) {
-                    category = "Overweight";
-                    message = "You are overweight. Regular exercise is recommended.";
+                    category = content?.categories?.overweight;
+                    message = content?.messages?.overweight;
                 } else {
-                    category = "Obese";
-                    message = "You are obese. Please consult with a healthcare professional.";
+                    category = content?.categories?.obese;
+                    message = content?.messages?.obese;
                 }
 
 
@@ -77,7 +99,7 @@ const BMICalculator: React.FC = () => {
                         ...prevState,
                         bmi: undefined,
                         category: undefined,
-                        message: "Please enter valid height and weight"
+                        message: content?.errors?.invalidInput,
                     };
                 }
 
@@ -93,12 +115,6 @@ const BMICalculator: React.FC = () => {
         }
     };
 
-    const [state, dispatch] = useReducer(reducer, initialState);
-
-    useEffect(() => {
-        dispatch({ type: 'CALCULATE_BMI' })
-    }, [state.weight, state.height])
-
     const calculateWeightRange = (h: number | undefined) => {
         if (!h || h <= 0) return { min: "0", max: "0" };
 
@@ -112,58 +128,67 @@ const BMICalculator: React.FC = () => {
         };
     };
 
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+    useEffect(() => {
+        dispatch({ type: 'CALCULATE_BMI' })
+    }, [state.weight, state.height])
+
+
     const weightRange = calculateWeightRange(state.height);
 
     return (
         <ToolCard id="BMI_Calculator">
-            <InputBox id="height" name="height" placeholder="Enter Your Height in cm: " onChangeFn={(v) => dispatch({ type: "UPDATE", param: 'height', value: Number(v) })} label="Height (Cm): " />
-            <InputBox id="weight" name="weight" placeholder="Enter Your Weight in kg: " onChangeFn={(v) => dispatch({ type: "UPDATE", param: 'weight', value: Number(v) })} label="Weight (Kg): " />
+            <InputBox id="height" name="height" placeholder={content?.placeholders?.height} onChangeFn={(v) => dispatch({ type: "UPDATE", param: 'height', value: Number(v) })} label={content?.labels?.height + ":"} />
+            <InputBox id="weight" name="weight" placeholder={content?.placeholders?.weight} onChangeFn={(v) => dispatch({ type: "UPDATE", param: 'weight', value: Number(v) })} label={content?.labels?.weight + ":"} />
             <div>
                 {state.bmi ?
                     (state.weight && state.height) ? (
                         <div>
                             <ResultDisplay
-                                label="BMI"
+                                label={content?.resultLabels?.bmi}
                                 result={state.bmi}
-                                placeholder="Result"
+                                placeholder={content?.resultLabels?.result}
+                                toastMessage={content?.toast?.bmiCopied}
                             />
-                            <TextChip isCopyOn={true}>
+                            <TextChip isCopyOn={true} toastMessage={content?.toast?.messageCopied}>
                                 <div className="p-2 my-2">
                                     {state.category}
                                 </div>
 
                                 <div className="opacity-80">
                                     {state.message}
+
                                 </div>
 
                                 {state.category && (
                                     <div>
                                         <div className="opacity-90">
-                                            {`The appropriate weight range for you with a height of `}
+                                            {content?.weightRangeText + ' '}
                                             <span className="text-green-500">
-                                                {state.height}
+                                                {state.height + ' '}
                                             </span>
                                             <span className="text-purple-400">
-                                                {' cm '}
+                                                {content?.units?.cm + ' '}
                                             </span>
                                             <span>
-                                                {' is: '}
+                                                {content?.common?.is}
                                             </span>
                                         </div>
 
                                         <div>
                                             <span className="text-blue-500">
-                                                {weightRange.min}
+                                                {weightRange.min + ' '}
                                             </span>
                                             <span className="text-purple-400">
-                                                {' kg'}
+                                                {content?.units?.kg + ' '}
                                             </span>
-                                            {` To `}
+                                            {' ' + content?.common?.to + ' '}
                                             <span className="text-red-500">
-                                                {weightRange.max}
+                                                {weightRange.max + ' '}
                                             </span>
                                             <span className="text-purple-400">
-                                                {' kg '}
+                                                {content?.units?.kg + ' '}
                                             </span>
                                         </div>
                                     </div>
@@ -173,7 +198,7 @@ const BMICalculator: React.FC = () => {
                     ) : null
                     : (
                         state.message ? (
-                            <TextChip>
+                            <TextChip isCopyOn={false}>
                                 <div className="text-red-500 font-bold">
                                     {state.message}
                                 </div>

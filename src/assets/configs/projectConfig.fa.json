@@ -1,0 +1,439 @@
+{
+  "project": {
+    "name": "مجموعه Calculatorify",
+    "description": "مجموعه‌ای جامع و مدرن از ابزارهای محاسباتی ساخته شده با فناوری‌های پیشرفته وب",
+    "status": {
+      "title": "در حال توسعه 🚧",
+      "message": "این پروژه در حال ساخت است و هنوز کامل نشده. من به طور فعال و منظم آن را ارتقا و بهبود می‌دهم.",
+      "phase": "آنلاین",
+      "version": "۱.۰.۰-بتا"
+    }
+  },
+  "features": {
+    "available": {
+      "title": "🚀 قابلیت‌های موجود",
+      "description": "ابزارهای پیاده‌سازی شده و کاملاً عملکردی",
+      "sectionIcon": "✅"
+    },
+    "upcoming": {
+      "title": "🔜 به زودی",
+      "description": "ویژگی‌ها و ابزارهایی که در حال توسعه هستند",
+      "sectionIcon": "🛠️"
+    },
+    "planned": {
+      "title": "📋 ویژگی‌های برنامه‌ریزی شده",
+      "description": "ویژگی‌های برنامه‌ریزی شده برای انتشارهای آینده",
+      "sectionIcon": "📅"
+    }
+  },
+  "technologies": {
+    "title": "🛠️ تکنولوژی‌ها و وضعیت",
+    "description": "تکنولوژی‌های مدرن قدرت‌بخش این برنامه",
+    "categories": {
+      "core": {
+        "title": "چارچوب اصلی",
+        "items": [
+          {
+            "name": "Vite",
+            "icon": "⚡",
+            "description": "ابزارهای نسل بعدی فرانت‌اند"
+          },
+          {
+            "name": "React 18",
+            "icon": "⚛️",
+            "description": "کتابخانه رابط کاربری مدرن با قابلیت‌های همزمان"
+          },
+          {
+            "name": "TypeScript",
+            "icon": "📘",
+            "description": "توسعه جاوااسکریپت ایمن از نظر نوع"
+          }
+        ]
+      },
+      "routing": {
+        "title": "مسیریابی و وضعیت",
+        "items": [
+          {
+            "name": "React Router",
+            "icon": "🛣️",
+            "description": "مسیریابی اعلامی برای React"
+          },
+          {
+            "name": "React Context",
+            "icon": "🔄",
+            "description": "راه‌حل مدیریت وضعیت"
+          }
+        ]
+      },
+      "styling": {
+        "title": "استایل و رابط کاربری",
+        "items": [
+          {
+            "name": "Tailwind CSS",
+            "icon": "🎨",
+            "description": "چارچوب CSS با رویکرد ابزار-اول"
+          },
+          {
+            "name": "حالت تاریک",
+            "icon": "🌙",
+            "description": "تغییر خودکار تم"
+          },
+          {
+            "name": "طراحی واکنش‌گرا",
+            "icon": "📱",
+            "description": "رویکرد موبایل-اول"
+          }
+        ]
+      }
+    }
+  },
+  "projectBenefits": {
+    "title": "💡 چرا این پروژه؟",
+    "description": "مزایای کلیدی و نقاط فروش منحصر به فرد",
+    "benefits": [
+      {
+        "icon": "🎯",
+        "title": "راه‌حل همه در یک",
+        "description": "نیازی به اپ‌های مختلف ماشین حساب نیست - همه چیز در یک مکان",
+        "color": "blue"
+      },
+      {
+        "icon": "⚡",
+        "title": "مدرن و سریع",
+        "description": "ساخته شده با جدیدترین تکنولوژی‌های وب برای عملکرد بهینه",
+        "color": "green"
+      },
+      {
+        "icon": "👥",
+        "title": "کاربرپسند",
+        "description": "رابط کاربری شهودی و تجربه کاربری روان",
+        "color": "purple"
+      },
+      {
+        "icon": "🔓",
+        "title": "متن‌باز",
+        "description": "توسعه شفاف و جامعه‌محور",
+        "color": "orange"
+      },
+      {
+        "icon": "🌍",
+        "title": "چندزبانه",
+        "description": "پشتیبانی از زبان‌ها و لوکال‌های مختلف",
+        "color": "teal"
+      },
+      {
+        "icon": "📊",
+        "title": "نتایج بلادرنگ",
+        "description": "محاسبات فوری با به‌روزرسانی زنده",
+        "color": "red"
+      }
+    ]
+  },
+  "creator": {
+    "title": "👨‍💼 درباره سازنده و لینک‌ها",
+    "description": "اطلاعات درباره توسعه‌دهنده و نگهدارنده پروژه",
+    "profile": {
+      "name": "آریان سورنا",
+      "title": "توسعه‌دهنده فول‌استک",
+      "description": "علاقه‌مند به ساخت ابزارهای مفید با تکنولوژی‌های مدرن وب",
+      "photo": "/Creator.png",
+      "location": "دورکاری",
+      "specialization": "React, TypeScript, برنامه‌های وب"
+    },
+    "links": {
+      "development": [
+        {
+          "icon": "github",
+          "title": "👨‍💻 پورتفولیو GitHub",
+          "description": "مشاهده تمام پروژه‌ها و مشارکت‌های من",
+          "link": "https://github.com/AriyanSurena"
+        },
+        {
+          "icon": "repo",
+          "title": "📂 دسترسی به ریپازیتوری",
+          "description": "کد منبع Calculatorify",
+          "link": "https://github.com/AriyanSurena/Calculatorify.git"
+        }
+      ],
+      "contact": [
+        {
+          "icon": "telegram",
+          "title": "📢 کانال توسعه",
+          "description": "آخرین به‌روزرسانی‌ها و اعلان‌ها",
+          "link": "https://t.me/SurenaIO"
+        },
+        {
+          "icon": "email",
+          "title": "✉️ تماس با توسعه‌دهنده",
+          "description": "مستقیماً برای من ایمیل بفرستید",
+          "link": "mailto:AriyanSurena@gmail.com"
+        },
+        {
+          "icon": "twitter",
+          "title": "📱 توییتر فنی",
+          "description": "افکار و به‌روزرسانی‌های فنی",
+          "link": "https://twitter.com/AriyanSurena"
+        }
+      ],
+      "professional": [
+        {
+          "icon": "linkedin",
+          "title": "🤝 ارتباط حرفه‌ای",
+          "description": "ارتباط در LinkedIn",
+          "link": "https://www.linkedin.com/in/ariyan-surena-09148b2b3/"
+        }
+      ]
+    }
+  },
+  "development": {
+    "title": "🚀 وضعیت توسعه",
+    "phases": [
+      {
+        "name": "آلفا",
+        "status": "فعال",
+        "description": "پیاده‌سازی ویژگی‌های اصلی",
+        "progress": 85
+      },
+      {
+        "name": "بتا",
+        "status": "آینده",
+        "description": "تست کاربری و رفع اشکالات",
+        "progress": 40
+      },
+      {
+        "name": "انتشار",
+        "status": "برنامه‌ریزی شده",
+        "description": "انتشار کامل عمومی",
+        "progress": 10
+      }
+    ]
+  },
+  "tools": {
+    "unitConverter": {
+      "icon": "unitConverter",
+      "title": "مبدل واحدها",
+      "path": "/Converter",
+      "description": "تبدیل بین واحدهای اندازه‌گیری مختلف",
+      "status": "active",
+      "category": "تبدیل",
+      "keywords": [
+        "واحد",
+        "تبدیل",
+        "اندازه‌گیری",
+        "متر",
+        "کیلوگرم"
+      ]
+    },
+    "shapeCalculator": {
+      "icon": "shapeCalculator",
+      "title": "ماشین حساب اشکال",
+      "path": "/Shape_Calculator",
+      "description": "محاسبه مساحت، محیط و اندازه‌های هندسی",
+      "status": "active",
+      "category": "هندسه",
+      "keywords": [
+        "هندسه",
+        "مساحت",
+        "محیط",
+        "مثلث",
+        "دایره"
+      ]
+    },
+    "bmiCalculator": {
+      "icon": "bmiCalculator",
+      "title": "ماشین حساب BMI",
+      "path": "/BMI_Calculator",
+      "description": "محاسبه شاخص توده بدنی و معیارهای سلامت",
+      "status": "active",
+      "category": "سلامت",
+      "keywords": [
+        "سلامت",
+        "وزن",
+        "قد",
+        "تناسب اندام",
+        "سلامتی"
+      ]
+    },
+    "currencyConverter": {
+      "icon": "currencyConverter",
+      "title": "مبدل ارز",
+      "path": "/Currency_Converter",
+      "description": "نرخ ارز لحظه‌ای و تبدیل ارز",
+      "status": "active",
+      "category": "مالی",
+      "keywords": [
+        "ارز",
+        "دلار",
+        "یورو",
+        "تبدیل",
+        "نرخ"
+      ]
+    },
+    "investmentCalculator": {
+      "icon": "investmentCalculator",
+      "title": "ماشین حساب سرمایه‌گذاری",
+      "path": "/Investment_Calculator",
+      "description": "محاسبه بازده سرمایه‌گذاری و سود مرکب",
+      "status": "active",
+      "category": "مالی",
+      "keywords": [
+        "سرمایه‌گذاری",
+        "سود",
+        "بهره",
+        "بانک",
+        "سود مرکب"
+      ]
+    },
+    "volumeCalculator": {
+      "icon": "🧊",
+      "title": "ماشین حساب حجم",
+      "path": "/Volume_Calculator",
+      "description": "محاسبه حجم اشکال سه‌بعدی و ظرفیت",
+      "status": "comingSoon",
+      "category": "هندسه",
+      "keywords": [
+        "حجم",
+        "مکعب",
+        "استوانه",
+        "سه‌بعدی",
+        "ظرفیت"
+      ]
+    },
+    "interestCalculator": {
+      "icon": "💰",
+      "title": "ماشین حساب سود",
+      "path": "/Interest_Calculator",
+      "description": "محاسبه سود وام و رشد پس‌انداز",
+      "status": "comingSoon",
+      "category": "مالی",
+      "keywords": [
+        "سود",
+        "وام",
+        "قسط",
+        "بانک",
+        "بهره"
+      ]
+    },
+    "dateCalculator": {
+      "icon": "📅",
+      "title": "ماشین حساب تاریخ",
+      "path": "/Date_Calculator",
+      "description": "محاسبه تفاوت تاریخ‌ها و مدت زمان",
+      "status": "comingSoon",
+      "category": "زمان",
+      "keywords": [
+        "تاریخ",
+        "زمان",
+        "تفاوت",
+        "مدت",
+        "تقویم"
+      ]
+    },
+    "forexCalculator": {
+      "icon": "🌍",
+      "title": "ماشین حساب فارکس",
+      "path": "/Forex_Calculator",
+      "description": "محاسبات بازار ارز و معاملات",
+      "status": "comingSoon",
+      "category": "مالی",
+      "keywords": [
+        "فارکس",
+        "معامله",
+        "ارز",
+        "بازار",
+        "نرخ"
+      ]
+    },
+    "mathCalculator": {
+      "icon": "🧮",
+      "title": "ماشین حساب ریاضی",
+      "path": "/Math_Calculator",
+      "description": "عملیات ریاضی پایه تا پیشرفته",
+      "status": "comingSoon",
+      "category": "ریاضی",
+      "keywords": [
+        "ریاضی",
+        "محاسبه",
+        "جمع",
+        "ضرب",
+        "ریاضیات"
+      ]
+    },
+    "percentageCalculator": {
+      "icon": "📊",
+      "title": "ماشین حساب درصد",
+      "path": "/Percentage_Calculator",
+      "description": "محاسبه درصد، تخفیف و افزایش",
+      "status": "comingSoon",
+      "category": "ریاضی",
+      "keywords": [
+        "درصد",
+        "تخفیف",
+        "افزایش",
+        "نسبت",
+        "درصدگیری"
+      ]
+    },
+    "ageCalculator": {
+      "icon": "🎂",
+      "title": "ماشین حساب سن",
+      "path": "/Age_Calculator",
+      "description": "محاسبه سن دقیق و تفاوت زمانی",
+      "status": "comingSoon",
+      "category": "زمان",
+      "keywords": [
+        "سن",
+        "تاریخ تولد",
+        "عمر",
+        "زمان",
+        "تولد"
+      ]
+    }
+  },
+  "categories": {
+    "all": "همه",
+    "active": "فعال",
+    "comingSoon": "به زودی",
+    "conversion": "تبدیل",
+    "geometry": "هندسه",
+    "health": "سلامت",
+    "finance": "مالی",
+    "time": "زمان",
+    "math": "ریاضی"
+  },
+  "tooltips": {
+    "active": "✅ ابزار آماده و قابل استفاده",
+    "comingSoon": "🛠️ در حال توسعه - به زودی",
+    "popular": "🔥 پراستفاده و محبوب",
+    "new": "🆕 اضافه شده جدید"
+  },
+  "messages": {
+    "selectTool": "یک ابزار را انتخاب کنید",
+    "activeTools": "ابزارهای فعال",
+    "upcomingTools": "ابزارهای در راه",
+    "searchPlaceholder": "جستجوی ابزار...",
+    "noResults": "هیچ ابزاری یافت نشد"
+  },
+  "keywords": [
+    "ماشین حساب",
+    "مبدل واحد",
+    "برنامه React",
+    "TypeScript",
+    "ابزارهای آنلاین",
+    "ابزارهای محاسباتی",
+    "برنامه وب",
+    "ابزارهای بهره‌وری",
+    "ابزارهای ریاضی",
+    "ماشین حساب مالی"
+  ],
+  "common": {
+    "backToHome":"بازگشت به خانه",
+    "pageNotFound": "صفحه پیدا نشد"
+  },
+  "copyright": {
+    "text": "© {year} مجموعه Calculatorify. ساخته شده با اشتیاق و React",
+    "subText": "هدف ما ایجاد جامع‌ترین مجموعه ابزارهای محاسباتی است",
+    "license": "مجوز MIT",
+    "attribution": "ساخته شده با ❤️ توسط آریان سورنا"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "title": "مبدل واحدها",
+  "description": "تبدیل واحدهای مختلف اندازه‌گیری",
+  "placeholders": {
+    "inputValue": "مقدار را وارد کنید",
+    "result": "نتیجه"
+  },
+  "labels": {
+    "category": "دسته‌بندی واحدها",
+    "convertFrom": "تبدیل از",
+    "convertTo": "تبدیل به"
+  },
+  "messages": {
+    "isEqual": " برابر است با ",
+    "selectCategory": "لطفاً یک دسته‌بندی انتخاب کنید",
+    "error": "خطا: لطفاً یک عدد معتبر وارد کنید"
+  },
+  "toast": {
+    "convertCopied": "نتیجه با موفقیت کپی شد.",
+    "copied": "کپی شد."
+  }
+}

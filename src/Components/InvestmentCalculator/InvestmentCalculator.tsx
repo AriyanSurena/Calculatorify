@@ -3,6 +3,9 @@ import InputBox from "../InputBox";
 import RadioInputBox from "../RadioInputBox";
 import ResultDisplay from "../ResultDisplay";
 import ToolCard from "../ToolCard";
+import { useLanguage } from "../../Context/useLanguage";
+import En from "./languages/en.json";
+import Fa from "./languages/fa.json";
 
 interface InvestmentForm {
     initialAmount?: number;
@@ -19,6 +22,10 @@ type InvestmentAction =
     | { type: "RESET_FORM" };
 
 const InvestmentCalculator: React.FC = () => {
+
+    const { language } = useLanguage();
+
+    const content = language.includes('en-US') ? En : Fa;
 
     const initialState: InvestmentForm = {
         initialAmount: undefined,
@@ -101,18 +108,22 @@ const InvestmentCalculator: React.FC = () => {
 
     return (
         <ToolCard id="Investment_Calculator">
-            <div className="flex gap-2 justify-around">
+            <div className="p-2">
+                {content?.messages?.selectInterestType + ':'}
+            </div>
+            <div className="flex flex-col gap-2 justify-around">
                 <RadioInputBox
                     id="interestType_simple"
                     name="interestType"
-                    labelText="Simple"
-                    labelTitle="interest Type is Simple"
+                    labelText={content?.interestTypes?.simple?.label}
+                    labelDescription={content?.interestTypes?.simple?.description}
+                    labelTitle={content?.interestTypes?.simple?.title}
                     checked={state.interestType === "simple"}
                     onClickFn={
                         (v) => {
                             dispatch(
                                 {
-                                    type:"UPDATE_FIELD",
+                                    type: "UPDATE_FIELD",
                                     field: "interestType",
                                     value: v
                                 }
@@ -120,18 +131,19 @@ const InvestmentCalculator: React.FC = () => {
                         }
                     }
                     value="simple"
-                    />
+                />
                 <RadioInputBox
                     id="interestType"
                     name="interestType"
-                    labelText="Compound"
-                    labelTitle="interest Type is Compound"
+                    labelText={content?.interestTypes?.compound?.label}
+                    labelDescription={content?.interestTypes?.compound?.description}
+                    labelTitle={content?.interestTypes?.compound?.title}
                     checked={state.interestType === "compound"}
                     onClickFn={
                         (v) => {
                             dispatch(
                                 {
-                                    type:"UPDATE_FIELD",
+                                    type: "UPDATE_FIELD",
                                     field: "interestType",
                                     value: v
                                 }
@@ -139,16 +151,51 @@ const InvestmentCalculator: React.FC = () => {
                         }
                     }
                     value="compound"
-                    />
+                />
             </div>
+
+            <InputBox
+                id="initialAmount"
+                name="initialAmount"
+                placeholder={content?.placeholders?.initialInvestment}
+                onChangeFn={
+                    (v) => {
+                        dispatch(
+                            {
+                                type: "UPDATE_FIELD",
+                                field: "initialAmount",
+                                value: v
+                            }
+                        )
+                    }
+                }
+                label={content?.labels?.initialInvestment} />
+
+            <InputBox
+                id="interestRate"
+                name="interestRate"
+                placeholder={content?.placeholders?.interestRate}
+                onChangeFn={
+                    (v) => {
+                        dispatch(
+                            {
+                                type: "UPDATE_FIELD",
+                                field: "interestRate",
+                                value: v
+                            }
+                        )
+                    }
+                }
+                label={content?.labels?.interestRate} />
             {
                 state.interestType === 'compound' ? (
-                    <div className="flex justify-evenly">
+                    <div className="flex flex-col justify-evenly">
                         <RadioInputBox
                             id="compound_yearly"
                             name="compounding"
-                            labelText="Yearly"
-                            labelTitle="Compounding Yearly"
+                            labelText={content?.compoundingOptions?.yearly?.label}
+                            labelTitle={content?.compoundingOptions?.yearly?.title}
+                            labelDescription={content?.compoundingOptions?.yearly?.description}
                             checked={state.compounding === "yearly"}
                             onClickFn={
                                 (v) => {
@@ -162,13 +209,14 @@ const InvestmentCalculator: React.FC = () => {
                                 }
                             }
                             value="yearly"
-                            />
-                        
+                        />
+
                         <RadioInputBox
                             id="compound_monthly"
                             name="compounding"
-                            labelText="Monthly"
-                            labelTitle="Compounding Monthly"
+                            labelText={content?.compoundingOptions?.monthly?.label}
+                            labelTitle={content?.compoundingOptions?.monthly?.title}
+                            labelDescription={content?.compoundingOptions?.monthly?.description}
                             checked={state.compounding === "monthly"}
                             onClickFn={
                                 (v) => {
@@ -182,13 +230,14 @@ const InvestmentCalculator: React.FC = () => {
                                 }
                             }
                             value="monthly"
-                            />
-                        
+                        />
+
                         <RadioInputBox
                             id="compound_daily"
                             name="compounding"
-                            labelText="Daily"
-                            labelTitle="Compounding Daily"
+                            labelText={content?.compoundingOptions?.daily?.label}
+                            labelTitle={content?.compoundingOptions?.daily?.title}
+                            labelDescription={content?.compoundingOptions?.daily?.description}
                             checked={state.compounding === "daily"}
                             onClickFn={
                                 (v) => {
@@ -208,42 +257,9 @@ const InvestmentCalculator: React.FC = () => {
                 ) : null
             }
             <InputBox
-                id="initialAmount"
-                name="initialAmount"
-                placeholder="Enter Your initial Investment: "
-                onChangeFn={
-                    (v) => {
-                        dispatch(
-                            {
-                                type: "UPDATE_FIELD",
-                                field: "initialAmount",
-                                value: v
-                            }
-                        )
-                    }
-                }
-                label ="initial Investment: " />
-
-            <InputBox
-                id="interestRate"
-                name="interestRate"
-                placeholder="Enter Your Interest Rate: "
-                onChangeFn={
-                    (v) => {
-                        dispatch(
-                            {
-                                type: "UPDATE_FIELD",
-                                field: "interestRate",
-                                value: v
-                            }
-                        )
-                    }
-                }
-                label ="Interest Rate: " />
-            <InputBox
                 id="duration"
                 name="duration"
-                placeholder="Enter Your duration: "
+                placeholder={content?.placeholders?.duration}
                 onChangeFn={
                     (v) => {
                         dispatch(
@@ -255,9 +271,9 @@ const InvestmentCalculator: React.FC = () => {
                         )
                     }
                 }
-                label ="duration: " />
+                label={content?.labels?.duration} />
 
-                <ResultDisplay result={Number(state.finalAmount)} placeholder="Resualt"/>
+            <ResultDisplay label={content?.labels?.finalAmount} result={Number(state.finalAmount)} toastMessage={state.finalAmount + ' ' + content?.toast?.copied} placeholder="" />
         </ToolCard>
     )
 }

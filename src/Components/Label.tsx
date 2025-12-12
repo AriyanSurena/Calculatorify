@@ -1,6 +1,6 @@
 interface LabelProps {
   htmlFor: string;
-  label: string;
+  label: string | undefined;
   children: string | React.ReactNode;
   title?: string;
   classes?: string;
