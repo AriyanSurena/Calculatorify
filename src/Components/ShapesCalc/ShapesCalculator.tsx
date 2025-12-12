@@ -249,7 +249,7 @@ const ShapesCalculator: React.FC = () => {
             <Menu id='category' list={
                 shapesKeys.map(key => ({
                     key: key,
-                    label: ShapesCategory[key]
+                    label: ShapesCategory[key as Shapes]
                 }))
             } setSelected={setSelectedShape} selected={selectedShape} />
             {
