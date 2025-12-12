@@ -1,5 +1,6 @@
 export type ToolStatus = 'active' | 'comingSoon' | 'planned' | 'deprecated';
 export type ToolCategory = 'conversion' | 'geometry' | 'health' | 'finance' | 'time' | 'math' | 'all';
+
 export interface Tool {
   icon: string;
   title: string;
@@ -101,6 +102,7 @@ export interface ProjectConfig {
       }>;
     };
   };
+
   development: {
     title: string;
     phases: Array<{
@@ -110,47 +112,53 @@ export interface ProjectConfig {
       progress: number;
     }>;
   };
+
+  // این مهمترین تغییر است - tools مستقیم است نه تودرتو
   tools: {
-    tools: {
-      [key: string]: Tool;
-    };
-  }
+    [key: string]: Tool;
+  };
+
   categories: {
     [key: string]: string;
   };
+
   tooltips: {
     [key: string]: string;
   };
+
   messages: {
     [key: string]: string;
   };
+
   sorting?: {
     [key: string]: string;
   };
+
   keywords: string[];
+
   copyright: {
     text: string;
     subText: string;
     license: string;
     attribution: string;
   };
-  common: {
-    backToHome: string,
-    pageNotFound: string
-  },
 
+  common: {
+    backToHome: string;
+    pageNotFound: string;
+  };
 }
 
 import { useLanguage } from "./useLanguage";
 import projectConfigEn from "../assets/configs/projectConfig.en.json";
 import projectConfigFa from "../assets/configs/projectConfig.fa.json";
 
-const useConfig = () => {
+const useConfig = (): ProjectConfig => {
   const { language } = useLanguage();
 
   const config = language.includes('en-US')
-    ? projectConfigEn as unknown as ProjectConfig
-    : projectConfigFa as  unknown as ProjectConfig;
+    ? projectConfigEn as ProjectConfig
+    : projectConfigFa as ProjectConfig;
 
   return config;
 };

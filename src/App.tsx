@@ -11,7 +11,7 @@ import ToolNav from "./Components/HomePage/ToolNav";
 import LinkButton from "./Components/BackButton";
 import Toast from "./Components/Toast";
 import { useToast } from "./Context/useToast";
-import { useLanguage } from "./Context/useLanguage";
+import { useLanguage, type Languages } from "./Context/useLanguage";
 import { useEffect } from "react";
 import FontDirectionManager from "./Context/Direction";
 import { useConfig } from "./Context/useProjectConfig";
@@ -47,7 +47,7 @@ const App = (): React.ReactNode => {
           <div className="relative inline-block">
             <select
               value={language}
-              onChange={(e) => setLanguage(e.target.value)}
+              onChange={(e) => setLanguage(e.target.value as Languages)}
               className="
         bg-transparent
         py-2
@@ -110,21 +110,21 @@ const App = (): React.ReactNode => {
                   {Object.entries(config.tools).map(([toolKey, tool]) => (
                     (tool.status === "active") ? (
                       <Link
-                        to={String(tool.path)}
+                        to={tool.path}
                         className="p-4 text-white flex flex-col gap-2 items-center rounded-lg select-none [-webkit-user-drag:none] transition-all duration-300 bg-gradient-to-r from-blue-600 to-purple-700 dark:from-slate-900 dark:to-gray-900 hover:scale-105 hover:shadow-lg w-32 active:text-blue-500"
                         key={toolKey}
                       >
-                        <DynamicIcon icon={String(tool.icon)} />
-                        <span className="text-sm font-medium text-center">{String(tool.title)}</span>
+                        <DynamicIcon icon={tool.icon} />
+                        <span className="text-sm font-medium text-center">{tool.title}</span>
                       </Link>
                     ) : (
                       <Link
-                        to={String(tool.path)}
+                        to={tool.path}
                         className="opacity-50 animate-pulse p-4 text-white flex flex-col gap-2 items-center rounded-lg select-none [-webkit-user-drag:none] transition-all duration-300 bg-gradient-to-r from-blue-600 to-purple-700 dark:from-slate-900 dark:to-gray-900 hover:scale-105 hover:shadow-lg w-32 active:text-blue-500"
                         key={toolKey}
                       >
-                        <DynamicIcon icon={String(tool.icon)} />
-                        <span className="text-sm font-medium text-center">{String(tool.title)}</span>
+                        <DynamicIcon icon={tool.icon} />
+                        <span className="text-sm font-medium text-center">{tool.title}</span>
                       </Link>
                     )
                   ))}

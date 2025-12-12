@@ -93,10 +93,10 @@ const Footer: React.FC = () => {
                                                     className="selsect-none"
                                                 >
                                                     <Link
-                                                        to={String(tool.path) ?? '/*'}
+                                                        to={tool.path ?? '/*'}
                                                         className="hover:text-gray-400 active:text-red-400"
                                                     >
-                                                        {String(tool.title)}
+                                                        {tool.title}
                                                     </Link>
                                                 </li>
                                             ) : null
@@ -118,10 +118,10 @@ const Footer: React.FC = () => {
                                                     key={toolKey}
                                                 >
                                                     <Link
-                                                        to={String(tool.path) ?? '/*'}
+                                                        to={tool.path ?? '/*'}
                                                         className="hover:text-gray-400 active:text-red-400"
                                                     >
-                                                        {String(tool.title)}
+                                                        {tool.title}
                                                     </Link>
                                                 </li>
                                             ) : null

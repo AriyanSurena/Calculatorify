@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-type Languages = 'en-US' | 'fa-IR';
+export type Languages = 'en-US' | 'fa-IR';
 
 type LanguagesContextType = {
     language: Languages;

@@ -32,14 +32,14 @@ const ToolNav: React.FC = () => {
 
                         {currentTool && (
                             <div className="flex items-center gap-2">
-                                <DynamicIcon icon={currentTool.icon} />
-                                <h1 className="text-xl font-bold">{currentTool.title}</h1>
+                                <DynamicIcon icon={currentTool?.icon} />
+                                <h1 className="text-xl font-bold">{currentTool?.title}</h1>
                             </div>
                         )}
                     </div>
                     
                     <div className="text-sm text-blue-200">
-                        {currentTool.description}
+                        {currentTool?.description}
                     </div>
                 </div>
             </div>
