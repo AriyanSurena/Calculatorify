@@ -47,7 +47,12 @@ const App = (): React.ReactNode => {
           <div className="relative inline-block">
             <select
               value={language}
-              onChange={(e) => setLanguage(e.target.value as Languages)}
+              onChange={(e) => {
+                setLanguage(
+                  ((e.target.value as unknown) as Languages)
+                )
+              }
+              }
               className="
                 bg-transparent
                 py-2
