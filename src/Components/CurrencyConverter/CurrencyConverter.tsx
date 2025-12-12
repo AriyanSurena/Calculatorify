@@ -21,10 +21,10 @@ const CurrencyConverter: React.FC = () => {
     const { language } = useLanguage();
     const content: ContentType = language.includes('en-US') ? En : Fa;
 
-    let [convertedAmount, setConvertedAmount] = useState(0);
+    const [convertedAmount, setConvertedAmount] = useState(0);
 
     useEffect(() => {
-        let currencies: typeof content.currencies = [];
+        const currencies: typeof content.currencies = [];
         content?.currencies.map(currency => {
             currencies.push(currency)
         })

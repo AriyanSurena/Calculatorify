@@ -49,28 +49,28 @@ const App = (): React.ReactNode => {
               value={language}
               onChange={(e) => setLanguage(e.target.value as Languages)}
               className="
-        bg-transparent
-        py-2
-        pl-8
-        pr-4
-        text-sm
-        font-medium
-        text-gray-700
-        dark:text-gray-200
-        border-0
-        border-b-2
-        border-gray-300
-        dark:border-gray-600
-        hover:border-blue-500
-        dark:hover:border-blue-400
-        focus:outline-none
-        focus:ring-0
-        focus:border-blue-500
-        transition-colors
-        duration-200
-        cursor-pointer
-        appearance-none
-      "
+                bg-transparent
+                py-2
+                pl-8
+                pr-4
+                text-sm
+                font-medium
+                text-gray-700
+                dark:text-gray-200
+                border-0
+                border-b-2
+                border-gray-300
+                dark:border-gray-600
+                hover:border-blue-500
+                dark:hover:border-blue-400
+                focus:outline-none
+                focus:ring-0
+                focus:border-blue-500
+                transition-colors
+                duration-200
+                cursor-pointer
+                appearance-none
+              "
               aria-label="Select language"
             >
               <option value="en-US">EN</option>

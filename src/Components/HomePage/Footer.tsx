@@ -83,8 +83,7 @@ const Footer: React.FC = () => {
                             <h4 className="font-semibold text-blue-200">{config.features.available.title}</h4>
                             <ul className="text-sm text-blue-100 space-y-1">
                                 {
-                                    // @ts-ignore
-                                    Object.entries(config.tools).map(([toolkey, tool], index) => {
+                                    Object.entries(config.tools).map(([, tool], index) => {
                                         console.log(tool)
                                         return (
                                             (tool.status === 'active') ? (
@@ -110,8 +109,7 @@ const Footer: React.FC = () => {
                             <h4 className="font-semibold text-blue-200">{config.features.upcoming.title}</h4>
                             <ul className="text-sm text-blue-100 space-y-1">
                                 {
-                                    // @ts-ignore
-                                    Object.entries(config.tools).map(([toolKey, tool], index) => {
+                                    Object.entries(config.tools).map(([toolKey, tool]) => {
                                         return (
                                             (tool.status  === "comingSoon") ? (
                                                 <li
@@ -137,8 +135,7 @@ const Footer: React.FC = () => {
                         <h4 className="font-semibold text-lg">{config.technologies.title}</h4>
                         <div className="flex flex-col gap-8 text-sm">
                             {   
-                                // @ts-ignore
-                                Object.entries(config.technologies.categories).map(([techKey, tech], index) => {
+                                Object.entries(config.technologies.categories).map(([techKey, tech]) => {
                                     return (
                                         <div key={techKey} className="flex flex-col gap-2">
                                             <span>{tech.title}</span>

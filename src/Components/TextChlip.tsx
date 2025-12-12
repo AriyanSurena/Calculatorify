@@ -14,8 +14,7 @@ const TextChip: TextChipProps = ({
   children,
   classes
 }) => {
-  // @ts-ignore
-  const { toast, setToast } = useToast();
+  const { setToast } = useToast();
 
   const handleClick: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void = (e) => {
     if (isCopyOn) {

@@ -1,4 +1,4 @@
-import { useId, useState } from "react";
+import { useState } from "react";
 
 interface SelectProps {
     id: string;
@@ -14,7 +14,7 @@ const Select: React.FC<SelectProps> = ({
     setSelected,
 }) => {
     const [isOpened, setIsOpened] = useState<boolean>(false);
-    const selectId: string = id || useId();
+    const selectId: string = id;
 
     return (
         <section
