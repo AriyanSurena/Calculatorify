@@ -14,25 +14,27 @@ export const LanguagesProvider: React.FC<{
 }> = ({
     children
 }) => {
-        const [language, setLanguage] = useState<Languages>('en-US');
+        const [language, setLanguage] = useState<Languages>(() => {
+            if (typeof window === 'undefined') return 'en-US';
+
+            const saved = localStorage.getItem('Calculatorify_Language');
+            if (saved === 'en-US' || saved === 'fa-IR') return saved;
+
+            const browserLanguage = navigator.language;
+            return browserLanguage.startsWith('fa') ? 'fa-IR' : 'en-US';
+        });
 
         useEffect(() => {
-            let savedLanguage: Languages = localStorage.getItem('language') as (Languages | null) ?? navigator.language as Languages;
-            console.log('savedLanguage Detected: ', savedLanguage);
-            if (savedLanguage) {
-                if (savedLanguage !== "en-US" && savedLanguage !== "fa-IR") savedLanguage = "en-US"
-                setLanguage(savedLanguage);
-            }
-
-        }, [])
+                localStorage.setItem('Calculatorify_Language', language as (Languages));
+        }, [language])
 
         return (
-            <LanguageContext value={{
+            <LanguageContext.Provider value={{
                 language,
                 setLanguage,
             }}>
                 {children}
-            </LanguageContext>
+            </LanguageContext.Provider>
         )
     }
 
