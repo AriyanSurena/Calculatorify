@@ -34,6 +34,7 @@
     "buttons": {
         "reset": "Reset"
     },
+    "progressLabel": "BMI Range",
     "common": {
         "to": "to",
         "is": "is"

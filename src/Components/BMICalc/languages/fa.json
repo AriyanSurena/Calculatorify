@@ -34,6 +34,7 @@
     "buttons": {
         "reset": "بازنشانی"
     },
+    "progressLabel": "محدوده BMI",
     "common": {
         "to": "تا",
         "is": "برابر است با"
