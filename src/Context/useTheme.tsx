@@ -30,12 +30,12 @@ export const ThemeProvider: React.FC<{
     }, [])
 
     return (
-        <ThemeContext value={{
+        <ThemeContext.Provider value={{
             theme,
             setTheme
         }}>
             {children}
-        </ThemeContext>
+        </ThemeContext.Provider>
     )
 }
 
