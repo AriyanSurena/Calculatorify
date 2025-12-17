@@ -16,11 +16,11 @@ export const LanguagesProvider: React.FC<{
 }) => {
         const [language, setLanguage] = useState<Languages>(() => {
             if (typeof window === 'undefined') return 'en-US';
-
+            
             const saved = localStorage.getItem('Calculatorify_Language');
             if (saved === 'en-US' || saved === 'fa-IR') return saved;
-
-            const browserLanguage = navigator.language;
+            
+            const browserLanguage = navigator.language ?? navigator.languages[0];
             return browserLanguage.startsWith('fa') ? 'fa-IR' : 'en-US';
         });
 

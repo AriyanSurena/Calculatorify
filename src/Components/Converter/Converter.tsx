@@ -11,6 +11,7 @@ import Fa from "./languages/fa.json";
 import unitsFa from "./languages/units.fa.json";
 import unitsEn from "./languages/units.en.json";
 import { useLanguage } from "../../Context/useLanguage";
+import useToolConfig from "../../Context/useContentConfig";
 
 
 type ContentType = typeof En;
@@ -21,7 +22,7 @@ const Converter: React.FC = () => {
     const { language } = useLanguage();
 
     // انتخاب محتوا بر اساس زبان
-    const content: ContentType = language.includes('en-US') ? En : Fa;
+    const content: ContentType = useToolConfig<ContentType>(En,Fa);
     const unitsData: UnitsDataType = language.includes('en-US') ? unitsEn : unitsFa;
 
     // لیست دسته‌بندی‌ها

@@ -8,6 +8,7 @@ import ToolCard from "../ToolCard";
 import Fa from "./languages/fa.json";
 import En from "./languages/en.json";
 import { useLanguage } from "../../Context/useLanguage";
+import useContentConfig from "../../Context/useContentConfig";
 
 type Shapes = 'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle';
 
@@ -49,6 +50,7 @@ interface actionType {
 
 const ShapesCalculator: React.FC = () => {
     const { language } = useLanguage();
+    const content = useContentConfig<typeof En>(En, Fa);
 
     const ShapesCategory: ShapesObj = language.includes('en-US') ? En.shapes.displayNames : Fa.shapes.displayNames;;
     const [shapesKeys, setShapesKeys] = useState<string[]>([]);
@@ -62,7 +64,6 @@ const ShapesCalculator: React.FC = () => {
 
     console.log('SelectedShape', selectedShape)
 
-    const content = language.includes('en-US') ? En : Fa;
 
     const initialState: stateType = {
         shape: "Circle",

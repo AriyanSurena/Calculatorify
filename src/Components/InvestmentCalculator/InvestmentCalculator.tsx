@@ -3,9 +3,9 @@ import InputBox from "../InputBox";
 import RadioInputBox from "../RadioInputBox";
 import ResultDisplay from "../ResultDisplay";
 import ToolCard from "../ToolCard";
-import { useLanguage } from "../../Context/useLanguage";
 import En from "./languages/en.json";
 import Fa from "./languages/fa.json";
+import useContentConfig from "../../Context/useContentConfig";
 
 interface InvestmentForm {
     initialAmount?: number;
@@ -21,11 +21,10 @@ type InvestmentAction =
     | { type: "CALCULATE_INVESTMENT" }
     | { type: "RESET_FORM" };
 
+type InvestmentType = typeof En;
 const InvestmentCalculator: React.FC = () => {
 
-    const { language } = useLanguage();
-
-    const content = language.includes('en-US') ? En : Fa;
+    const content = useContentConfig<InvestmentType>(En, Fa)
 
     const initialState: InvestmentForm = {
         initialAmount: undefined,

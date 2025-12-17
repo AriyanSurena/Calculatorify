@@ -9,6 +9,7 @@ import { useLanguage } from "../../Context/useLanguage";
 import CurrencySelect from "./CurrencySelect";
 import ResultDisplay from "../ResultDisplay";
 import TextChip from "../TextChlip";
+import useToolConfig from "../../Context/useContentConfig";
 
 type ContentType = typeof En;
 
@@ -19,7 +20,7 @@ const CurrencyConverter: React.FC = () => {
     const { rates, loading, error } = useExchangeRates(fromCurrency.code)
 
     const { language } = useLanguage();
-    const content: ContentType = language.includes('en-US') ? En : Fa;
+    const content: ContentType = useToolConfig<ContentType>(En, Fa)
 
     const [convertedAmount, setConvertedAmount] = useState(0);
 

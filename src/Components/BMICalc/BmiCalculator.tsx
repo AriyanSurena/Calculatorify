@@ -1,11 +1,11 @@
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer } from "react";
 import ResultDisplay from "../ResultDisplay";
 import TextChip from "../TextChlip";
 import InputBox from "../InputBox";
 import ToolCard from "../ToolCard";
-import { useLanguage } from "../../Context/useLanguage";
 import En from "./languages/en.json";
 import Fa from "./languages/fa.json";
+import useContentConfig from "../../Context/useContentConfig";
 
 interface BMIState {
     weight: number | undefined,
@@ -26,25 +26,8 @@ type ActionType =
     { type: "UPDATE"; param: keyof StateType; value: string | number }
     | { type: "CALCULATE_BMI" };
 
-
-type contentuageType = typeof En
-
 const BMICalculator: React.FC = () => {
-    const { language } = useLanguage();
-    const [content, setContent] = useState<contentuageType>();
-    useEffect(() => {
-        setContent(Fa)
-        switch (language) {
-            case "en-US": {
-                setContent(En)
-            } break;
-            case "fa-IR": {
-                setContent(Fa)
-            } break;
-        }
-
-        dispatch({ type: "CALCULATE_BMI" })
-    }, [language])
+    const content = useContentConfig(En, Fa);
 
     const initialState: BMIState = {
         weight: undefined,

@@ -1,47 +1,47 @@
 {
     "title": "ماشین حساب سرمایه‌گذاری",
-    "description": "محاسبه سود سرمایه‌گذاری با سود ساده و مرکب",
+    "description": "محاسبه بازده سرمایه‌گذاری با بهره ساده و مرکب",
     "labels": {
         "initialInvestment": "سرمایه اولیه",
-        "interestRate": "نرخ سود",
+        "interestRate": "نرخ بهره",
         "duration": "مدت زمان",
         "finalAmount": "مبلغ نهایی",
-        "interestType": "نوع سود",
-        "compounding": "دفعات ترکیب سود"
+        "interestType": "نوع بهره",
+        "compounding": "تناوب ترکیب بهره"
     },
     "placeholders": {
         "initialInvestment": "مبلغ سرمایه اولیه را وارد کنید",
-        "interestRate": "نرخ سود سالانه را وارد کنید",
-        "duration": "مدت زمان را وارد کنید",
+        "interestRate": "نرخ بهره سالانه را وارد کنید",
+        "duration": "مدت زمان را به سال وارد کنید",
         "result": "نتیجه محاسبه"
     },
     "interestTypes": {
         "simple": {
-            "label": "سود ساده",
-            "title": "نوع سود: ساده",
-            "description": "سود فقط بر روی سرمایه اولیه محاسبه می‌شود"
+            "label": "بهره ساده",
+            "title": "نوع بهره: ساده",
+            "description": "بهره فقط بر اساس مبلغ اصلی محاسبه می‌شود"
         },
         "compound": {
-            "label": "سود مرکب",
-            "title": "نوع سود: مرکب",
-            "description": "سود بر روی سرمایه اولیه به علاوه سودهای قبلی محاسبه می‌شود"
+            "label": "بهره مرکب",
+            "title": "نوع بهره: مرکب",
+            "description": "بهره بر اساس مبلغ اصلی به همراه بهره انباشته محاسبه می‌شود"
         }
     },
     "compoundingOptions": {
         "yearly": {
             "label": "سالانه",
-            "title": "ترکیب سود سالانه",
-            "description": "سود یک بار در سال محاسبه می‌شود"
+            "title": "ترکیب: سالانه",
+            "description": "بهره یک بار در سال محاسبه می‌شود"
         },
         "monthly": {
             "label": "ماهانه",
-            "title": "ترکیب سود ماهانه",
-            "description": "سود هر ماه محاسبه و به سرمایه اضافه می‌شود"
+            "title": "ترکیب: ماهانه",
+            "description": "بهره ماهانه محاسبه و اضافه می‌شود"
         },
         "daily": {
             "label": "روزانه",
-            "title": "ترکیب سود روزانه",
-            "description": "سود هر روز محاسبه و به سرمایه اضافه می‌شود"
+            "title": "ترکیب: روزانه",
+            "description": "بهره روزانه محاسبه و اضافه می‌شود"
         }
     },
     "units": {
@@ -50,11 +50,11 @@
         "year": "سال"
     },
     "messages": {
-        "selectInterestType": "نوع سود را انتخاب کنید",
-        "selectCompounding": "دفعات ترکیب سود را انتخاب کنید",
+        "selectInterestType": "نوع بهره را انتخاب کنید",
+        "selectCompounding": "تناوب ترکیب را انتخاب کنید",
         "calculationResult": "نتیجه محاسبه",
         "initialAmountRequired": "لطفاً مبلغ سرمایه اولیه را وارد کنید",
-        "interestRateRequired": "لطفاً نرخ سود را وارد کنید",
+        "interestRateRequired": "لطفاً نرخ بهره را وارد کنید",
         "durationRequired": "لطفاً مدت زمان را وارد کنید"
     },
     "investmentTerms": {
@@ -65,20 +65,21 @@
         "dailyGrowth": "رشد روزانه",
         "monthlyGrowth": "رشد ماهانه",
         "yearlyGrowth": "رشد سالانه",
+        "currency": "ریال",
         "months": "ماه",
         "years": "سال"
     },
     "formats": {
-        "currency": "#,##0",
+        "currency": "#,##0.00",
         "percentage": "0.00",
         "years": "0"
     },
     "tooltips": {
         "initialInvestment": "مبلغ اولیه‌ای که سرمایه‌گذاری می‌کنید",
-        "interestRate": "نرخ سود سالانه (بر حسب درصد)",
+        "interestRate": "نرخ بهره سالانه (بر حسب درصد)",
         "duration": "مدت زمان سرمایه‌گذاری (بر حسب سال)",
-        "simpleInterest": "سود = سرمایه اولیه × نرخ سود × زمان",
-        "compoundInterest": "سود = سرمایه اولیه × (۱ + نرخ سود)^زمان"
+        "simpleInterest": "بهره = اصل سرمایه × نرخ × زمان",
+        "compoundInterest": "بهره = اصل سرمایه × (۱ + نرخ)^زمان"
     },
     "toast": {
         "copied": "کپی شد."
