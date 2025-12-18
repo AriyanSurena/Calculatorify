@@ -9,6 +9,7 @@ import { useLanguage } from "../../Context/useLanguage";
 import DisplayBMI from "./DisplayBMI";
 import DisplayBMIHistory from "./DisplayBMIHistory";
 import { createReducer } from "./BMI Utils/createReducer.utils";
+import BMIRange from "./RangeSlider";
 
 /**
  * BMI calculation component.
@@ -57,13 +58,22 @@ const BMICalculator: React.FC = () => {
         return () => clearTimeout(timeoutId);
     }, [state, content]);
 
+    const handleValueChange = (type: "height" | "weight", value: number) => {
+        if (type === "height") {
+            dispatch({ type: "UPDATE", param: "height", value });
+        } else {
+            dispatch({ type: "UPDATE", param: "weight", value });
+        }
+    };
+
     return (
         <ToolCard
             id="BMI_Calculator"
             key={"BMI_Calculator"}>
 
             {/* User height input: */}
-            <InputBox
+            <BMIRange content={content} onValueChange={handleValueChange} initialValues={state} />
+            {/* <InputBox
                 id="height"
                 name="height"
                 placeholder={content?.placeholders?.height}
@@ -77,7 +87,7 @@ const BMICalculator: React.FC = () => {
                 }
                 label={content?.labels?.height + ":"}
                 focused={true}
-            />
+            /> */}
 
             {/* User Weight input: */}
             <InputBox
@@ -97,7 +107,7 @@ const BMICalculator: React.FC = () => {
 
             {/* Display BMI Calculate Result */}
             <DisplayBMI state={state} content={content} />
-            
+
             {
                 state.bmi ? (
                     <div className="flex gap-4">

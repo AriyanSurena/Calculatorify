@@ -184,21 +184,21 @@ export function EquilateralTriangleIcon(): React.ReactElement {
 }
 
 // مبدل واحد - خط‌کش
-export const UnitConverterIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+export const UnitConverterIcon: React.FC<{ className?: string }> = ({ className = "w-8 h-8" }) => (
     <svg className={className} fill="currentColor" viewBox="0 0 24 24">
         <path d="M1 21h22v2H1v-2zM5 1h14v18H5V1zm2 2v14h10V3H7zm2 2h6v2H9V5zm0 4h6v2H9V9zm0 4h6v2H9v-2z" />
     </svg>
 );
 
 // مبدل ارز - اسکناس
-export const CurrencyConverterIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+export const CurrencyConverterIcon: React.FC<{ className?: string }> = ({ className = "w-8 h-8" }) => (
     <svg className={className} fill="currentColor" viewBox="0 0 24 24">
         <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z" />
     </svg>
 );
 
 // ماشین حساب سرمایه‌گذاری - نمودار رشد
-export const InvestmentCalculatorIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+export const InvestmentCalculatorIcon: React.FC<{ className?: string }> = ({ className = "w-8 h-8" }) => (
     <svg className={className} fill="currentColor" viewBox="0 0 24 24">
         <path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z" />
         <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.83 3.41 18.3l6-6.01 4 4L20 9.71 22 11.71V6z" />
@@ -206,7 +206,7 @@ export const InvestmentCalculatorIcon: React.FC<{ className?: string }> = ({ cla
 );
 
 // ماشین حساب شکل‌ها - مثلث و مربع
-export const ShapeCalculatorIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+export const ShapeCalculatorIcon: React.FC<{ className?: string }> = ({ className = "w-8 h-8" }) => (
     <svg className={className} fill="currentColor" viewBox="0 0 24 24">
         <path d="M17 15h2V7H9v2h8v6z" />
         <path d="M7 17V7H5v10h2z" />
@@ -215,21 +215,21 @@ export const ShapeCalculatorIcon: React.FC<{ className?: string }> = ({ classNam
 );
 
 // ماشین حساب حجم - مکعب
-export const VolumeCalculatorIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+export const VolumeCalculatorIcon: React.FC<{ className?: string }> = ({ className = "w-8 h-8" }) => (
     <svg className={className} fill="currentColor" viewBox="0 0 24 24">
         <path d="M21 7V3h-4v2H7V3H3v4h2v10H3v4h4v-2h10v2h4v-4h-2V7h2zM5 5h2v2H5V5zm2 14H5v-2h2v2zm12 0h-2v-2h2v2zm-2-4H7v-2h10v2zm0-4H7V7h10v4zm2-6h2v2h-2V5z" />
     </svg>
 );
 
 // ماشین حساب تاریخ - تقویم
-export const DateCalculatorIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+export const DateCalculatorIcon: React.FC<{ className?: string }> = ({ className = "w-8 h-8" }) => (
     <svg className={className} fill="currentColor" viewBox="0 0 24 24">
         <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z" />
     </svg>
 );
 
 // آیکون BMI - نماد ترازو و بدن
-export const BMICalculatorIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+export const BMICalculatorIcon: React.FC<{ className?: string }> = ({ className = "w-8 h-8" }) => (
     <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
         {/* بدنه ترازو */}
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6h18M6 6v12m12-12v12" />
@@ -244,26 +244,26 @@ export const BMICalculatorIcon: React.FC<{ className?: string }> = ({ className 
 );
 
 // آیکون BMI - نماد ترازو و بدن
-export const BackIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+export const BackIcon: React.FC<{ className?: string }> = ({ className = "w-8 h-8" }) => (
     <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
     </svg>
 );
 
 // آیکون ضربدر (Close)
-export const CloseIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+export const CloseIcon: React.FC<{ className?: string }> = ({ className = "w-8 h-8" }) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
   </svg>
 );
 
-export const MenuIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+export const MenuIcon: React.FC<{ className?: string }> = ({ className = "w-8 h-8" }) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
   </svg>
 );
 
-export const ShareIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
+export const ShareIcon: React.FC<{ className?: string }> = ({ className = "w-8 h-8" }) => (
   <svg 
     className={className} 
     fill="none" 
@@ -276,6 +276,142 @@ export const ShareIcon: React.FC<{ className?: string }> = ({ className = "w-6 h
       strokeLinejoin="round" 
       strokeWidth={2} 
       d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" 
+    />
+  </svg>
+);
+
+export const RulerIcon: React.FC<{ className?: string }> = ({ className = "w-8 h-8 rotate-[-45deg]" }) => (
+  <svg 
+    className={className} 
+    fill="none" 
+    stroke="currentColor" 
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeWidth={2} 
+      d="M3 12h18M3 12v6h18v-6"
+    />
+    <path 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeWidth={1.5} 
+      d="M6 12v6M9 12v6M12 12v6M15 12v6M18 12v6"
+    />
+  </svg>
+);
+
+export const WeightIcon: React.FC<{ className?: string }> = ({ className = "w-8 h-8" }) => (
+  <svg 
+    className={className} 
+    fill="none" 
+    stroke="currentColor" 
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle 
+      cx="12" 
+      cy="12" 
+      r="6" 
+      stroke="currentColor" 
+      strokeWidth={2}
+      fill="none"
+    />
+    <path 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeWidth={2} 
+      d="M12 6v12M15 9l-3 3-3-3"
+    />
+  </svg>
+);
+
+export const DragIcon: React.FC<{ className?: string }> = ({ className = "w-8 h-8" }) => (
+  <svg 
+    className={className} 
+    fill="none" 
+    stroke="currentColor" 
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    {/* نقطه مرکزی */}
+    <circle cx="12" cy="12" r="1" fill="currentColor" />
+    
+    {/* فلش‌های چهار جهت */}
+    <path 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeWidth={2} 
+      d="M12 8v8M8 12h8"
+    />
+    
+    {/* فلش‌های مورب */}
+    <path 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeWidth={2} 
+      d="M9 9l3 3M15 15l-3-3M15 9l-3 3M9 15l3-3"
+    />
+  </svg>
+);
+
+export const MinusIcon: React.FC<{ className?: string }> = ({ className = "w-8 h-8" }) => (
+  <svg 
+    className={className} 
+    fill="none" 
+    stroke="currentColor" 
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeWidth={2.5} 
+      d="M6 12h12"
+    />
+  </svg>
+);
+
+export const PlusIcon: React.FC<{ className?: string }> = ({ className = "w-8 h-8" }) => (
+  <svg 
+    className={className} 
+    fill="none" 
+    stroke="currentColor" 
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeWidth={2.5} 
+      d="M12 6v12M6 12h12"
+    />
+  </svg>
+);
+
+export const InfoIcon: React.FC<{ className?: string }> = ({ className = "w-12 h-12" }) => (
+  <svg 
+    className={className} 
+    fill="none" 
+    stroke="currentColor" 
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle 
+      cx="12" 
+      cy="12" 
+      r="9" 
+      stroke="currentColor" 
+      strokeWidth={2}
+      fill="none"
+    />
+    <path 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeWidth={2} 
+      d="M12 16v-4M12 8h.01"
     />
   </svg>
 );

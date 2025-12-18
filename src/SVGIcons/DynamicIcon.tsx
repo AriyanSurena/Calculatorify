@@ -1,4 +1,4 @@
-import { BackIcon, BMICalculatorIcon, CircleIcon, CloseIcon, CurrencyConverterIcon, DateCalculatorIcon, DiscordIcon, EmailIcon, EquilateralTriangleIcon, FacebookIcon, GitHubIcon, GitHubRepoIcon, HexagonIcon, InstagramIcon, InvestmentCalculatorIcon, IsoscelesTriangleIcon, LinkedInIcon, MenuIcon, PentagonIcon, RectangleIcon, RightTriangleIcon, ScaleneTriangleIcon, ShapeCalculatorIcon, ShareIcon, SquareIcon, TelegramIcon, TwitterIcon, UnitConverterIcon, UserIcon, VolumeCalculatorIcon, WebsiteIcon } from "./Icons";
+import { BackIcon, BMICalculatorIcon, CircleIcon, CloseIcon, CurrencyConverterIcon, DateCalculatorIcon, DiscordIcon, DragIcon, EmailIcon, EquilateralTriangleIcon, FacebookIcon, GitHubIcon, GitHubRepoIcon, HexagonIcon, InfoIcon, InstagramIcon, InvestmentCalculatorIcon, IsoscelesTriangleIcon, LinkedInIcon, MenuIcon, MinusIcon, PentagonIcon, PlusIcon, RectangleIcon, RightTriangleIcon, RulerIcon, ScaleneTriangleIcon, ShapeCalculatorIcon, ShareIcon, SquareIcon, TelegramIcon, TwitterIcon, UnitConverterIcon, UserIcon, VolumeCalculatorIcon, WebsiteIcon, WeightIcon } from "./Icons";
 
 const DynamicIcon: React.FC<
 {
@@ -35,7 +35,13 @@ const DynamicIcon: React.FC<
             back: <BackIcon />,
             close: <CloseIcon />,
             menu: <MenuIcon />,
-            share: <ShareIcon />
+            share: <ShareIcon />,
+            ruler: <RulerIcon />,
+            weight: <WeightIcon />,
+            drag: <DragIcon />,
+            minus: <MinusIcon />,
+            plus: <PlusIcon />,
+            info: <InfoIcon />
             // repo: <RepoIcon />,
             // portfolio: <PortfolioIcon />,
             // email: <EmailIcon />,

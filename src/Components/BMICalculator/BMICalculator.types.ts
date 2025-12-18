@@ -45,3 +45,12 @@ export type BMIHistoryType = {
     category: string;
     message?: string;
 }
+
+export interface BMIRangeSliderProps {
+    onValueChange: (type: "height" | "weight", value: number) => void;
+    content: ContentType;
+    initialValues?: {
+        height?: number;
+        weight?: number;
+    };
+}

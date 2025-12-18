@@ -48,6 +48,15 @@
     "errors": {
         "invalidInput": "Please enter valid values for height and weight"
     },
+    "slider": {
+        "dragHint": "Drag left/right to adjust",
+        "min": "Min",
+        "max": "Max",
+        "step": "Step",
+        "tipTitle": "Quick Tip",
+        "heightTip": "Drag horizontally to adjust height. Average height is shown in purple.",
+        "weightTip": "Drag horizontally to adjust weight. BMI updates in real-time."
+    },
     "toast": {
         "bmiCopied": "Body mass index was successfully copied.",
         "messageCopied": "The body mass index message was successfully copied."
