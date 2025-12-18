@@ -1,7 +1,7 @@
 import Header from "./Components/HomePage/Header";
 import Footer from "./Components/HomePage/Footer";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import BMICalculator from "./Components/BMICalc/BmiCalculator";
+import BMICalculator from "./Components/BMICalculator/BMICalculator";
 import ShapesCalculator from "./Components/ShapesCalc/ShapesCalculator";
 import CurrencyConverter from "./Components/CurrencyConverter/CurrencyConverter";
 import Converter from "./Components/Converter/Converter";

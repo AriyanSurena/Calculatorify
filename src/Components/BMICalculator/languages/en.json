@@ -33,7 +33,8 @@
     },
     "weightRangeText": "The appropriate weight range for your height of",
     "buttons": {
-        "reset": "Reset"
+        "reset": "Reset",
+        "save": "Save"
     },
     "progressLabel": "BMI Range",
     "common": {

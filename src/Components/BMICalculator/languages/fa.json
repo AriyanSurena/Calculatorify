@@ -33,7 +33,8 @@
     },
     "weightRangeText": "محدوده وزن مناسب برای شما با قد:",
     "buttons": {
-        "reset": "بازنشانی"
+        "reset": "بازنشانی",
+        "save": "ذخیره در تایخچه"
     },
     "progressLabel": "محدوده BMI",
     "common": {
