@@ -4,7 +4,8 @@
     "labels": {
         "height": "Height (cm)",
         "weight": "Weight (kg)",
-        "gender": "Gender"
+        "gender": "Gender",
+        "history": "History"
     },
     "placeholders": {
         "height": "Enter your height in centimeters",

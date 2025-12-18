@@ -11,6 +11,7 @@ const InputBox: React.FC<{
     id?: string,
     onClickFn?: () => void,
     onChangeFn?: (value: number) => void,
+    focused?: boolean
 }> = ({
     name,
     placeholder,
@@ -20,6 +21,7 @@ const InputBox: React.FC<{
     propValue,
     onClickFn,
     onChangeFn,
+    focused
 }) => {
         const handleChange = (value: string) => {
             if (onChangeFn) {
@@ -49,6 +51,7 @@ const InputBox: React.FC<{
                     placeholder={placeholder}
                     onChange={handleChange}
                     classes="w-full bg-slate-100 dark:bg-slate-600 rounded shadow p-2 ring-1 ring-slate-200 dark:ring-slate-700 focus:ring-2 focus:ring-blue-500 transition"
+                    focused={focused}
                 />
             </Label>
         )

@@ -4,7 +4,8 @@
     "labels": {
         "height": "قد (سانتی‌متر)",
         "weight": "وزن (کیلوگرم)",
-        "gender": "جنسیت"
+        "gender": "جنسیت",
+        "history": "سابقه"
     },
     "placeholders": {
         "height": "قد خود را به سانتی‌متر وارد کنید",

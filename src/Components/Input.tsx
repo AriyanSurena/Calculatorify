@@ -8,6 +8,7 @@ interface InputProps {
     propValue?: number;
     disabled?: boolean;
     classes?: string;
+    focused?: boolean;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -17,7 +18,8 @@ const Input: React.FC<InputProps> = ({
     id,
     propValue,
     disabled,
-    classes
+    classes,
+    focused
 }) => {
     const [localValue, setLocalValue] = useState<string>('')
 
@@ -58,6 +60,7 @@ const Input: React.FC<InputProps> = ({
             className={`w-full bg-slate-100 dark:bg-slate-600 hover:shadow-xl focus:ring-2 focus:ring-slate-900 rounded shadow p-2 ring-1 ring-slate-200 dark:ring-slate-700 transition-all duration-200 ${classes}`}
             type="text"
             inputMode="decimal"
+            autoFocus={focused}
         />
     )
 }

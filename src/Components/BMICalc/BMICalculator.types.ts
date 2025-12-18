@@ -15,4 +15,5 @@ export type StateType = {
 
 export type ActionType =
     { type: "UPDATE"; param: keyof StateType; value: string | number }
+    | { type: "RESET"; }
     | { type: "CALCULATE_BMI" };
