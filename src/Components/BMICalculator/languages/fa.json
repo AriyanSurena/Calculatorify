@@ -46,7 +46,11 @@
         "cm": "سانتی‌متر"
     },
     "errors": {
-        "invalidInput": "لطفاً مقادیر معتبر برای قد و وزن وارد کنید"
+        "invalidInput": "لطفاً مقادیر معتبر برای قد و وزن وارد کنید",
+        "weightExceedsRange": "وزن بیش از محدوده مجاز است",
+        "weightBelowRange": "وزن کمتر از محدوده مجاز است",
+        "heightExceedsRange": "قد بیش از محدوده مجاز است",
+        "heightBelowRange": "قد کمتر از محدوده مجاز است"
     },
     "slider": {
         "dragHint": "برای تنظیم به چپ/راست بکشید",

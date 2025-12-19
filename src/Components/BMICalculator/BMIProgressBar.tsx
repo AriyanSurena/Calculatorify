@@ -5,10 +5,10 @@
         bmi,
         content
     }) => {
-        
+
         // Get The ProgressBar Data:
         const bmiProgress = getBMIProgress({ bmi, content });
-
+        const bmiProgressSeperators: string[] = ['-', '15', '18.5', '25', '30', '35', '40', '+']
         if (bmi)
             return (
                 //  BMI Progress Bar - Added
@@ -32,38 +32,15 @@
 
                         {/* BMI Range Markers */}
                         <div className="absolute inset-0 flex justify-between items-center px-1">
-                            <div className="flex flex-col items-center">
-                                <span className="text-xs text-white dark:text-gray-300 mt-1">-</span>
-                            </div>
-                            <div className="flex flex-col items-center">
+                        {
+                            bmiProgressSeperators.map((seperator) => (        
+                            <div className="flex flex-col items-center" key={seperator}>
                                 <div className="w-px h-3 bg-gray-100 dark:bg-gray-300" />
-                                <span className="text-xs text-white dark:text-gray-300 mt-1">15</span>
+                                <span className="text-xs text-white dark:text-gray-300 mt-1">{seperator}</span>
                             </div>
-                            <div className="flex flex-col items-center">
-                                <div className="w-px h-3 bg-gray-100 dark:bg-gray-300" />
-                                <span className="text-xs text-white dark:text-gray-300 mt-1">18.5</span>
-                            </div>
-                            <div className="flex flex-col items-center">
-                                <div className="w-px h-3 bg-gray-100 dark:bg-gray-300" />
-                                <span className="text-xs text-white dark:text-gray-300 mt-1">25</span>
-                            </div>
-                            <div className="flex flex-col items-center">
-                                <div className="w-px h-3 bg-gray-100 dark:bg-gray-300" />
-                                <span className="text-xs text-white dark:text-gray-300 mt-1">30</span>
-                            </div>
-                            <div className="flex flex-col items-center">
-                                <div className="w-px h-3 bg-gray-100 dark:bg-gray-300" />
-                                <span className="text-xs text-white dark:text-gray-300 mt-1">35</span>
-                            </div>
-                            <div className="flex flex-col items-center">
-                                <div className="w-px h-3 bg-gray-100 dark:bg-gray-300" />
-                                <span className="text-xs text-white dark:text-gray-300 mt-1">40</span>
-                            </div>
-                            <div className="flex flex-col items-center">
-                                <span className="text-xs text-white dark:text-gray-300 mt-1">+</span>
-                            </div>
+                            ))
+                        }
                         </div>
-
                     </div>
 
                     {/* Range Labels */}

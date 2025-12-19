@@ -21,13 +21,24 @@ const BMICalculator: React.FC = () => {
     // Get the language used by the component:
     const { language } = useLanguage();
 
+    // Get the user's BMI record from localStorage; 
+    const [history, setHistory] = useState<BMIHistoryType[]>(() => {
+        // return its value if it exists, or an empty array if it doesn't:
+        const savedHistory = localStorage.getItem('BMI_History');
+        return savedHistory ? JSON.parse(savedHistory) : [];
+    });
+
     // BMI calculator function for useReducer hook
     const reducer = useMemo(() => createReducer(content), [content])
 
     // Initial value for initialState
     const initialState: () => BMIStateType = () => {
-        const saved = localStorage.getItem("Calculatorify_BMI");
-        if (saved) return (JSON.parse(saved))
+        if (history) return {
+            weight: history[0]?.weight,
+            height: history[0]?.height,
+            category: history[0]?.category,
+            message: history[0]?.message,
+        }
 
         return {
             weight: undefined,
@@ -40,19 +51,13 @@ const BMICalculator: React.FC = () => {
     // The overall state of the component that holds the data and updates it with useReducer:
     const [state, dispatch] = useReducer(reducer, initialState());
 
-    // Get the user's BMI record from localStorage; 
-    const [history, setHistory] = useState<BMIHistoryType[]>(() => {
-        // return its value if it exists, or an empty array if it doesn't:
-        const savedHistory = localStorage.getItem('BMI_History');
-        return savedHistory ? JSON.parse(savedHistory) : [];
-    });
 
     // Calculate BMI live and quickly (with debounce) every time you change the input values ​​for weight and height:
     useEffect(() => {
         const timeoutId = setTimeout(() => {
             if (state.weight && state.height)
                 dispatch({ type: 'CALCULATE_BMI' })
-        }, 100); // 100ms delay
+        }, 50); // 50ms delay
 
         return () => clearTimeout(timeoutId);
     }, [state, content]);
@@ -70,9 +75,9 @@ const BMICalculator: React.FC = () => {
             id="BMI_Calculator"
             key={"BMI_Calculator"}>
 
-            {/* User height input: */}
+            {/* User height & Weight inputs: */}
             <BMIRange content={content} onValueChange={handleValueChange} initialValues={state} />
-            
+
             {/* Display BMI Calculate Result */}
             <DisplayBMI state={state} content={content} />
 
@@ -136,7 +141,9 @@ const BMICalculator: React.FC = () => {
 
             {/* Display BMI Calculate History */}
             {
-                history.length > 0 && <DisplayBMIHistory content={content} history={history} setHistory={setHistory} />
+                history.length > 0 ? (
+                    <DisplayBMIHistory content={content} history={history} setHistory={setHistory} />
+                ) : null
             }
         </ToolCard>
     )

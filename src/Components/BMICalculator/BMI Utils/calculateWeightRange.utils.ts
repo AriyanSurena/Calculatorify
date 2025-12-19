@@ -1,6 +1,8 @@
+import { STANDARD_RANGES } from "../RangeSlider";
+
 // Function to identify the minimum and maximum weight allowed for the user:
 export const calculateWeightRange = (h: number | undefined) => {
-    if (!h || h <= 0) return { min: "0", max: "0" };
+    if (!h || h <= STANDARD_RANGES.height.min) return { min: STANDARD_RANGES.height.min, max: STANDARD_RANGES.height.max };
 
     const heightInMeters = h / 100;
     const min = 18.5 * heightInMeters * heightInMeters;

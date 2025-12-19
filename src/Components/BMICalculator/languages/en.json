@@ -46,7 +46,11 @@
         "cm": "centimeters"
     },
     "errors": {
-        "invalidInput": "Please enter valid values for height and weight"
+        "invalidInput": "Please enter valid values for height and weight",
+        "weightExceedsRange": "Weight exceeds the allowed range",
+        "weightBelowRange": "Weight is below the allowed range",
+        "heightExceedsRange": "Height exceeds the allowed range",
+        "heightBelowRange": "Height is below the allowed range"
     },
     "slider": {
         "dragHint": "Drag left/right to adjust",

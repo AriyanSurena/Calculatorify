@@ -1,3 +1,4 @@
+import { useLanguage } from "../../Context/useLanguage";
 import DynamicIcon from "../../SVGIcons/DynamicIcon";
 import ResultDisplay from "../ResultDisplay";
 import TextChip from "../TextChlip";
@@ -11,6 +12,8 @@ const DisplayBMI: React.FC<DisplayBMIType> = ({
     // variable for identify the minimum and maximum weight allowed for the user:
     const weightRange = calculateWeightRange(state.height);
 
+    const { language } = useLanguage();
+    
     return (
         <div>
             {state.bmi ?
@@ -30,7 +33,6 @@ const DisplayBMI: React.FC<DisplayBMIType> = ({
                             bmi={state.bmi}
                         />
 
-                        {/*  */}
                         {/* Show the category the user falls into:*/}
                         {state.category && state.message ?
                             (
@@ -44,8 +46,13 @@ const DisplayBMI: React.FC<DisplayBMIType> = ({
                                         </div>
                                         <button
                                             onClick={() => {
-                                                const text = `My BMI: ${state.bmi} (${state.category})`;
-                                                navigator.share({ title: 'My BMI Data', text })
+                                                const text = `${content?.resultLabels?.bmi}: ${state.bmi} (${state.category}) \n ${content?.labels?.weight}: ${state.weight} \n ${content?.labels?.height}: ${state.height} \n ${new Date().toLocaleString(language, {
+                                                    month: 'short',
+                                                    day: 'numeric',
+                                                    hour: '2-digit',
+                                                    minute: '2-digit'
+                                                })}`;
+                                                navigator.share({ title: `${content?.resultLabels?.bmi}`, text })
                                             }}
                                             className="p-1.5 bg-blue-900/40 hover:bg-blue-800/60 rounded-lg border border-blue-700/50 hover:border-blue-600/70 transition-all duration-200 hover:scale-105 active:scale-95"
                                         >
@@ -148,7 +155,8 @@ const DisplayBMI: React.FC<DisplayBMIType> = ({
                             </div>
                         </TextChip>
                     ) : null
-                )}
+                )
+            }
         </div>
     )
 }

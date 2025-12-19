@@ -20,14 +20,37 @@ export const createReducer = (content: ContentType) => {
 
                 // validation
                 // If the weight and height values ​​are invalid, stop executing the function:
-                if (weight < STANDARD_RANGES.weight.min || height < STANDARD_RANGES.height.min || height > STANDARD_RANGES.height.max || weight > STANDARD_RANGES.weight.max) {
+                if (weight < STANDARD_RANGES.weight.min) {
                     return {
                         ...prevState,
                         bmi: undefined,
                         category: undefined,
-                        message: content?.errors?.invalidInput,
+                        message: content?.errors?.weightBelowRange,
                     };
-                }
+
+                } else if (weight > STANDARD_RANGES.weight.max) {
+                    return {
+                        ...prevState,
+                        bmi: undefined,
+                        category: undefined,
+                        message: content?.errors?.weightExceedsRange,
+                    };
+                    
+                } else if (height < STANDARD_RANGES.height.min) {
+                    return {
+                        ...prevState,
+                        bmi: undefined,
+                        category: undefined,
+                        message: content?.errors?.heightBelowRange,
+                    };
+                    
+                } else if (height > STANDARD_RANGES.height.max)
+                    return {
+                        ...prevState,
+                        bmi: undefined,
+                        category: undefined,
+                        message: content?.errors?.weightExceedsRange,
+                    };
 
                 // To calculate BMI, convert centimeters to meters:
                 const heightInMeters = height / 100;

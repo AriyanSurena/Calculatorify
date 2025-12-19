@@ -207,7 +207,7 @@ const BMIRange: React.FC<BMIRangeSliderProps> = ({
                         </span>
                         <div className="w-4/5 h-3 mx-auto w-full rounded bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent" >
                             <div
-                                className="h-full bg-gradient-to-r from-blue-500/20 via-green-500 to-red-500/20 transition-all duration-300 rounded"
+                                className="h-full bg-gradient-to-r from-blue-500/20 via-green-500 to-red-500/20 transition-all duration-200 rounded"
                                 style={{ width: `${getProgressPercentage()}%` }}
                                 />
                         </div>
