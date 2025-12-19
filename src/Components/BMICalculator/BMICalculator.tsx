@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useReducer, useState } from "react";
-import InputBox from "../InputBox";
 import ToolCard from "../ToolCard";
 import en_US from "./languages/en.json";
 import fa_IR from "./languages/fa.json";
@@ -73,38 +72,7 @@ const BMICalculator: React.FC = () => {
 
             {/* User height input: */}
             <BMIRange content={content} onValueChange={handleValueChange} initialValues={state} />
-            {/* <InputBox
-                id="height"
-                name="height"
-                placeholder={content?.placeholders?.height}
-                // Update the state.height with each input change:
-                onChangeFn={(v) =>
-                    dispatch({
-                        type: "UPDATE",
-                        param: 'height',
-                        value: Number(v)
-                    })
-                }
-                label={content?.labels?.height + ":"}
-                focused={true}
-            /> */}
-
-            {/* User Weight input: */}
-            <InputBox
-                id="weight"
-                name="weight"
-                placeholder={content?.placeholders?.weight}
-                // Update the state.weight with each input change:
-                onChangeFn={(v) =>
-                    dispatch({
-                        type: "UPDATE",
-                        param: 'weight',
-                        value: Number(v)
-                    })
-                }
-                label={content?.labels?.weight + ":"}
-            />
-
+            
             {/* Display BMI Calculate Result */}
             <DisplayBMI state={state} content={content} />
 

@@ -52,9 +52,9 @@ const BMIRange: React.FC<BMIRangeSliderProps> = ({
 
         const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
         const deltaX = clientX - startX;
-        
+
         // حساسیت پیمایش (هر 10 پیکسل = 1 واحد)
-        const sensitivity = 10;
+        const sensitivity = 20;
         const change = Math.round(deltaX / sensitivity);
 
         if (activeTab === "height") {
@@ -131,13 +131,13 @@ const BMIRange: React.FC<BMIRangeSliderProps> = ({
     };
 
     return (
-        <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 select-none">
             {/* Tabs : Height - Weight */}
             <div className="flex border-b border-gray-200 dark:border-gray-700 mb-6">
                 <button
                     className={`flex-1 p-3 text-center font-semibold text-lg transition-all ${activeTab === "height"
-                            ? "text-purple-600 dark:text-purple-400 border-b-2 border-purple-500"
-                            : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                        ? "text-purple-600 dark:text-purple-400 border-b-2 border-purple-500"
+                        : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                         }`}
                     onClick={() => setActiveTab("height")}
                 >
@@ -151,8 +151,8 @@ const BMIRange: React.FC<BMIRangeSliderProps> = ({
 
                 <button
                     className={`flex-1 p-3 text-center font-semibold text-lg transition-all ${activeTab === "weight"
-                            ? "text-purple-600 dark:text-purple-400 border-b-2 border-purple-500"
-                            : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                        ? "text-purple-600 dark:text-purple-400 border-b-2 border-purple-500"
+                        : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                         }`}
                     onClick={() => setActiveTab("weight")}
                 >
@@ -174,70 +174,51 @@ const BMIRange: React.FC<BMIRangeSliderProps> = ({
                         {activeTab === "height" ? content?.units?.cm : content?.units?.kg}
                     </span>
                 </div>
-
-                {/* نمایش BMI (فقط در حالت وزن) */}
-                {/* {activeTab === "weight" && (
-                    <div className={`text-sm font-medium ${getCategoryColor()}`}>
-                        BMI: {currentBMI.toFixed(1)} • {content?.categories?.[weightCategory]}
-                    </div>
-                )} */}
             </div>
 
             {/* ناحیه پیمایش */}
             <div
                 ref={containerRef}
-                className="relative mb-8"
+                className="relative mb-8 cursor-pointer"
                 onMouseDown={handleDragStart}
                 onTouchStart={handleDragStart}
             >
-                {/* راهنما */}
-                <div className="absolute top-4 left-0 right-0 text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-full text-sm text-gray-600 dark:text-gray-300">
-                        <DynamicIcon icon="drag" />
-                        {content?.slider?.dragHint || "Drag left/right to adjust"}
-                    </div>
-                </div>
-
                 {/* اسلایدر بصری */}
-                <div className="h-32 rounded-xl bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 
+                <div className="flex flex-col justify-evenly h-32 rounded-xl bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 
                        border-2 border-dashed border-gray-300 dark:border-gray-600 mt-12 
                        flex items-center justify-center overflow-hidden">
 
-                    {/* خط‌های راهنما */}
-                    <div className="absolute inset-0 flex items-center">
-                        <div className="h-1 w-full bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent" />
+                    {/* راهنما */}
+                    <div className="text-center">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-full text-sm text-gray-600 dark:text-gray-300">
+                            <DynamicIcon icon="drag" />
+                            {content?.slider?.dragHint}
+                        </div>
                     </div>
 
-                    {/* اعداد راهنما */}
-                    <div className="absolute bottom-2 left-0 right-0 flex my-4 justify-between px-4 text-xs text-gray-500">
+                    {/* خط‌های راهنما */}
+                    <div className="flex px-2 w-full inset-0 items-center justify-between text-xs text-gray-500">
                         <span>
-                            {activeTab === "height"
-                                ? STANDARD_RANGES.height.min
-                                : STANDARD_RANGES.weight.min}
+                            {
+                                activeTab === "height"
+                                    ? STANDARD_RANGES.height.min
+                                    : STANDARD_RANGES.weight.min
+                            }
                         </span>
-                        <span className="text-purple-500 font-semibold">
-                            {activeTab === "height"
-                                ? STANDARD_RANGES.height.average
-                                : STANDARD_RANGES.weight.average.toFixed(1)}
-                        </span>
+                        <div className="w-4/5 h-3 mx-auto w-full rounded bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent" >
+                            <div
+                                className="h-full bg-gradient-to-r from-blue-500/20 via-green-500 to-red-500/20 transition-all duration-300 rounded"
+                                style={{ width: `${getProgressPercentage()}%` }}
+                                />
+                        </div>
+                        {/*  */}
                         <span>
                             {activeTab === "height"
                                 ? STANDARD_RANGES.height.max
                                 : STANDARD_RANGES.weight.max}
                         </span>
                     </div>
-                </div>
-
-                {/* Progress Bar */}
-                <div className="mt-6">
-                    <div className="flex h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                        <div
-                            className="h-full bg-gradient-to-r from-blue-500 via-green-500 to-red-500 transition-all duration-300"
-                            style={{ width: `${getProgressPercentage()}%` }}
-                        />
-                    </div>
-
-                    <div className="flex mb-8 justify-between gap-4 text-sm text-gray-500 mb-1">
+                    <div className="w-full px-2 flex justify-between text-sm text-gray-500">
                         <span>{content?.slider?.min}</span>
                         <span>{content?.slider?.max}</span>
                     </div>
