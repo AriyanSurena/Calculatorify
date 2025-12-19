@@ -231,7 +231,7 @@ const BMIRange: React.FC<BMIRangeSliderProps> = ({
                     onClick={decrement}
                     className="p-4 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 
                    hover:from-gray-200 hover:to-gray-300 dark:hover:from-gray-600 dark:hover:to-gray-700 
-                   border border-gray-300 dark:border-gray-600 transition-all active:scale-95"
+                   border border-gray-300 dark:border-gray-600 transition-all active:scale-95  disabled:opacity-60 disabled:cursor-auto disabled:hover:bg-unset disabled:active:scale-100 disabled:hover:bg-gradient-to-br disabled:hover:from-gray-100 disabled:hover:to-gray-200 disabled:hover:dark:from-gray-700 disabled:hover:dark:to-gray-800"
                     disabled={isDragging || activeTab === "weight" && height === STANDARD_RANGES.height.min || activeTab === "weight" && weight === STANDARD_RANGES.weight.min}
                 >
                     <DynamicIcon icon="minus" />
@@ -252,7 +252,7 @@ const BMIRange: React.FC<BMIRangeSliderProps> = ({
                     onClick={increment}
                     className="p-4 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 
                    hover:from-gray-200 hover:to-gray-300 dark:hover:from-gray-600 dark:hover:to-gray-700 
-                   border border-gray-300 dark:border-gray-600 transition-all active:scale-95 disabled:opacity-60 disabled:cursor-auto disabled:hover:bg-unset disabled:active:scale-100"
+                   border border-gray-300 dark:border-gray-600 transition-all active:scale-95 disabled:opacity-60 disabled:cursor-auto disabled:hover:bg-unset disabled:active:scale-100 disabled:hover:bg-gradient-to-br disabled:hover:from-gray-100 disabled:hover:to-gray-200 disabled:hover:dark:from-gray-700 disabled:hover:dark:to-gray-800"
                     disabled={isDragging || activeTab === "height" && height === STANDARD_RANGES.height.max || activeTab === "weight" && weight === STANDARD_RANGES.weight.max}
                 >
                     <DynamicIcon icon="plus" />
