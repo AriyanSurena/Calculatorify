@@ -31,7 +31,7 @@ const DisplayBMIHistory: React.FC<DisplayBMIHistoryType> = ({content, history, s
                 </button>
             </div>
 
-            <div className="space-y-3 max-h-96 overflow-y-auto pr-2">
+            <div className="space-y-3 overflow-y-auto pr-2">
                 {history.map((item, index) => (
                     <div
                         key={item.id}
