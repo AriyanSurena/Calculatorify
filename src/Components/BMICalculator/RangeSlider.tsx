@@ -3,7 +3,7 @@ import DynamicIcon from "../../SVGIcons/DynamicIcon";
 import type { BMIRangeSliderProps } from "./BMICalculator.types";
 
 // Standard Range
-const STANDARD_RANGES = {
+export const STANDARD_RANGES = {
     height: {
         min: 100,   // 100 Centimeter
         max: 250,   // 250 Centimeter
@@ -54,7 +54,7 @@ const BMIRange: React.FC<BMIRangeSliderProps> = ({
         const deltaX = clientX - startX;
 
         // حساسیت پیمایش (هر 10 پیکسل = 1 واحد)
-        const sensitivity = 20;
+        const sensitivity = 10;
         const change = Math.round(deltaX / sensitivity);
 
         if (activeTab === "height") {
@@ -232,7 +232,7 @@ const BMIRange: React.FC<BMIRangeSliderProps> = ({
                     className="p-4 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 
                    hover:from-gray-200 hover:to-gray-300 dark:hover:from-gray-600 dark:hover:to-gray-700 
                    border border-gray-300 dark:border-gray-600 transition-all active:scale-95"
-                    disabled={isDragging}
+                    disabled={isDragging || activeTab === "weight" && height === STANDARD_RANGES.height.min || activeTab === "weight" && weight === STANDARD_RANGES.weight.min}
                 >
                     <DynamicIcon icon="minus" />
                 </button>
@@ -252,8 +252,8 @@ const BMIRange: React.FC<BMIRangeSliderProps> = ({
                     onClick={increment}
                     className="p-4 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 
                    hover:from-gray-200 hover:to-gray-300 dark:hover:from-gray-600 dark:hover:to-gray-700 
-                   border border-gray-300 dark:border-gray-600 transition-all active:scale-95"
-                    disabled={isDragging}
+                   border border-gray-300 dark:border-gray-600 transition-all active:scale-95 disabled:opacity-60 disabled:cursor-auto disabled:hover:bg-unset disabled:active:scale-100"
+                    disabled={isDragging || activeTab === "height" && height === STANDARD_RANGES.height.max || activeTab === "weight" && weight === STANDARD_RANGES.weight.max}
                 >
                     <DynamicIcon icon="plus" />
                 </button>
