@@ -9,44 +9,7 @@ import ResultDisplay from "../common/ResultDisplay";
 import ShapeInput from "./ShapeInput";
 import ShapeDisplay from "./ShapeDisplay";
 import ToolCard from "../common/ToolCard";
-
-type Shapes = 'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle';
-
-type ShapesObj = typeof En.shapes.displayNames;
-
-interface stateType {
-    shape: Shapes;
-    radius?: number,
-    area: number,
-    perimeter: number,
-    width?: number,
-    length?: number,
-    height?: number,
-    base?: number,
-    side?: number,
-    sideA?: number,
-    sideB?: number,
-    sideC?: number,
-    equalSide?: number,
-    hypotenuse?: number,
-    error?: string
-}
-
-interface actionType {
-    shape: Shapes;
-    radius?: number,
-    width?: number,
-    length?: number,
-    height?: number,
-    base?: number,
-    side?: number,
-    sideA?: number,
-    sideB?: number,
-    sideC?: number,
-    equalSide?: number,
-    hypotenuse?: number,
-    error?: string
-}
+import type { ShapesObj, ShapeTypes, StateType, ActionType } from "./shapes.types";
 
 const ShapesCalculator: React.FC = () => {
     const { language } = useLanguage();
@@ -65,13 +28,13 @@ const ShapesCalculator: React.FC = () => {
     console.log('SelectedShape', selectedShape)
 
 
-    const initialState: stateType = {
+    const initialState: StateType = {
         shape: "Circle",
         area: 0,
         perimeter: 0,
     }
 
-    function reducer(prevState: stateType, action: actionType): stateType {
+    function reducer(prevState: StateType, action: ActionType): StateType {
         switch (action.shape) {
             case 'Circle': {
                 const radius = action.radius ?? prevState.radius ?? 0;
@@ -225,7 +188,7 @@ const ShapesCalculator: React.FC = () => {
 
     useEffect(() => {
         dispatch({
-            shape: selectedShape as (Shapes),
+            shape: selectedShape as (ShapeTypes),
             radius: undefined,
             width: undefined,
             length: undefined,
@@ -234,7 +197,7 @@ const ShapesCalculator: React.FC = () => {
     }, [selectedShape])
 
 
-    const Row: React.FC<{ label: string, placeholder: string, shape: (Shapes), param: string, onChange: ActionDispatch<[action: actionType]> }> = ({ label, placeholder, shape, param, onChange }) => {
+    const Row: React.FC<{ label: string, placeholder: string, shape: (ShapeTypes), param: string, onChange: ActionDispatch<[action: ActionType]> }> = ({ label, placeholder, shape, param, onChange }) => {
         return (
             <div className="flex flex-col my-2 gap-2">
                 <ShapeInput placeholder={placeholder} label={label} shape={shape} param={param} onChange={onChange} />
@@ -250,9 +213,10 @@ const ShapesCalculator: React.FC = () => {
             <Menu id='category' list={
                 shapesKeys.map(key => ({
                     key: key,
-                    label: ShapesCategory[key as Shapes]
+                    label: ShapesCategory[key as ShapeTypes]
                 }))
             } setSelected={setSelectedShape} selected={selectedShape} />
+            <ShapeDisplay {...state} />
             {
                 <div className="flex flex-col">
                     <span className="flex flex-col my-2 gap-2">
@@ -326,7 +290,6 @@ const ShapesCalculator: React.FC = () => {
                     </span>
                     <ResultDisplay label={content?.shapes?.units?.area} placeholder={content?.shapes?.units?.area} result={state.area} toastMessage={content?.shapes?.units?.area + ' ' + content?.toast?.copied} />
                     <ResultDisplay label={content?.shapes?.units?.perimeter} placeholder={content?.shapes?.units?.perimeter} result={state.perimeter} toastMessage={content?.shapes?.units?.perimeter + ' ' + content?.toast?.copied} />
-                    <ShapeDisplay {...state} />
                 </div>
             }
 
