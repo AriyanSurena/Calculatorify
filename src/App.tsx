@@ -11,11 +11,11 @@ import ShapesCalculator from "./components/shapesCalculator/ShapesCalculator";
 import CurrencyConverter from "./components/currencyConverter/CurrencyConverter";
 import Converter from "./components/converter/Converter";
 import InvestmentCalculator from "./components/investmentCalculator/InvestmentCalculator";
-import DynamicIcon from "./components/svgIcons/DynamicIcon";
 import ToolNav from "./pages/navigation/ToolNav";
 import LinkButton from "./components/common/BackButton";
 import Toast from "./components/common/Toast";
 import FontDirectionManager from "./context/language/direction";
+import DynamicIcon from "./components/svgIcons/DynamicIcon";
 
 const App = (): React.ReactNode => {
   const { toast } = useToast()

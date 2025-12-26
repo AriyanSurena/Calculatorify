@@ -7,7 +7,7 @@ import Menu from "../common/Menu";
 import TextChip from "../common/TextChlip";
 import ResultDisplay from "../common/ResultDisplay";
 import ShapeInput from "./ShapeInput";
-import ShapeDisplay from "./ShapeDisplay";
+import ShapeDisplay from "./ShapeInput";
 import ToolCard from "../common/ToolCard";
 
 type Shapes = 'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle';
