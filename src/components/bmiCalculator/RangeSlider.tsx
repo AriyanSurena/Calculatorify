@@ -263,4 +263,4 @@ const BmiRange: React.FC<BMIRangeSliderProps> = ({
     );
 };
 
-export default BMIRange;
+export default BmiRange;
