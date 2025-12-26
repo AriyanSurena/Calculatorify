@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
                             <div className="space-y-2">
                                 {/* ترکیب همه لینک‌ها در یک آرایه */}
                                 {[
-                                    ...config.creator.links.development,
+                                    // ...config.creator.links.development,
                                     ...config.creator.links.contact,
                                     ...config.creator.links.professional
                                 ].map((link, index) => (
