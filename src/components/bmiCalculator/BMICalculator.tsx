@@ -4,11 +4,11 @@ import fa_IR from "./languages/fa.json";
 import useContentConfig from "../../hooks/useContentConfig";
 import useLanguage from "../../hooks/useLanguage";
 import { createReducer } from "./bmiUtils/createReducer.utils";
-import type { BMIHistoryType, BMIStateType, ContentType } from "./bmiCalculator.types";
+import type { BMIHistoryType, BMIStateType, ContentType } from "./BmiCalculator.types";
 import ToolCard from "../common/ToolCard";
-import BMIRange from "./RangeSlider";
-import DisplayBMI from "./DisplayBmi";
-import DisplayBMIHistory from "./DisplayBmiHistory";
+import BmiRange from "./RangeSlider";
+import DisplayBmi from "./DisplayBmi";
+import DisplayBmiHistory from "./DisplayBmiHistory";
 
 /**
  * BMI calculation component.
@@ -76,10 +76,10 @@ const BMICalculator: React.FC = () => {
             key={"BMI_Calculator"}>
 
             {/* User height & Weight inputs: */}
-            <BMIRange content={content} onValueChange={handleValueChange} initialValues={state} />
+            <BmiRange content={content} onValueChange={handleValueChange} initialValues={state} />
 
             {/* Display BMI Calculate Result */}
-            <DisplayBMI state={state} content={content} />
+            <DisplayBmi state={state} content={content} />
 
             {
                 state.bmi ? (
@@ -142,7 +142,7 @@ const BMICalculator: React.FC = () => {
             {/* Display BMI Calculate History */}
             {
                 history.length > 0 ? (
-                    <DisplayBMIHistory content={content} history={history} setHistory={setHistory} />
+                    <DisplayBmiHistory content={content} history={history} setHistory={setHistory} />
                 ) : null
             }
         </ToolCard>

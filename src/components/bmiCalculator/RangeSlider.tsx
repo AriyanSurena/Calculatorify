@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import DynamicIcon from "../SvgIcons/DynamicIcon";
-import type { BMIRangeSliderProps } from "./bmiCalculator.types";
+import DynamicIcon from "../svgIcons/DynamicIcon";
+import type { BMIRangeSliderProps } from "./BmiCalculator.types";
 import { STANDARD_RANGES } from "./standardRanges";
 
-const BMIRange: React.FC<BMIRangeSliderProps> = ({
+const BmiRange: React.FC<BMIRangeSliderProps> = ({
     onValueChange,
     content,
     initialValues = {}
