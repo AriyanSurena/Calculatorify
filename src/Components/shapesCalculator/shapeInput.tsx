@@ -22,7 +22,7 @@ type ShapeInputProps = {
 const ShapeInput: React.FC<ShapeInputProps> = ({
     shape,
     param,
-    label,
+    label = shape,
     placeholder,
     onChange,
     value: propValue, // مقدار اولیه از props
