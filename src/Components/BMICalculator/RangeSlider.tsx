@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import DynamicIcon from "../svgIcons/dynamicIcon";
-import type { BMIRangeSliderProps } from "./bmiCalculator.types";
+import DynamicIcon from "../svgIcons/DynamicIcon";
+import type { BMIRangeSliderProps } from "./BmiCalculator.types";
 
 // Standard Range
 export const STANDARD_RANGES = {

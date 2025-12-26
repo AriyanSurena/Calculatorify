@@ -6,7 +6,7 @@ import ToolCard from "../common/ToolCard";
 import En from "./languages/en.json";
 import Fa from "./languages/fa.json";
 import { useLanguage } from "../../context/useLanguage";
-import CurrencySelect from "./currencySelect";
+import CurrencySelect from "./CurrencySelect";
 import ResultDisplay from "../common/ResultDisplay";
 import TextChip from "../common/TextChlip";
 import useToolConfig from "../../context/useContentConfig";

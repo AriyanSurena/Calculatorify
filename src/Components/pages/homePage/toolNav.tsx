@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import DynamicIcon from "../../components/svgIcons/DynamicIcon"
-import { useConfig } from "../../context/useProjectConfig";
+import DynamicIcon from "../../svgIcons/DynamicIcon"
+import { useConfig } from "../../../context/useProjectConfig";
 // کامپوننت هدر برای صفحات ابزار
 const ToolNav: React.FC = () => {
     const config = useConfig()
