@@ -8,10 +8,7 @@
             "Square": "مربع",
             "Pentagon": "پنج‌ضلعی",
             "Hexagon": "شش‌ضلعی",
-            "Equilateral Triangle": "مثلث متساوی‌الاضلاع",
-            "Isosceles Triangle": "مثلث متساوی‌الساقین",
-            "Scalene Triangle": "مثلث مختلف‌الاضلاع",
-            "Right Triangle": "مثلث قائم‌الزاویه"
+            "Equilateral Triangle": "مثلث متساوی‌الاضلاع"
         },
         "labels": {
             "radius": "شعاع",
@@ -48,8 +45,8 @@
             "invalidInput": "لطفاً مقادیر معتبر وارد کنید"
         },
         "messages": {
-            "areaIs": "برابر است با",
-            "perimeterIs": "محیط برابر است با",
+            "areaIs": "مساحت {shape} برابر است با",
+            "perimeterIs": "محیط {shape} برابر است با",
             "of": "از",
             "selectShape": "یک شکل انتخاب کنید"
         }

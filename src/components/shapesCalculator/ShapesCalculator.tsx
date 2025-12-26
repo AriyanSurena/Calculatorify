@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState, type ActionDispatch } from "react";
+import { useEffect, useReducer, useState } from "react";
 import Fa from "./languages/fa.json";
 import En from "./languages/en.json";
 import useLanguage from "../../hooks/useLanguage";
@@ -9,7 +9,7 @@ import ResultDisplay from "../common/ResultDisplay";
 import ShapeInput from "./ShapeInput";
 import ShapeDisplay from "./ShapeDisplay";
 import ToolCard from "../common/ToolCard";
-import type { ShapesObj, ShapeTypes, StateType, ActionType } from "./shapes.types";
+import type { ShapesObj, ShapesType, StateType, ActionType } from "./shapes.types";
 
 const ShapesCalculator: React.FC = () => {
     const { language } = useLanguage();
@@ -110,74 +110,6 @@ const ShapesCalculator: React.FC = () => {
                     perimeter: side > 0 ? 3 * side : 0
                 };
             }
-            case 'Isosceles Triangle': {
-                const base = action.base ?? prevState.base ?? 0;
-                const equalSide = action.equalSide ?? prevState.equalSide ?? 0;
-
-                if (base < 0 || equalSide < 0) return prevState;
-
-                // شرط جدید: چک کردن که مثلث تشکیل بشه یا نه
-                if (base >= 2 * equalSide) {
-                    return {
-                        ...prevState,
-                        shape: "Isosceles Triangle",
-                        base,
-                        equalSide,
-                        area: 0,
-                        perimeter: 0,
-                        error: content?.shapes?.errors?.invalidTriangle
-                    };
-                }
-
-                const height = Math.sqrt(equalSide * equalSide - (base * base) / 4);
-
-                return {
-                    shape: "Isosceles Triangle",
-                    base,
-                    equalSide,
-                    height,
-                    area: (base * height) / 2,
-                    perimeter: base + 2 * equalSide
-                };
-            }
-
-            case 'Scalene Triangle': {
-                const sideA = action.sideA ?? prevState.sideA ?? 0;
-                const sideB = action.sideB ?? prevState.sideB ?? 0;
-                const sideC = action.sideC ?? prevState.sideC ?? 0;
-                if (sideA < 0 || sideB < 0 || sideC < 0) return prevState;
-
-                // فرمول هرون برای مساحت
-                const s = (sideA + sideB + sideC) / 2;
-                const area = Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
-
-                return {
-                    shape: "Scalene Triangle",
-                    sideA,
-                    sideB,
-                    sideC,
-                    area: sideA > 0 && sideB > 0 && sideC > 0 ? area : 0,
-                    perimeter: sideA > 0 && sideB > 0 && sideC > 0 ? sideA + sideB + sideC : 0
-                };
-            }
-
-            case 'Right Triangle': {
-                const base = action.base ?? prevState.base ?? 0;
-                const height = action.height ?? prevState.height ?? 0;
-                if (base < 0 || height < 0) return prevState;
-
-                const hypotenuse = Math.sqrt(base * base + height * height);
-
-                return {
-                    shape: "Right Triangle",
-                    base,
-                    height,
-                    hypotenuse,
-                    area: base > 0 && height > 0 ? (base * height) / 2 : 0,
-                    perimeter: base > 0 && height > 0 ? base + height + hypotenuse : 0
-                };
-            }
-
             default: return prevState;
         }
     }
@@ -188,22 +120,13 @@ const ShapesCalculator: React.FC = () => {
 
     useEffect(() => {
         dispatch({
-            shape: selectedShape as (ShapeTypes),
+            shape: selectedShape as (ShapesType),
             radius: undefined,
             width: undefined,
             length: undefined,
             side: undefined
         })
     }, [selectedShape])
-
-
-    const Row: React.FC<{ label: string, placeholder: string, shape: (ShapeTypes), param: string, onChange: ActionDispatch<[action: ActionType]> }> = ({ label, placeholder, shape, param, onChange }) => {
-        return (
-            <div className="flex flex-col my-2 gap-2">
-                <ShapeInput placeholder={placeholder} label={label} shape={shape} param={param} onChange={onChange} />
-            </div>
-        )
-    }
 
     return (
         <ToolCard id="Shapes_Calculator">
@@ -213,7 +136,7 @@ const ShapesCalculator: React.FC = () => {
             <Menu id='category' list={
                 shapesKeys.map(key => ({
                     key: key,
-                    label: ShapesCategory[key as ShapeTypes]
+                    label: ShapesCategory[key as ShapesType]
                 }))
             } setSelected={setSelectedShape} selected={selectedShape} />
             <ShapeDisplay {...state} />
@@ -223,68 +146,42 @@ const ShapesCalculator: React.FC = () => {
                         {
                             (state.shape === 'Circle')
                                 ? (
-                                    <Row label={content?.shapes?.displayNames?.Circle} shape="Circle" param="radius" placeholder={content?.shapes?.placeholders?.radius} onChange={dispatch} />
+                                    
+                                    <ShapeInput placeholder={content?.shapes?.placeholders?.radius} label={content?.shapes?.labels?.radius + ":"} shape={"Circle"} param="radius" onChange={dispatch} />
+                                    
                                 ) : null
                         }
                         {
                             (state.shape === 'Rectangle')
                                 ? (
                                     <>
-                                        <Row label={content?.shapes?.labels?.width + ":"} shape="Rectangle" param="width" placeholder={content?.shapes?.placeholders?.width} onChange={dispatch} />
-                                        <Row label={content?.shapes?.labels?.length + ":"} shape="Rectangle" param="length" placeholder={content?.shapes?.placeholders?.length} onChange={dispatch} />
+                                        <ShapeInput label={content?.shapes?.labels?.width + ":"} shape="Rectangle" param="width" placeholder={content?.shapes?.placeholders?.width} onChange={dispatch} />
+                                        <ShapeInput label={content?.shapes?.labels?.length + ":"} shape="Rectangle" param="length" placeholder={content?.shapes?.placeholders?.length} onChange={dispatch} />
                                     </>
                                 ) : null
                         }
                         {
                             (state.shape === 'Square')
                                 ? (
-                                    <Row label={content?.shapes?.labels?.side} shape="Square" param="side" placeholder={content?.shapes?.placeholders?.side} onChange={dispatch} />
+                                    <ShapeInput label={content?.shapes?.labels?.side + ":"} shape="Square" param="side" placeholder={content?.shapes?.placeholders?.side} onChange={dispatch} />
                                 ) : null
                         }
                         {
                             (state.shape === 'Pentagon')
                                 ? (
-                                    <Row label={content?.shapes?.labels?.side} shape="Pentagon" param="side" placeholder={content?.shapes?.placeholders?.side} onChange={dispatch} />
+                                    <ShapeInput label={content?.shapes?.labels?.side + ":"} shape="Pentagon" param="side" placeholder={content?.shapes?.placeholders?.side} onChange={dispatch} />
                                 ) : null
                         }
                         {
                             (state.shape === 'Hexagon')
                                 ? (
-                                    <Row label={content?.shapes?.placeholders?.side} shape="Hexagon" param="side" placeholder={content?.shapes?.placeholders?.side} onChange={dispatch} />
+                                    <ShapeInput label={content?.shapes?.placeholders?.side + ":"} shape="Hexagon" param="side" placeholder={content?.shapes?.placeholders?.side} onChange={dispatch} />
                                 ) : null
                         }
                         {
                             (state.shape === 'Equilateral Triangle')
                                 ? (
-                                    <Row label={content?.shapes?.placeholders?.side} shape="Equilateral Triangle" param="side" placeholder={content?.shapes?.placeholders?.side} onChange={dispatch} />
-                                ) : null
-                        }
-                        {
-                            (state.shape === 'Isosceles Triangle')
-                                ? (
-                                    <>
-                                        <Row label={content?.shapes?.labels?.base} shape="Isosceles Triangle" param="base" placeholder={content?.shapes?.placeholders?.base} onChange={dispatch} />
-                                        <Row label={content?.shapes?.labels?.equalSide} shape="Isosceles Triangle" param="equalSide" placeholder={content?.shapes?.placeholders?.equalSide} onChange={dispatch} />
-                                    </>
-                                ) : null
-                        }
-                        {
-                            (state.shape === 'Scalene Triangle')
-                                ? (
-                                    <>
-                                        <Row label={content?.shapes?.labels?.sideA} shape="Scalene Triangle" param="sideA" placeholder={content?.shapes?.placeholders?.sideA} onChange={dispatch} />
-                                        <Row label={content?.shapes?.labels?.sideB} shape="Scalene Triangle" param="sideB" placeholder={content?.shapes?.placeholders?.sideB} onChange={dispatch} />
-                                        <Row label={content?.shapes?.labels?.sideC} shape="Scalene Triangle" param="sideC" placeholder={content?.shapes?.placeholders?.sideC} onChange={dispatch} />
-                                    </>
-                                ) : null
-                        }
-                        {
-                            (state.shape === 'Right Triangle')
-                                ? (
-                                    <>
-                                        <Row label={content?.shapes?.labels?.base} shape="Right Triangle" param="base" placeholder={content?.shapes?.placeholders?.base} onChange={dispatch} />
-                                        <Row label={content?.shapes?.labels?.height} shape="Right Triangle" param="height" placeholder={content?.shapes?.placeholders?.height} onChange={dispatch} />
-                                    </>
+                                    <ShapeInput label={content?.shapes?.placeholders?.side + ":"} shape="Equilateral Triangle" param="side" placeholder={content?.shapes?.placeholders?.side} onChange={dispatch} />
                                 ) : null
                         }
                     </span>
@@ -297,11 +194,11 @@ const ShapesCalculator: React.FC = () => {
                 state.area > 0 && state.perimeter > 0 && (
                     <TextChip isCopyOn={true} toastMessage={content?.toast?.resCopied}>
                         <div className="overflow-x-hidden">
-                            <span className="text-blue-500">{`${content?.shapes?.units?.area + ' ' + state.shape + ' ' + content?.shapes?.messages?.areaIs + ' '}`}</span>
-                            <span className="text-blue-300">{` ${state.area} `}</span>
+                            <span className="text-blue-500">{`${content?.shapes?.messages?.areaIs.replace('{shape}', content.shapes.displayNames[state.shape]) + ' '}`}</span>
+                            <div className="text-blue-300">{` ${state.area.toFixed(2)} `}</div>
                             <div></div>
-                            <span className="text-green-500">{`${content?.shapes?.units?.perimeter + ' ' + state.shape + ' ' + content?.shapes?.messages?.perimeterIs + ' '}`}</span>
-                            <span className="text-green-300">{`${state.perimeter}`}</span>
+                            <span className="text-green-500">{`${content?.shapes?.messages?.perimeterIs.replace('{shape}', content.shapes.displayNames[state.shape]) + ' '}`}</span>
+                            <div className="text-green-300">{`${state.perimeter.toFixed(2)}`}</div>
                         </div>
                     </TextChip>
                 )

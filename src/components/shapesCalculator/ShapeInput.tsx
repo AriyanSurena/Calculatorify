@@ -1,23 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import type { ShapeInputProps } from './shapes.types';
 
-type Shapes = 'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle';
 
-interface actionType {
-    shape: Shapes;
-    radius?: number;
-    width?: number;
-    length?: number;
-    side?: number;
-}
-
-type ShapeInputProps = {
-    shape: Shapes;
-    value?: number;
-    param: string;
-    label: string;
-    placeholder?: string;
-    onChange: (action: actionType) => void;
-};
 
 const ShapeInput: React.FC<ShapeInputProps> = ({
     shape,
@@ -25,40 +9,42 @@ const ShapeInput: React.FC<ShapeInputProps> = ({
     label = shape,
     placeholder,
     onChange,
-    value: propValue, // مقدار اولیه از props
+    value: propValue, // initial Value From props
 }) => {
-    const id = `${label.toLowerCase()}-input`;
+    const id = `${shape.toLowerCase()}-input`;
     const [localValue, setLocalValue] = useState<string>('');
 
-    // همگام‌سازی با prop (در صورت controlled component بودن)
+    // sync with prop (only in controlled component)
     useEffect(() => {
         if (propValue !== undefined) {
             setLocalValue(propValue.toString());
         }
     }, [propValue]);
 
-    // ارسال تغییرات به والد
+    // send changes to parent
     useEffect(() => {
-            onChange({ shape, [param]: localValue });
+        onChange({ shape, [param]: localValue });
     }, [localValue, shape, param, onChange]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const inputValue = e.target.value;
 
-        // محدودیت 20 کاراکتر
+        // 20 character limit
         if (inputValue.length > 20) {
             return;
         }
 
-        // فقط اعداد، نقطه و منفی مجاز باشند
+        // only integer and dot allowed:
         if (/^\d*\.?\d*$/.test(inputValue) || inputValue === '') {
             setLocalValue(inputValue);
         }
     };
 
     return (
-        <label htmlFor={id} className="flex flex-col gap-2">
-                {label}
+        <label
+            htmlFor={id}
+            className="flex flex-col gap-2">
+            {label}
             <input
                 id={id}
                 name={`${shape}-input`}

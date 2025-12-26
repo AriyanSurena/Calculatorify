@@ -1,14 +1,12 @@
 import En from "./languages/en.json"
 
-export type ShapeTypes = 'Circle' | 'Rectangle' | 'Square' |
-    'Pentagon' | 'Hexagon' | 'Equilateral Triangle' |
-    'Isosceles Triangle' | 'Scalene Triangle' |
-    'Right Triangle';
+export type ShapesType = 'Circle' | 'Rectangle' | 'Square' |
+    'Pentagon' | 'Hexagon' | 'Equilateral Triangle';
 
 export type ShapesObj = typeof En.shapes.displayNames;
 
 export interface StateType {
-    shape: ShapeTypes;
+    shape: ShapesType;
     radius?: number,
     area: number,
     perimeter: number,
@@ -26,7 +24,7 @@ export interface StateType {
 }
 
 export interface ActionType {
-    shape: ShapeTypes;
+    shape: ShapesType;
     radius?: number,
     width?: number,
     length?: number,
@@ -40,3 +38,12 @@ export interface ActionType {
     hypotenuse?: number,
     error?: string
 }
+
+export type ShapeInputProps = {
+    shape: ShapesType;
+    value?: number;
+    param: string;
+    label: string;
+    placeholder?: string;
+    onChange: (action: ActionType) => void;
+};

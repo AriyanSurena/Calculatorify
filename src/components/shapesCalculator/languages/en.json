@@ -8,10 +8,7 @@
             "Square": "Square",
             "Pentagon": "Pentagon",
             "Hexagon": "Hexagon",
-            "Equilateral Triangle": "Equilateral Triangle",
-            "Isosceles Triangle": "Isosceles Triangle",
-            "Scalene Triangle": "Scalene Triangle",
-            "Right Triangle": "Right Triangle"
+            "Equilateral Triangle": "Equilateral Triangle"
         },
         "labels": {
             "radius": "Radius",
@@ -48,8 +45,8 @@
             "invalidInput": "Please enter valid values"
         },
         "messages": {
-            "areaIs": "Area is equal to",
-            "perimeterIs": "Perimeter is equal to",
+            "areaIs": "{shape} Area is equal to",
+            "perimeterIs": "{shape} Perimeter is equal to",
             "of": "of",
             "selectShape": "Select a shape"
         }
