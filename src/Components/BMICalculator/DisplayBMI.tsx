@@ -1,10 +1,10 @@
-import { useLanguage } from "../../Context/useLanguage";
-import DynamicIcon from "../../SVGIcons/DynamicIcon";
-import ResultDisplay from "../ResultDisplay";
-import TextChip from "../TextChlip";
-import { calculateWeightRange } from "./BMI Utils/calculateWeightRange.utils";
-import type { DisplayBMIType } from "./BMICalculator.types";
-import BMIProgressBar from "./BMIProgressBar";
+import { useLanguage } from "../../context/useLanguage";
+import DynamicIcon from "../svgIcons/dynamicIcon";
+import ResultDisplay from "../common/ResultDisplay";
+import TextChip from "../common/TextChlip";
+import { calculateWeightRange } from "./bmiUtils/calculateWeightRange.utils";
+import type { DisplayBMIType } from "./bmiCalculator.types";
+import BMIProgressBar from "./bmiProgressbar";
 const DisplayBMI: React.FC<DisplayBMIType> = ({
     state,
     content

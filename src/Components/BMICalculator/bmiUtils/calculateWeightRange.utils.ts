@@ -1,4 +1,4 @@
-import { STANDARD_RANGES } from "../RangeSlider";
+import { STANDARD_RANGES } from "../rangeSlider";
 
 // Function to identify the minimum and maximum weight allowed for the user:
 export const calculateWeightRange = (h: number | undefined) => {

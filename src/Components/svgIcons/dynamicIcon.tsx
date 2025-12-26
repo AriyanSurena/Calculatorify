@@ -1,20 +1,21 @@
-import { BackIcon, BMICalculatorIcon, CircleIcon, CloseIcon, CurrencyConverterIcon, DateCalculatorIcon, DiscordIcon, DragIcon, EmailIcon, EquilateralTriangleIcon, FacebookIcon, GitHubIcon, GitHubRepoIcon, HexagonIcon, InfoIcon, InstagramIcon, InvestmentCalculatorIcon, IsoscelesTriangleIcon, LinkedInIcon, MenuIcon, MinusIcon, PentagonIcon, PlusIcon, RectangleIcon, RightTriangleIcon, RulerIcon, ScaleneTriangleIcon, ShapeCalculatorIcon, ShareIcon, SquareIcon, TelegramIcon, TwitterIcon, UnitConverterIcon, UserIcon, VolumeCalculatorIcon, WebsiteIcon, WeightIcon } from "./Icons";
+import { BackIcon, BMICalculatorIcon, CircleIcon, CloseIcon, CurrencyConverterIcon, DateCalculatorIcon, DiscordIcon, DragIcon, EmailIcon, EquilateralTriangleIcon, FacebookIcon, GitHubIcon, GitHubRepoIcon, HexagonIcon, InfoIcon, InstagramIcon, InvestmentCalculatorIcon, IsoscelesTriangleIcon, LinkedInIcon, MenuIcon, MinusIcon, PentagonIcon, PlusIcon, RectangleIcon, RightTriangleIcon, RulerIcon, ScaleneTriangleIcon, ShapeCalculatorIcon, ShareIcon, SquareIcon, TelegramIcon, TwitterIcon, UnitConverterIcon, UserIcon, VolumeCalculatorIcon, WebsiteIcon, WeightIcon } from "./icons";
 
 const DynamicIcon: React.FC<
-{
-    icon: string
-}> = ({icon}) => {
-    const icons = {
+    {
+        icon: string
+    }> = ({ icon }) => {
+
+        const icons = {
             github: <GitHubIcon />,
             user: <UserIcon />,
-            circle: <CircleIcon />, 
-            equilateralTriangle: <EquilateralTriangleIcon />, 
+            circle: <CircleIcon />,
+            equilateralTriangle: <EquilateralTriangleIcon />,
             hexagon: <HexagonIcon />,
-            isoscelesTriangle: <IsoscelesTriangleIcon />, 
+            isoscelesTriangle: <IsoscelesTriangleIcon />,
             pentagon: <PentagonIcon />,
-            rectangle: <RectangleIcon />, 
-            rightTriangle: <RightTriangleIcon />, 
-            scaleneTriangle: <ScaleneTriangleIcon />, 
+            rectangle: <RectangleIcon />,
+            rightTriangle: <RightTriangleIcon />,
+            scaleneTriangle: <ScaleneTriangleIcon />,
             square: <SquareIcon />,
             telegram: <TelegramIcon />,
             facebook: <FacebookIcon />,
@@ -27,7 +28,7 @@ const DynamicIcon: React.FC<
             email: <EmailIcon />,
             dateCalculator: <DateCalculatorIcon />,
             volumeCalculator: <VolumeCalculatorIcon />,
-            investmentCalculator: <InvestmentCalculatorIcon /> ,
+            investmentCalculator: <InvestmentCalculatorIcon />,
             currencyConverter: <CurrencyConverterIcon />,
             bmiCalculator: <BMICalculatorIcon />,
             shapeCalculator: <ShapeCalculatorIcon />,
@@ -49,6 +50,6 @@ const DynamicIcon: React.FC<
         };
 
         return icons[icon as keyof typeof icons] || null
-}
+    }
 
-export default DynamicIcon;
+export default DynamicIcon; 

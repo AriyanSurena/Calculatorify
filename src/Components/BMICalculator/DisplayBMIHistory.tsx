@@ -1,6 +1,6 @@
-import DynamicIcon from "../../SVGIcons/DynamicIcon";
-import TextChip from "../TextChlip";
-import type { BMIHistoryType, ContentType } from "./BMICalculator.types";
+import DynamicIcon from "../svgIcons/dynamicIcon";
+import TextChip from "../common/TextChlip";
+import type { BMIHistoryType, ContentType } from "./bmiCalculator.types";
 
 interface DisplayBMIHistoryType {
     content: ContentType;

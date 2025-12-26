@@ -1,14 +1,14 @@
 import { useEffect, useReducer, useState, type ActionDispatch } from "react";
-import Menu from "../Menu";
-import TextChip from "../TextChlip";
-import ResultDisplay from "../ResultDisplay";
-import ShapeInput from "./ShapeInput";
-import ShapeDisplay from "./ShapeDisplay";
-import ToolCard from "../ToolCard";
+import Menu from "../common/Menu";
+import TextChip from "../common/TextChlip";
+import ResultDisplay from "../common/ResultDisplay";
+import ShapeInput from "./shapeInput";
+import ShapeDisplay from "./shapeDisplay";
+import ToolCard from "../common/ToolCard";
 import Fa from "./languages/fa.json";
 import En from "./languages/en.json";
-import { useLanguage } from "../../Context/useLanguage";
-import useContentConfig from "../../Context/useContentConfig";
+import { useLanguage } from "../../context/useLanguage";
+import useContentConfig from "../../context/useContentConfig";
 
 type Shapes = 'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle';
 

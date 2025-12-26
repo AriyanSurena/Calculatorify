@@ -1,4 +1,4 @@
-import { useToast } from '../Context/useToast';
+import { useToast } from '../../context/useToast';
 
 interface SectionHeaderProps {
   children: React.ReactNode,

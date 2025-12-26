@@ -136,7 +136,7 @@
       "name": "آریان سورنا",
       "title": "توسعه‌دهنده فول‌استک",
       "description": "علاقه‌مند به ساخت ابزارهای مفید با تکنولوژی‌های مدرن وب",
-      "photo": "/Creator.png",
+      "photo": "https://media.licdn.com/dms/image/v2/D4E03AQFDfCC6YCZAQg/profile-displayphoto-crop_800_800/B4EZtVJZjeIwAI-/0/1766660090279?e=1768435200&v=beta&t=YHNVQ6E1kBds8j7VjGufY5E4vNKDIC6n732RSH83PoI",
       "location": "دورکاری",
       "specialization": "React, TypeScript, برنامه‌های وب"
     },
@@ -144,13 +144,13 @@
       "development": [
         {
           "icon": "github",
-          "title": "👨‍💻 پورتفولیو GitHub",
+          "title": "پورتفولیو GitHub",
           "description": "مشاهده تمام پروژه‌ها و مشارکت‌های من",
           "link": "https://github.com/AriyanSurena"
         },
         {
           "icon": "repo",
-          "title": "📂 دسترسی به ریپازیتوری",
+          "title": "دسترسی به ریپازیتوری",
           "description": "کد منبع Calculatorify",
           "link": "https://github.com/AriyanSurena/Calculatorify.git"
         }
@@ -158,19 +158,19 @@
       "contact": [
         {
           "icon": "telegram",
-          "title": "📢 کانال توسعه",
+          "title": "کانال توسعه",
           "description": "آخرین به‌روزرسانی‌ها و اعلان‌ها",
           "link": "https://t.me/SurenaIO"
         },
         {
           "icon": "email",
-          "title": "✉️ تماس با توسعه‌دهنده",
+          "title": "تماس با توسعه‌دهنده",
           "description": "مستقیماً برای من ایمیل بفرستید",
           "link": "mailto:AriyanSurena@gmail.com"
         },
         {
           "icon": "twitter",
-          "title": "📱 توییتر فنی",
+          "title": "توییتر",
           "description": "افکار و به‌روزرسانی‌های فنی",
           "link": "https://twitter.com/AriyanSurena"
         }
@@ -178,9 +178,9 @@
       "professional": [
         {
           "icon": "linkedin",
-          "title": "🤝 ارتباط حرفه‌ای",
+          "title": "ارتباط حرفه‌ای",
           "description": "ارتباط در LinkedIn",
-          "link": "https://www.linkedin.com/in/ariyan-surena-09148b2b3/"
+          "link": "https://www.linkedin.com/in/ariyansurena/"
         }
       ]
     }
@@ -427,7 +427,7 @@
     "ماشین حساب مالی"
   ],
   "common": {
-    "backToHome":"بازگشت به خانه",
+    "backToHome": "بازگشت به خانه",
     "pageNotFound": "صفحه پیدا نشد"
   },
   "copyright": {

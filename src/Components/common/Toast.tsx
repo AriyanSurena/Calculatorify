@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import DynamicIcon from "../SVGIcons/DynamicIcon";
-import { useToast } from "../Context/useToast";
+import DynamicIcon from "../svgIcons/dynamicIcon";
+import { useToast } from "../../context/useToast";
 
 /**
  * Types of toast notifications.

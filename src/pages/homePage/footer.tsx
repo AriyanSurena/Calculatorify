@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import DynamicIcon from "../../SVGIcons/DynamicIcon";
-import { useConfig } from "../../Context/useProjectConfig";
+import DynamicIcon from "../../components/svgIcons/dynamicIcon";
+import { useConfig } from "../../context/useProjectConfig";
 
 const Footer: React.FC = () => {
 
@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
                     <section className="space-y-4">
                         <h4 className="font-semibold text-lg">{config.creator.title}</h4>
                         <div className="space-y-3 select-none" title={config.creator.profile.name}>
-                            <div className="relative w-32 h-32 p-4 my-4 mx-auto">
+                            <div className="relative w-40 h-40 p-4 my-4 mx-auto">
                                 {/* قاب عکس مدرن با افکت‌های خاص */}
                                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full transform scale-110 opacity-20 blur-sm"></div>
 
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
                                 <div className="relative z-10">
                                     <img
                                         src={config.creator.profile.photo}
-                                        className="w-full h-full rounded-full border-4 border-white/80 shadow-2xl shadow-blue-500/20 object-cover transform hover:scale-105 transition-transform duration-300"
+                                        className="w-full h-full rounded-full border-1 border-white/80 shadow-2xl shadow-blue-500/20 object-cover transform hover:scale-105 transition-transform duration-300"
                                         alt={config.creator.profile.name}
                                     />
                                 </div>
@@ -69,6 +69,7 @@ const Footer: React.FC = () => {
                         </div>
 
                     </section>
+
 
                     {/* About Project */}
                     <section className="space-y-4 select-none [-webkit-user-drag:none]">

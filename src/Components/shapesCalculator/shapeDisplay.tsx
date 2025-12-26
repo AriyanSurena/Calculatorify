@@ -1,4 +1,4 @@
-import DynamicIcon from "../../SVGIcons/DynamicIcon";
+import DynamicIcon from "../svgIcons/dynamicIcon";
 
 type Shapes = 'Circle' | 'Rectangle' | 'Square' | 'Pentagon' | 'Hexagon' | 'Equilateral Triangle' | 'Isosceles Triangle' | 'Scalene Triangle' | 'Right Triangle'
 interface stateType {

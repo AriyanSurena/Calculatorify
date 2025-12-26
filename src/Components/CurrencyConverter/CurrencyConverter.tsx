@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import InputBox from "./../InputBox";
+import InputBox from "../common/InputBox";
 
-import useExchangeRates from "./useExchangeRates";
-import ToolCard from "../ToolCard";
+import useExchangeRates from "../../context/useExchangeRates";
+import ToolCard from "../common/ToolCard";
 import En from "./languages/en.json";
 import Fa from "./languages/fa.json";
-import { useLanguage } from "../../Context/useLanguage";
-import CurrencySelect from "./CurrencySelect";
-import ResultDisplay from "../ResultDisplay";
-import TextChip from "../TextChlip";
-import useToolConfig from "../../Context/useContentConfig";
+import { useLanguage } from "../../context/useLanguage";
+import CurrencySelect from "./currencySelect";
+import ResultDisplay from "../common/ResultDisplay";
+import TextChip from "../common/TextChlip";
+import useToolConfig from "../../context/useContentConfig";
 
 type ContentType = typeof En;
 

@@ -1,20 +1,20 @@
-import Header from "./Components/HomePage/Header";
-import Footer from "./Components/HomePage/Footer";
+import Header from "./pages/homePage/header";
+import Footer from "./pages/homePage/footer";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import BMICalculator from "./Components/BMICalculator/BMICalculator";
-import ShapesCalculator from "./Components/ShapesCalc/ShapesCalculator";
-import CurrencyConverter from "./Components/CurrencyConverter/CurrencyConverter";
-import Converter from "./Components/Converter/Converter";
-import InvestmentCalculator from "./Components/InvestmentCalculator/InvestmentCalculator";
-import DynamicIcon from "./SVGIcons/DynamicIcon";
-import ToolNav from "./Components/HomePage/ToolNav";
-import LinkButton from "./Components/BackButton";
-import Toast from "./Components/Toast";
-import { useToast } from "./Context/useToast";
-import { useLanguage, type Languages } from "./Context/useLanguage";
+import BMICalculator from "./components/bmiCalculator/bmiCalculator";
+import ShapesCalculator from "./components/shapesCalculator/shapesCalculator";
+import CurrencyConverter from "./components/currencyConverter/currencyConverter";
+import Converter from "./components/converter/converter";
+import InvestmentCalculator from "./components/investmentCalculator/investmentCalculator";
+import DynamicIcon from "./components/svgIcons/dynamicIcon";
+import ToolNav from "./pages/homePage/toolNav";
+import LinkButton from "./components/common/BackButton";
+import Toast from "./components/common/Toast";
+import { useToast } from "./context/useToast";
+import { useLanguage, type Languages } from "./context/useLanguage";
 import { useEffect } from "react";
-import FontDirectionManager from "./Context/Direction";
-import { useConfig } from "./Context/useProjectConfig";
+import FontDirectionManager from "./context/direction";
+import { useConfig } from "./context/useProjectConfig";
 
 const App = (): React.ReactNode => {
   const { toast } = useToast()

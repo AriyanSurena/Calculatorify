@@ -136,7 +136,7 @@
       "name": "Ariyan Surena",
       "title": "Full-Stack Developer",
       "description": "Passionate about building useful tools with modern web technologies",
-      "photo": "/Creator.png",
+      "photo": "https://media.licdn.com/dms/image/v2/D4E03AQFDfCC6YCZAQg/profile-displayphoto-crop_800_800/B4EZtVJZjeIwAI-/0/1766660090279?e=1768435200&v=beta&t=YHNVQ6E1kBds8j7VjGufY5E4vNKDIC6n732RSH83PoI",
       "location": "Remote",
       "specialization": "React, TypeScript, Web Applications"
     },
@@ -144,13 +144,13 @@
       "development": [
         {
           "icon": "github",
-          "title": "👨‍💻 GitHub Portfolio",
+          "title": "GitHub Portfolio",
           "description": "View all my projects and contributions",
           "link": "https://github.com/AriyanSurena"
         },
         {
           "icon": "repo",
-          "title": "📂 Repository Access",
+          "title": "Repository Access",
           "description": "Source code of Calculatorify",
           "link": "https://github.com/AriyanSurena/Calculatorify.git"
         }
@@ -158,19 +158,19 @@
       "contact": [
         {
           "icon": "telegram",
-          "title": "📢 Development Channel",
+          "title": "Development Channel",
           "description": "Latest updates and announcements",
           "link": "https://t.me/SurenaIO"
         },
         {
           "icon": "email",
-          "title": "✉️ Contact Developer",
+          "title": "Contact Developer",
           "description": "Send me an email directly",
           "link": "mailto:AriyanSurena@gmail.com"
         },
         {
           "icon": "twitter",
-          "title": "📱 Tech Twitter",
+          "title": "Twitter",
           "description": "Tech thoughts and updates",
           "link": "https://twitter.com/AriyanSurena"
         }
@@ -178,9 +178,9 @@
       "professional": [
         {
           "icon": "linkedin",
-          "title": "🤝 Professional Connect",
+          "title": "Professional Connect",
           "description": "Connect on LinkedIn",
-          "link": "https://www.linkedin.com/in/ariyan-surena-09148b2b3/"
+          "link": "https://www.linkedin.com/in/ariyansurena/"
         }
       ]
     }

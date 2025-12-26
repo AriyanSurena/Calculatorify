@@ -1,5 +1,5 @@
-import type { ActionType, BMIStateType, ContentType } from "../BMICalculator.types";
-import { STANDARD_RANGES } from "../RangeSlider";
+import type { ActionType, BMIStateType, ContentType } from "../bmiCalculator.types";
+import { STANDARD_RANGES } from "../rangeSlider";
 
 export const createReducer = (content: ContentType) => {
     return (prevState: BMIStateType, action: ActionType): BMIStateType => {
