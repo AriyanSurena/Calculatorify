@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import En from "./languages/en.json";
 import Fa from "./languages/fa.json";
 import useExchangeRates from "../../hooks/useExchangeRates";
-import useLanguage from "./../../hooks/useLanguage";
+import useLanguage from "../../hooks/useLanguage";
 import useToolConfig from "../../hooks/useContentConfig";
 import InputBox from "../common/InputBox";
 import ToolCard from "../common/ToolCard";

@@ -1,7 +1,7 @@
 import { useEffect, useReducer, useState, type ActionDispatch } from "react";
 import Fa from "./languages/fa.json";
 import En from "./languages/en.json";
-import useLanguage from "./../../hooks/useLanguage";
+import useLanguage from "../../hooks/useLanguage";
 import useContentConfig from "../../hooks/useContentConfig";
 import Menu from "../common/Menu";
 import TextChip from "../common/TextChlip";

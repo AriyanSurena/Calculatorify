@@ -1,14 +1,14 @@
 import { useEffect, useMemo, useReducer, useState } from "react";
-import type { BMIHistoryType, BMIStateType, ContentType } from "./BmiCalculator.types";
+import type { BMIHistoryType, BMIStateType, ContentType } from "./BMICalculator.types";
 import en_US from "./languages/en.json";
 import fa_IR from "./languages/fa.json";
 import useContentConfig from "../../hooks/useContentConfig";
-import useLanguage from "./../../hooks/useLanguage";
-import { createReducer } from "./bmiUtils/createReducer.utils";
+import useLanguage from "../../hooks/useLanguage";
 import ToolCard from "../common/ToolCard";
 import DisplayBMI from "./DisplayBMI";
-import DisplayBMIHistory from "./DisplayBmiHistory";
+import DisplayBMIHistory from "./DisplayBMIHistory";
 import BMIRange from "./RangeSlider";
+import { createReducer } from "./BMIUtils/createReducer.utils";
 
 /**
  * BMI calculation component.

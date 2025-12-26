@@ -1,4 +1,4 @@
-import type { ActionType, BMIStateType, ContentType } from "../BmiCalculator.types";
+import type { ActionType, BMIStateType, ContentType } from "../BMICalculator.types";
 import { STANDARD_RANGES } from "../standardRanges";
 
 export const createReducer = (content: ContentType) => {

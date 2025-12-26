@@ -4,7 +4,7 @@ import Fa from "./languages/fa.json";
 import unitsFa from "./languages/units.fa.json";
 import unitsEn from "./languages/units.en.json";
 import { isNumber } from "./utils/typeGuards";
-import useLanguage from "./../../hooks/useLanguage";
+import useLanguage from "../../hooks/useLanguage";
 import useToolConfig from "../../hooks/useContentConfig";
 import handleCalculate from "./utils/handleCalculate";
 import Input from "../common/Input";
