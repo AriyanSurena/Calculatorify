@@ -1,7 +1,7 @@
 import useLanguage from "../../hooks/useLanguage";
 import { calculateWeightRange } from "./BMIUtils/calculateWeightRange.utils";
 import type { DisplayBMIType } from "./BMICalculator.types";
-import DynamicIcon from "../svgIcons/DynamicIcon";
+import DynamicIcon from "../SvgIcons/DynamicIcon";
 import ResultDisplay from "../common/ResultDisplay";
 import TextChip from "../common/TextChlip";
 import BMIProgressBar from "./BMIProgressbar";

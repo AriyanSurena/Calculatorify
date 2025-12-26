@@ -1,4 +1,4 @@
-import DynamicIcon from "../svgIcons/DynamicIcon";
+import DynamicIcon from "../SvgIcons/DynamicIcon";
 import TextChip from "../common/TextChlip";
 import type { BMIHistoryType, ContentType } from "./BMICalculator.types";
 

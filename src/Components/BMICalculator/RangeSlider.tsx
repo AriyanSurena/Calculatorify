@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import DynamicIcon from "../svgIcons/DynamicIcon";
+import DynamicIcon from "../SvgIcons/DynamicIcon";
 import type { BMIRangeSliderProps } from "./BMICalculator.types";
 import { STANDARD_RANGES } from "./standardRanges";
 
