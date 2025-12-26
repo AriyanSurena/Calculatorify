@@ -1,5 +1,5 @@
-import type { BMIProgressBarType } from "./BmiCalculator.types";
-import { getBMIProgress } from "./bmiUtils/getBMIProgress.utils";
+import type { BMIProgressBarType } from "./BmiCalculator.types.ts";
+import { getBMIProgress } from "./bmiUtils/getBMIProgress.utils.ts";
 
     const BMIProgressBar: React.FC<BMIProgressBarType> = ({
         bmi,

@@ -4,11 +4,11 @@ import fa_IR from "./languages/fa.json";
 import useContentConfig from "../../hooks/useContentConfig";
 import useLanguage from "../../hooks/useLanguage";
 import { createReducer } from "./bmiUtils/createReducer.utils";
-import type { BMIHistoryType, BMIStateType, ContentType } from "./BmiCalculator.types";
+import type { BMIHistoryType, BMIStateType, ContentType } from "./BmiCalculator.types.ts";
 import ToolCard from "../common/ToolCard";
 import BmiRange from "./RangeSlider";
-import DisplayBmi from "./DisplayBmi";
-import DisplayBmiHistory from "./DisplayBmiHistory";
+import DisplayBmi from "./DisplayBmi.tsx";
+import DisplayBmiHistory from "./DisplayBmiHistory.tsx";
 
 /**
  * BMI calculation component.

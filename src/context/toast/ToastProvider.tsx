@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from "react";
-import type { ToastProps } from "./toast.types";
-import { ToastContext } from "./toastContext";
+import type { ToastProps } from "./Toast.types";
+import { ToastContext } from "./ToastContext";
 
 const ToastProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [toast, setToast] = useState<ToastProps | undefined>(undefined);

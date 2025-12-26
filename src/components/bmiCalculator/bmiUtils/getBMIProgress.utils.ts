@@ -1,4 +1,4 @@
-import type { BMIProgressBarType } from "../BmiCalculator.types";
+import type { BMIProgressBarType } from "../BmiCalculator.types.ts";
 
 // Calculate BMI percentage for progress bar
 export const getBMIProgress = ({ bmi }: BMIProgressBarType) => {

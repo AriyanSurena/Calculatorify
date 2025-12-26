@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { Themes } from "./theme.types";
+import type { Themes } from "./Theme.types";
 import { ThemeContext } from "./ThemeContext";
 
 const ThemeProvider: React.FC<{

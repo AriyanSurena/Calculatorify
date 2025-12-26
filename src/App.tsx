@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useConfig } from "./hooks/useProjectConfig";
 import useToast from "./hooks/useToast";
 import useLanguage from "./hooks/useLanguage";
-import type { Languages } from "./context/language/language.types";
+import type { Languages } from "./context/language/Language.types";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Header from "./pages/navigation/Header";
 import Footer from "./pages/navigation/Footer";
@@ -14,7 +14,7 @@ import InvestmentCalculator from "./components/investmentCalculator/InvestmentCa
 import ToolNav from "./pages/navigation/ToolNav";
 import LinkButton from "./components/common/BackButton";
 import Toast from "./components/common/Toast";
-import FontDirectionManager from "./context/language/direction";
+import FontDirectionManager from "./context/language/Direction";
 import DynamicIcon from "./components/SvgIcons/DynamicIcon";
 
 const App = (): React.ReactNode => {

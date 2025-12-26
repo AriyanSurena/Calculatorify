@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { Languages} from "./language.types";
+import type { Languages} from "./Language.types";
 import { LanguageContext } from "./languageContext";
 
 const LanguagesProvider: React.FC<{
