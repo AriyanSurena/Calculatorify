@@ -3,12 +3,12 @@ import en_US from "./languages/en.json";
 import fa_IR from "./languages/fa.json";
 import useContentConfig from "../../hooks/useContentConfig";
 import useLanguage from "../../hooks/useLanguage";
-import { createReducer } from "./BMIUtils/createReducer.utils";
-import type { BMIHistoryType, BMIStateType, ContentType } from "./BMICalculator.types";
+import { createReducer } from "./bmiUtils/createReducer.utils";
+import type { BMIHistoryType, BMIStateType, ContentType } from "./bmiCalculator.types";
 import ToolCard from "../common/ToolCard";
 import BMIRange from "./RangeSlider";
-import DisplayBMI from "./DisplayBMI";
-import DisplayBMIHistory from "./DisplayBMIHistory";
+import DisplayBMI from "./DisplayBmi";
+import DisplayBMIHistory from "./DisplayBmiHistory";
 
 /**
  * BMI calculation component.

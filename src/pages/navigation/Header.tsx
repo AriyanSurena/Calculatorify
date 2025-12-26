@@ -1,5 +1,5 @@
 import { useConfig } from "../../hooks/useProjectConfig";
-import { GitHubIcon } from "../../Components/SvgIcons/Icons";
+import { GitHubIcon } from "../../components/SvgIcons/Icons";
 
 const Header: React.FC = () => {
     const config = useConfig();
