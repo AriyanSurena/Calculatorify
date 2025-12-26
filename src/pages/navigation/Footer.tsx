@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import DynamicIcon from "../../components/svgIcons/DynamicIcon";
-import { useConfig } from "../../context/useProjectConfig";
+import { useConfig, type Tool } from "../../context/useProjectConfig";
 
 const Footer: React.FC = () => {
 
@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
                             <h4 className="font-semibold text-blue-200">{config.features.available.title}</h4>
                             <ul className="text-sm text-blue-100 space-y-1">
                                 {
-                                    Object.entries(config.tools).map(([toolKey, tool]) => {
+                                    Object.entries(config.tools).map(([toolKey, tool]:[string, Tool]) => {
                                         console.log(tool)
                                         return (
                                             (tool.status === 'active') ? (
