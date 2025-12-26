@@ -15,7 +15,7 @@ import ToolNav from "./pages/navigation/ToolNav";
 import LinkButton from "./components/common/BackButton";
 import Toast from "./components/common/Toast";
 import FontDirectionManager from "./context/language/Direction";
-import DynamicIcon from "./components/SvgIcons/DynamicIcon";
+import DynamicIcon from "./components/svgIcons/DynamicIcon";
 
 const App = (): React.ReactNode => {
   const { toast } = useToast()

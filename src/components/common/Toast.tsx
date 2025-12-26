@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import DynamicIcon from "../SvgIcons/DynamicIcon";
+import DynamicIcon from "../svgIcons/DynamicIcon";
 import useToast from "../../hooks/useToast";
 
 /**

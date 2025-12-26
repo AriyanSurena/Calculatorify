@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import DynamicIcon from "../SvgIcons/DynamicIcon";
+import DynamicIcon from "../svgIcons/DynamicIcon";
 
 const BackButton: React.FC<{
     to: string;
