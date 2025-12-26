@@ -84,12 +84,12 @@ const Footer: React.FC = () => {
                             <h4 className="font-semibold text-blue-200">{config.features.available.title}</h4>
                             <ul className="text-sm text-blue-100 space-y-1">
                                 {
-                                    Object.entries(config.tools).map(([, tool], index) => {
+                                    Object.entries(config.tools).map(([toolKey, tool]) => {
                                         console.log(tool)
                                         return (
                                             (tool.status === 'active') ? (
                                                 <li
-                                                    key={index}
+                                                    key={toolKey}
                                                     className="selsect-none"
                                                 >
                                                     <Link
