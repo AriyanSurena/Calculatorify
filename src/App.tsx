@@ -1,5 +1,5 @@
-import Header from "./pages/homePage/Header";
-import Footer from "./pages/homePage/Footer";
+import Header from "./pages/navigation/Header";
+import Footer from "./pages/navigation/Footer";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import BMICalculator from "./components/bmiCalculator/BmiCalculator";
 import ShapesCalculator from "./components/shapesCalculator/ShapesCalculator";
@@ -7,7 +7,7 @@ import CurrencyConverter from "./components/currencyConverter/CurrencyConverter"
 import Converter from "./components/converter/Converter";
 import InvestmentCalculator from "./components/investmentCalculator/InvestmentCalculator";
 import DynamicIcon from "./components/svgIcons/DynamicIcon";
-import ToolNav from "./pages/homePage/ToolNav";
+import ToolNav from "./pages/navigation/ToolNav";
 import LinkButton from "./components/common/BackButton";
 import Toast from "./components/common/Toast";
 import { useToast } from "./context/useToast";

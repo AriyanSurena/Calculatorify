@@ -1,11 +1,12 @@
 import { useEffect, useReducer } from "react";
+import En from "./languages/en.json";
+import Fa from "./languages/fa.json";
+import useContentConfig from "../../context/useContentConfig";
+
 import InputBox from "../common/InputBox";
 import RadioInputBox from "../common/RadioInputBox";
 import ResultDisplay from "../common/ResultDisplay";
 import ToolCard from "../common/ToolCard";
-import En from "./languages/en.json";
-import Fa from "./languages/fa.json";
-import useContentConfig from "../../context/useContentConfig";
 
 interface InvestmentForm {
     initialAmount?: number;
