@@ -33,7 +33,7 @@ const Input: React.FC<InputProps> = ({
     // ارسال تغییرات به والد
     useEffect(() => {
         onChange(localValue);
-    }, [localValue]);
+    }, [localValue, onChange]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const inputValue = e.target.value;

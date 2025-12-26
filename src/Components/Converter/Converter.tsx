@@ -4,8 +4,8 @@ import Fa from "./languages/fa.json";
 import unitsFa from "./languages/units.fa.json";
 import unitsEn from "./languages/units.en.json";
 import { isNumber } from "./utils/typeGuards";
-import { useLanguage } from "../../context/useLanguage";
-import useToolConfig from "../../context/useContentConfig";
+import useLanguage from "./../../hooks/useLanguage";
+import useToolConfig from "../../hooks/useContentConfig";
 import handleCalculate from "./utils/handleCalculate";
 import Input from "../common/Input";
 import TextChip from "../common/TextChlip";
@@ -43,7 +43,7 @@ const Converter: React.FC = () => {
             setFromUnit(units[0].unit);
             setToUnit(units[1]?.unit || units[0].unit);
         }
-    }, [selectedCategory]);
+    }, [unitsData, selectedCategory]);
 
     // وقتی واحدها یا مقدار تغییر کرد، محاسبه کن
     useEffect(() => {
@@ -60,6 +60,7 @@ const Converter: React.FC = () => {
             numValue,
             setResult
         );
+
     }, [inputValue, fromUnit, toUnit]);
     
     const handleInputChange = (value: string) => {

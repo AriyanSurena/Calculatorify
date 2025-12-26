@@ -1,4 +1,4 @@
-import { useLanguage } from "../../context/useLanguage";
+import useLanguage from "./../../hooks/useLanguage";
 
 interface ToolCardProps {
     id: string;

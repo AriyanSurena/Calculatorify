@@ -1,6 +1,11 @@
+import { useEffect } from "react";
+import { useConfig } from "./hooks/useProjectConfig";
+import useToast from "./hooks/useToast";
+import useLanguage from "./hooks/useLanguage";
+import type { Languages } from "./context/language/language.types";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Header from "./pages/navigation/Header";
 import Footer from "./pages/navigation/Footer";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import BMICalculator from "./components/bmiCalculator/BmiCalculator";
 import ShapesCalculator from "./components/shapesCalculator/ShapesCalculator";
 import CurrencyConverter from "./components/currencyConverter/CurrencyConverter";
@@ -10,11 +15,7 @@ import DynamicIcon from "./components/svgIcons/DynamicIcon";
 import ToolNav from "./pages/navigation/ToolNav";
 import LinkButton from "./components/common/BackButton";
 import Toast from "./components/common/Toast";
-import { useToast } from "./context/useToast";
-import { useLanguage, type Languages } from "./context/useLanguage";
-import { useEffect } from "react";
-import FontDirectionManager from "./context/direction";
-import { useConfig } from "./context/useProjectConfig";
+import FontDirectionManager from "./context/language/direction";
 
 const App = (): React.ReactNode => {
   const { toast } = useToast()

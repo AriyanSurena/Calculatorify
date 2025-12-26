@@ -1,4 +1,4 @@
-import { useLanguage } from "./useLanguage";
+import useLanguage from "./useLanguage";
 import projectConfigEn from "../assets/configs/projectConfig.en.json";
 import projectConfigFa from "../assets/configs/projectConfig.fa.json";
 import type { ProjectConfig } from "../assets/configs/projectConfig.types";

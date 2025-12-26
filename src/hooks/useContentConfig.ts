@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLanguage } from "./useLanguage";
-
+import useLanguage from "./useLanguage";
 const useContentConfig = <T>(en_US: T, fa_IR: T) => {
     const { language } = useLanguage();
     const [content, setContent] = useState<T>(en_US);

@@ -1,4 +1,4 @@
-import { useToast } from "../../context/useToast";
+import useToast from "../../hooks/useToast";
 
 interface ResultDisplayProps {
     result: string | number;

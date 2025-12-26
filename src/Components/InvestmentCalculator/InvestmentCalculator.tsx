@@ -1,7 +1,7 @@
 import { useEffect, useReducer } from "react";
 import En from "./languages/en.json";
 import Fa from "./languages/fa.json";
-import useContentConfig from "../../context/useContentConfig";
+import useContentConfig from "../../hooks/useContentConfig";
 
 import InputBox from "../common/InputBox";
 import RadioInputBox from "../common/RadioInputBox";
@@ -18,7 +18,7 @@ interface InvestmentForm {
 }
 
 type InvestmentAction =
-    | { type: "UPDATE_FIELD"; field: keyof InvestmentForm; value: any }
+    | { type: "UPDATE_FIELD"; field: keyof InvestmentForm; value: number | string | undefined }
     | { type: "CALCULATE_INVESTMENT" }
     | { type: "RESET_FORM" };
 

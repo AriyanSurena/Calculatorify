@@ -2,8 +2,8 @@ import { useEffect, useMemo, useReducer, useState } from "react";
 import type { BMIHistoryType, BMIStateType, ContentType } from "./BmiCalculator.types";
 import en_US from "./languages/en.json";
 import fa_IR from "./languages/fa.json";
-import useContentConfig from "../../context/useContentConfig";
-import { useLanguage } from "../../context/useLanguage";
+import useContentConfig from "../../hooks/useContentConfig";
+import useLanguage from "./../../hooks/useLanguage";
 import { createReducer } from "./bmiUtils/createReducer.utils";
 import ToolCard from "../common/ToolCard";
 import DisplayBMI from "./DisplayBMI";
@@ -52,7 +52,7 @@ const BMICalculator: React.FC = () => {
     const [state, dispatch] = useReducer(reducer, initialState());
 
 
-    // Calculate BMI live and quickly (with debounce) every time you change the input values ​​for weight and height:
+    // Calculate BMI live and quickly (with debounce) every time you change the input values weight and height:
     useEffect(() => {
         const timeoutId = setTimeout(() => {
             if (state.weight && state.height)

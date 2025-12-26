@@ -1,6 +1,6 @@
 // components/FontDirectionManager.tsx
 import { useEffect } from 'react';
-import { useLanguage } from './useLanguage';
+import useLanguage from './../../hooks/useLanguage';
 
 const FontDirectionManager = () => {
   const { language } = useLanguage();

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import En from "./languages/en.json";
 import Fa from "./languages/fa.json";
-import useExchangeRates from "../../context/useExchangeRates";
-import { useLanguage } from "../../context/useLanguage";
-import useToolConfig from "../../context/useContentConfig";
+import useExchangeRates from "../../hooks/useExchangeRates";
+import useLanguage from "./../../hooks/useLanguage";
+import useToolConfig from "../../hooks/useContentConfig";
 import InputBox from "../common/InputBox";
 import ToolCard from "../common/ToolCard";
 import CurrencySelect from "./CurrencySelect";
@@ -30,11 +30,11 @@ const CurrencyConverter: React.FC = () => {
         })
         setFromCurrency(currencies[0])
         setToCurrency(currencies[1])
-    }, [])
+    }, [content])
 
     useEffect(() => {
         setConvertedAmount(rates[toCurrency.code] ? (amount ?? 0) * rates[toCurrency.code] : 0)
-    }, [amount, fromCurrency, toCurrency])
+    }, [amount, fromCurrency, toCurrency, rates])
 
     return (
         <ToolCard id="Currency_Converter">

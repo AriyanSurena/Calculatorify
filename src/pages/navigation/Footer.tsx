@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import DynamicIcon from "../../components/svgIcons/DynamicIcon";
-import { useConfig } from "../../context/useProjectConfig";
+import { useConfig } from "../../hooks/useProjectConfig";
 
 const Footer: React.FC = () => {
 

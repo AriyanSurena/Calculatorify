@@ -1,5 +1,5 @@
 import type { ActionType, BMIStateType, ContentType } from "../BmiCalculator.types";
-import { STANDARD_RANGES } from "../RangeSlider";
+import { STANDARD_RANGES } from "../standardRanges";
 
 export const createReducer = (content: ContentType) => {
     return (prevState: BMIStateType, action: ActionType): BMIStateType => {
@@ -18,8 +18,7 @@ export const createReducer = (content: ContentType) => {
                 const weight = Number(prevState.weight) || 0;
                 const height = Number(prevState.height) || 0;
 
-                // validation
-                // If the weight and height values ​​are invalid, stop executing the function:
+                // validation: If the weight and height values invalid, stop executing the function:
                 if (weight < STANDARD_RANGES.weight.min) {
                     return {
                         ...prevState,

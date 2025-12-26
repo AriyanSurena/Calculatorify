@@ -1,14 +1,8 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import type { Themes } from "./theme.types";
+import { ThemeContext } from "./ThemeContext";
 
-type Themes = 'light' | 'dark' | 'system' | 'amoled' | 'blueSky';
-type ThemeContextType = {
-    theme: Themes;
-    setTheme: (theme: Themes) => void;
-}
-
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
-
-export const ThemeProvider: React.FC<{
+const ThemeProvider: React.FC<{
     children: React.ReactNode
 }> = ({
     children
@@ -39,9 +33,4 @@ export const ThemeProvider: React.FC<{
     )
 }
 
-
-export const useTheme = (): ThemeContextType => {
-    const context = useContext(ThemeContext);
-    if(!context) throw new Error('useTheme must be used within a ThemeProvider');
-    return context;
-}
+export default ThemeProvider;
