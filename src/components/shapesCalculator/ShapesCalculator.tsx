@@ -9,7 +9,7 @@ import ResultDisplay from "../common/ResultDisplay";
 import ShapeInput from "./ShapeInput";
 import ShapeDisplay from "./ShapeDisplay";
 import ToolCard from "../common/ToolCard";
-import type { ShapesObj, ShapesType, StateType, ActionType } from "./shapes.types";
+import type { ShapesObj, ShapesType, StateType, ActionType } from "./Shapes.types";
 
 const ShapesCalculator: React.FC = () => {
     const { language } = useLanguage();

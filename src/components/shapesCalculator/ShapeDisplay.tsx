@@ -1,5 +1,5 @@
 import DynamicIcon from "../svgIcons/DynamicIcon";
-import type { StateType } from "./shapes.types";
+import type { StateType } from "./Shapes.types";
 
 const ShapeDisplay: React.FC<StateType> = (state) => {
     return (

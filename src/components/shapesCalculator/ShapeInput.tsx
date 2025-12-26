@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import type { ShapeInputProps } from './shapes.types';
-
-
+import type { ShapeInputProps } from './Shapes.types';
 
 const ShapeInput: React.FC<ShapeInputProps> = ({
     shape,
