@@ -6,16 +6,16 @@ import type { Languages } from "./context/language/language.types";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Header from "./pages/navigation/Header";
 import Footer from "./pages/navigation/Footer";
-import BMICalculator from "./components/bmiCalculator/BMICalculator";
-import ShapesCalculator from "./components/shapesCalculator/ShapesCalculator";
-import CurrencyConverter from "./components/currencyConverter/CurrencyConverter";
-import Converter from "./components/converter/Converter";
-import InvestmentCalculator from "./components/investmentCalculator/InvestmentCalculator";
+import BMICalculator from "./Components/BMICalculator/BMICalculator";
+import ShapesCalculator from "./Components/shapesCalculator/ShapesCalculator";
+import CurrencyConverter from "./Components/currencyConverter/CurrencyConverter";
+import Converter from "./Components/converter/Converter";
+import InvestmentCalculator from "./Components/investmentCalculator/InvestmentCalculator";
 import ToolNav from "./pages/navigation/ToolNav";
-import LinkButton from "./components/common/BackButton";
-import Toast from "./components/common/Toast";
+import LinkButton from "./Components/common/BackButton";
+import Toast from "./Components/common/Toast";
 import FontDirectionManager from "./context/language/direction";
-import DynamicIcon from "./components/svgIcons/DynamicIcon";
+import DynamicIcon from "./Components/SvgIcons/DynamicIcon";
 
 const App = (): React.ReactNode => {
   const { toast } = useToast()
