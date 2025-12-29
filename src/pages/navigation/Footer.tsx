@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
                             <ul className="text-sm text-blue-100 space-y-1">
                                 {
                                     Object.entries(config.tools).map(([toolKey, tool]) => {
-                                        console.log(tool)
+                                        // console.log(tool)
                                         return (
                                             (tool.status === 'active') ? (
                                                 <li

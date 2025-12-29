@@ -1,8 +1,8 @@
 {
-    "name": "Ariyan Surena - Calculator App - Calculatorify Suite",
+    "name": "Calculatorify",
     "short_name": "Calculatorify",
     "description": "A comprehensive and modern suite of computational tools built with advanced web technologies.",
-    "start_url": "/",
+    "start_url": "/?source=pwa",    
     "scope": ".",
     "display": "standalone",
     "dir": "ltr",
@@ -29,6 +29,6 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
+    "theme_color": "#000000",
     "background_color": "#ffffff"
 }
